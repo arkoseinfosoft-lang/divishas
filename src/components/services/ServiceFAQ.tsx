@@ -22,7 +22,7 @@ export function ServiceFAQ({ faqs, categoryTitle }: ServiceFAQProps) {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-[#FAF8F7] border-t border-[#EAE3E6]">
+    <section className="py-20 md:py-28 bg-[#FAF8F7] border-t border-[#EAE3E6]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Frequently Asked Questions"
@@ -30,20 +30,20 @@ export function ServiceFAQ({ faqs, categoryTitle }: ServiceFAQProps) {
           subtitle="Everything you need to know before visiting Divisha's Unisex Salon."
         />
 
-        <div className="mt-10 space-y-4">
+        <div className="mt-12 space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={faq.question}
-                className="bg-white rounded-2xl border border-[#EAE3E6] overflow-hidden transition-all duration-200"
+                className="bg-white rounded-2xl border border-[#EAE3E6] overflow-hidden transition-all duration-200 shadow-sm"
               >
                 <button
                   type="button"
                   onClick={() => toggle(index)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-[#FAF5F7] transition-colors"
+                  className="w-full p-6 sm:p-7 text-left flex items-center justify-between gap-4 hover:bg-[#FAF5F7] transition-colors"
                 >
-                  <span className="font-serif text-lg sm:text-xl font-bold text-[#181517]">
+                  <span className="text-lg sm:text-xl font-semibold text-[#181517] leading-snug">
                     {faq.question}
                   </span>
                   <div
@@ -56,7 +56,7 @@ export function ServiceFAQ({ faqs, categoryTitle }: ServiceFAQProps) {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-[#666164] leading-relaxed border-t border-[#F5EDF2] animate-in fade-in duration-200">
+                  <div className="px-6 sm:px-7 pb-7 pt-1 text-sm sm:text-base text-[#554e53] leading-relaxed border-t border-[#F5EDF2] animate-in fade-in duration-200 font-normal">
                     {faq.answer}
                   </div>
                 )}

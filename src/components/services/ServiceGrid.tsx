@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Check, Calendar, ArrowRight } from "lucide-react";
 import { ServiceItem } from "@/config/servicesData";
 import { Badge } from "../ui/Badge";
@@ -13,27 +16,31 @@ interface ServiceGridProps {
 
 export function ServiceGrid({ items, categoryTitle }: ServiceGridProps) {
   return (
-    <section className="py-16 sm:py-24 bg-white">
+    <section className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-12">
+        <div className="space-y-12 md:space-y-16">
           {items.map((item, index) => {
             const isEven = index % 2 === 1;
             return (
-              <div
+              <motion.div
                 key={item.id}
                 id={item.id}
-                className="luxury-card bg-[#FAF8F7] rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#EAE3E6] overflow-hidden"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="luxury-card bg-[#FAF8F7] rounded-3xl p-8 sm:p-10 lg:p-12 border border-[#EAE3E6] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 <div
                   className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center`}
                 >
                   {/* Content Column */}
                   <div
-                    className={`lg:col-span-7 space-y-5 ${
+                    className={`lg:col-span-7 space-y-6 ${
                       isEven ? "lg:order-2" : "lg:order-1"
                     }`}
                   >
-                    <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-2.5">
                       <Badge
                         variant={
                           item.forGender === "Unisex"
@@ -49,27 +56,27 @@ export function ServiceGrid({ items, categoryTitle }: ServiceGridProps) {
                           ? "For Men"
                           : "For Women"}
                       </Badge>
-                      <span className="text-xs text-[#8C8488] font-medium">
+                      <span className="text-xs text-[#787175] font-medium">
                         • {categoryTitle}
                       </span>
                     </div>
 
-                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#181517]">
+                    <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-[#181517] leading-[1.2]">
                       {item.name}
                     </h3>
 
-                    <p className="text-base text-[#5E575B] leading-relaxed font-sans">
+                    <p className="text-base text-[#554e53] leading-relaxed font-normal font-sans">
                       {item.fullDesc}
                     </p>
 
                     {/* Features list */}
-                    <div className="space-y-2.5 pt-2">
+                    <div className="space-y-3 pt-2">
                       {item.features.map((feature) => (
-                        <div key={feature} className="flex items-start gap-2.5">
+                        <div key={feature} className="flex items-start gap-3">
                           <div className="w-5 h-5 rounded-full bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0 mt-0.5">
                             <Check className="w-3.5 h-3.5" />
                           </div>
-                          <span className="text-sm text-[#3E383C] font-medium">
+                          <span className="text-sm text-[#383236] font-normal">
                             {feature}
                           </span>
                         </div>
@@ -102,19 +109,19 @@ export function ServiceGrid({ items, categoryTitle }: ServiceGridProps) {
                         isEven ? "lg:order-1" : "lg:order-2"
                       }`}
                     >
-                      <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-lg border border-[#EAE3E6]">
+                      <div className="relative h-72 sm:h-88 rounded-3xl overflow-hidden shadow-xl border border-[#EAE3E6]">
                         <Image
                           src={item.image}
                           alt={item.name}
                           fill
                           className="object-cover hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 768px) 100vw, 400px"
+                          sizes="(max-width: 768px) 100vw, 500px"
                         />
                       </div>
                     </div>
                   )}
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

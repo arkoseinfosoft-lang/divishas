@@ -2,29 +2,35 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Sparkles, Calendar, ShieldCheck, Heart } from "lucide-react";
 import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 bg-luxury-radial">
+    <section className="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28 bg-luxury-radial">
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#E0007C]/8 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-0 w-[400px] h-[400px] bg-[#D81B60]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           {/* Left Hero Content */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
-            {/* Top Brand Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FCE4EC] border border-[#F8BBD0] text-[#C2185B] text-xs sm:text-sm font-semibold shadow-sm">
-              <Sparkles className="w-4 h-4 text-[#E0007C]" />
-              <span>Premium Unisex Salon • Welcoming Men & Women</span>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left"
+          >
+            {/* Top Brand Pill with breathing room */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FCE4EC] border border-[#F8BBD0] text-[#C2185B] text-xs font-semibold tracking-wide shadow-sm mb-2">
+              <Sparkles className="w-3.5 h-3.5 text-[#E0007C]" />
+              <span>Premium Unisex Salon • Welcoming Men &amp; Women</span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#181517] leading-[1.12]">
+            {/* Main Headline with Playfair Display 600 weight and 1.2 leading */}
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold tracking-tight text-[#181517] leading-[1.2]">
               Elevate Your Everyday Style &amp; Special Moments at{" "}
               <span className="text-gradient-magenta inline-block">
                 Divisha&apos;s
@@ -32,7 +38,7 @@ export function HeroSection() {
             </h1>
 
             {/* Persuasive Subtext */}
-            <p className="text-base sm:text-lg text-[#5E575B] leading-relaxed max-w-2xl mx-auto lg:mx-0 font-sans">
+            <p className="text-base sm:text-lg text-[#554e53] leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal font-sans">
               Experience the harmony of contemporary hairdressing, couture bridal
               makeup, luxury nail art, and revitalizing skin grooming — delivered by
               certified master stylists in a welcoming, hygienic atmosphere.
@@ -67,7 +73,7 @@ export function HeroSection() {
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="text-xs sm:text-sm font-bold text-[#181517]">
+                  <p className="text-xs sm:text-sm font-semibold text-[#181517]">
                     100% Sanitized
                   </p>
                   <p className="text-[11px] text-[#7A7276] hidden sm:block">
@@ -81,7 +87,7 @@ export function HeroSection() {
                   <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="text-xs sm:text-sm font-bold text-[#181517]">
+                  <p className="text-xs sm:text-sm font-semibold text-[#181517]">
                     Expert Stylists
                   </p>
                   <p className="text-[11px] text-[#7A7276] hidden sm:block">
@@ -95,7 +101,7 @@ export function HeroSection() {
                   <Heart className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="text-xs sm:text-sm font-bold text-[#181517]">
+                  <p className="text-xs sm:text-sm font-semibold text-[#181517]">
                     Unisex Care
                   </p>
                   <p className="text-[11px] text-[#7A7276] hidden sm:block">
@@ -104,17 +110,22 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Hero Image Card */}
-          <div className="lg:col-span-5 relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 relative"
+          >
             <div className="relative mx-auto max-w-md lg:max-w-none">
               {/* Decorative Frame Elements */}
               <div className="absolute -top-4 -left-4 w-full h-full rounded-3xl border-2 border-[#E0007C]/20 -z-10" />
               <div className="absolute -bottom-4 -right-4 w-full h-full rounded-3xl bg-[#FCE4EC]/40 -z-20" />
 
-              {/* Main Image Container */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#EAE3E6] bg-white aspect-[4/3] sm:aspect-[4/3] lg:aspect-[4/3]">
+              {/* Main Image Container with rounded-3xl and soft shadow */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/10 border border-[#EAE3E6] bg-white aspect-[4/3] sm:aspect-[4/3] lg:aspect-[4/3]">
                 <Image
                   src="/images/hero-salon.jpg"
                   alt="Divisha's Unisex Salon Luxury Interior and Hair Styling"
@@ -124,11 +135,11 @@ export function HeroSection() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 />
 
-                {/* Subtle Image Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                {/* Subtle Image Gradient Overlay for text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
                 {/* Floating Bottom Card */}
-                <div className="absolute bottom-4 inset-x-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-white/40 shadow-lg flex items-center justify-between">
+                <div className="absolute bottom-4 inset-x-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-white/50 shadow-lg flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-[#FCE4EC] p-1 flex items-center justify-center shrink-0">
                       <Image
@@ -140,7 +151,7 @@ export function HeroSection() {
                       />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-[#181517]">
+                      <p className="text-xs font-semibold text-[#181517]">
                         Divisha&apos;s Unisex Salon
                       </p>
                       <p className="text-[11px] text-[#C2185B] font-medium">
@@ -155,7 +166,7 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

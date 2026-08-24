@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Check, UserCheck } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Button } from "../ui/Button";
@@ -25,11 +28,17 @@ const points = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-16 sm:py-24 bg-white border-b border-[#EAE3E6]">
+    <section className="py-20 md:py-28 bg-white border-b border-[#EAE3E6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Text */}
-          <div className="lg:col-span-6 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-6 space-y-6"
+          >
             <SectionHeading
               align="left"
               badge="The Divisha's Distinction"
@@ -37,26 +46,26 @@ export function WhyChooseUs() {
               subtitle="Whether you're visiting for a regular haircut or getting ready for your most cherished celebration, we ensure every moment is relaxing and transformative."
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4">
               {points.map((point) => (
                 <div
                   key={point.title}
-                  className="p-5 rounded-2xl bg-[#FAF8F7] border border-[#EAE3E6] space-y-2 hover:border-[#C2185B]/40 transition-colors"
+                  className="p-6 rounded-2xl bg-[#FAF8F7] border border-[#EAE3E6] space-y-2.5 hover:border-[#C2185B]/40 transition-colors shadow-sm"
                 >
-                  <div className="w-7 h-7 rounded-lg bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center">
                     <Check className="w-4 h-4" />
                   </div>
-                  <h4 className="font-serif text-lg font-bold text-[#181517]">
+                  <h4 className="text-lg font-semibold text-[#181517]">
                     {point.title}
                   </h4>
-                  <p className="text-xs text-[#666164] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#554e53] leading-relaxed font-normal">
                     {point.desc}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="pt-2 flex items-center gap-4">
+            <div className="pt-3 flex items-center gap-4">
               <Button href="/about" variant="primary" size="md">
                 Learn More About Us
               </Button>
@@ -64,17 +73,23 @@ export function WhyChooseUs() {
                 Find Our Salon
               </Button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Image Composition */}
-          <div className="lg:col-span-6">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-6"
+          >
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="relative h-96 sm:h-[450px] rounded-3xl overflow-hidden shadow-2xl border border-[#EAE3E6]">
+              <div className="relative h-96 sm:h-[480px] rounded-3xl overflow-hidden shadow-2xl shadow-black/10 border border-[#EAE3E6]">
                 <Image
                   src="/images/hair-men.jpg"
                   alt="Men's and Women's Unisex Styling at Divisha's"
                   fill
-                  className="object-cover"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, 600px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -85,17 +100,17 @@ export function WhyChooseUs() {
                     <UserCheck className="w-6 h-6" />
                   </div>
                   <div>
-                    <h5 className="text-sm font-bold text-[#181517]">
+                    <h5 className="text-sm font-semibold text-[#181517]">
                       Expert Hair &amp; Grooming
                     </h5>
-                    <p className="text-xs text-[#666164]">
+                    <p className="text-xs text-[#554e53]">
                       Certified master stylists for modern cuts &amp; beard sculpting
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

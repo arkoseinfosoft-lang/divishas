@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/layout/Navbar";
@@ -7,11 +7,11 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileStickyBar } from "@/components/layout/MobileStickyBar";
 import { LocalBusinessJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 
-const inter = Inter({
-  variable: "--font-inter",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["600", "700"],
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -101,9 +101,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${plusJakarta.variable} h-full antialiased scroll-smooth`}
+      className={`${playfair.variable} ${plusJakarta.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-[#FAF8F7] text-[#181517] font-sans antialiased selection:bg-[#FCE4EC] selection:text-[#C2185B]">
+      <body className="min-h-full flex flex-col bg-[#FAF8F7] text-[#221E20] font-sans antialiased selection:bg-[#FCE4EC] selection:text-[#C2185B]">
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />
         <Navbar />

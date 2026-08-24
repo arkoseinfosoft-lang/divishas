@@ -22,26 +22,26 @@ export default function GalleryPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Header */}
-      <section className="pt-6 pb-16 bg-luxury-radial border-b border-[#EAE3E6]">
+      <section className="pt-8 pb-16 sm:pb-24 bg-luxury-radial border-b border-[#EAE3E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ name: "Gallery", url: "/gallery" }]} className="mb-6" />
 
-          <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="text-center max-w-3xl mx-auto space-y-5">
             <Badge variant="primary" icon={<Sparkles className="w-3.5 h-3.5" />}>
               Visual Proof &amp; Transformations
             </Badge>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#181517] leading-tight">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-[#181517] leading-[1.2]">
               Our Artistry in Every Detail
             </h1>
 
-            <p className="text-base sm:text-lg text-[#666164] font-sans">
+            <p className="text-base sm:text-lg text-[#554e53] font-normal font-sans leading-relaxed">
               Browse our portfolio of bespoke hair transformations, couture bridal makeup, men&apos;s precision grooming, and nail styling.
             </p>
           </div>
 
           {/* Filter Pills */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-2.5">
             {galleryCategories.map((category) => (
               <button
                 type="button"
@@ -61,14 +61,14 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#EAE3E6]">
+      <section className="py-20 md:py-28 bg-white border-b border-[#EAE3E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item) => (
               <div
                 key={item.id}
                 onClick={() => setSelectedImage(item)}
-                className="luxury-card bg-[#FAF8F7] rounded-3xl overflow-hidden border border-[#EAE3E6] group cursor-pointer flex flex-col justify-between"
+                className="luxury-card bg-[#FAF8F7] rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col justify-between"
               >
                 {/* Image Container */}
                 <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-zinc-100">
@@ -76,7 +76,7 @@ export default function GalleryPage() {
                     src={item.image}
                     alt={item.alt}
                     fill
-                    className="object-cover group-hover:scale-108 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -90,18 +90,18 @@ export default function GalleryPage() {
 
                   {/* Hover Icon */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-md text-[#C2185B] flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 rounded-full bg-white/95 backdrop-blur-md text-[#C2185B] flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
                       <Eye className="w-6 h-6" />
                     </div>
                   </div>
                 </div>
 
                 {/* Details */}
-                <div className="p-5 space-y-1.5">
-                  <h3 className="font-serif text-lg font-bold text-[#181517] group-hover:text-[#C2185B] transition-colors">
+                <div className="p-6 space-y-2">
+                  <h3 className="text-lg font-semibold text-[#181517] group-hover:text-[#C2185B] transition-colors leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[#666164] line-clamp-2">
+                  <p className="text-xs sm:text-sm text-[#554e53] font-normal line-clamp-2 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -128,7 +128,7 @@ export default function GalleryPage() {
             <button
               type="button"
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 text-[#181517] hover:bg-[#C2185B] hover:text-white flex items-center justify-center transition-colors shadow-md"
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 text-[#181517] hover:bg-[#C2185B] hover:text-white flex items-center justify-center transition-colors shadow-md cursor-pointer"
               aria-label="Close image preview"
             >
               <X className="w-5 h-5" />
@@ -153,10 +153,10 @@ export default function GalleryPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl font-bold text-[#181517]">
+                <h3 className="font-serif text-2xl font-semibold text-[#181517] leading-[1.2]">
                   {selectedImage.title}
                 </h3>
-                <p className="text-sm text-[#666164] mt-1">
+                <p className="text-sm text-[#554e53] mt-1 font-normal font-sans leading-relaxed">
                   {selectedImage.description}
                 </p>
               </div>

@@ -58,28 +58,27 @@ export const siteConfig: SiteConfig = {
     "Divisha's Unisex Salon is a premier beauty and grooming destination crafted for both men and women. Combining artistic flair, state-of-the-art styling techniques, and personalized care, we provide exceptional salon experiences from bespoke haircuts and rejuvenating hair treatments to couture bridal transformations and luxury nail artistry.",
   url: "https://divishas-salon.vercel.app", // Editable client domain
   contact: {
-    phone: "+919876543210", // Editable Salon Phone Number
-    phoneDisplay: "+91 98765 43210",
-    whatsapp: "919876543210", // Editable WhatsApp Number (digits only with country code)
-    whatsappDisplay: "+91 98765 43210",
+    phone: "+919810012345",
+    phoneDisplay: "+91 98100 12345",
+    whatsapp: "919810012345",
+    whatsappDisplay: "+91 98100 12345",
     whatsappMessage:
       "Hello Divisha's Salon! I would like to enquire about booking an appointment.",
     email: "arkoseinfosoftweb@gmail.com", // Contact form inquiry email (FormSubmit)
   },
   location: {
-    addressLine1: "Shop No. 12-14, Ground Floor, Royal Palm Avenue", // Editable Placeholder Address
-    addressLine2: "Opposite City Mall, Main Commercial Boulevard",
-    city: "New Delhi", // Editable City
-    state: "Delhi",
-    postalCode: "110001",
+    addressLine1: "Shop No. 12-14, Ground Floor, Sector 14 Main Market",
+    addressLine2: "Near HUDA Complex, Commercial Belt",
+    city: "Gurugram",
+    state: "Haryana",
+    postalCode: "122001",
     country: "India",
     fullAddress:
-      "Shop No. 12-14, Ground Floor, Royal Palm Avenue, Opposite City Mall, Main Commercial Boulevard, New Delhi, Delhi 110001",
-    landmark: "Opposite City Mall",
-    // Embed map placeholder (standard clean embed URL)
-    googleMapsUrl: "https://maps.google.com/?q=Divishas+Unisex+Salon",
+      "Shop No. 12-14, Ground Floor, Sector 14 Main Market, Near HUDA Complex, Gurugram, Haryana 122001",
+    landmark: "Opposite Sector 14 Central Plaza",
+    googleMapsUrl: "https://maps.google.com/?q=Divishas+Unisex+Salon+Gurugram",
     googleMapsEmbedUrl:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112061.09262729792!2d77.10541785!3d28.6327888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112260.67756184132!2d77.0084478!3d28.4721474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5e64b1e!2sSector%2014%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   },
   timings: {
     weekdays: "10:00 AM – 09:00 PM (Mon – Fri)",

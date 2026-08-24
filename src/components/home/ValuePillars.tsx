@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Sparkles,
   Users,
@@ -44,7 +47,7 @@ const pillars = [
 
 export function ValuePillars() {
   return (
-    <section className="py-16 sm:py-20 bg-white border-y border-[#EAE3E6]">
+    <section className="py-20 md:py-28 bg-white border-y border-[#EAE3E6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="The Divisha's Standard"
@@ -52,26 +55,30 @@ export function ValuePillars() {
           subtitle="We combine the precision of modern beauty techniques with a warm, inclusive environment designed for everyone."
         />
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {pillars.map((pillar) => {
+        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
-              <div
+              <motion.div
                 key={pillar.title}
-                className="luxury-card bg-[#FAF8F7] rounded-3xl p-7 border border-[#EAE3E6] flex flex-col justify-between"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className="luxury-card bg-[#FAF8F7] rounded-3xl p-8 md:p-9 border border-[#EAE3E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center mb-5">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-2xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center mb-6 shadow-sm">
+                    <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-[#181517] mb-2.5">
+                  <h3 className="text-xl font-semibold text-[#181517] mb-3">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-[#666164] leading-relaxed font-sans">
+                  <p className="text-sm text-[#554e53] leading-relaxed font-normal">
                     {pillar.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

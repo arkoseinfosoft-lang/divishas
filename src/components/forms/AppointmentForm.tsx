@@ -177,14 +177,14 @@ Please let me know if this slot is available. Thank you!`;
     >
       {/* Header */}
       <div className="mb-8">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#C2185B] bg-[#FCE4EC] rounded-full mb-2">
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#C2185B] bg-[#FCE4EC] rounded-full mb-3">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Priority Booking</span>
         </div>
-        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#181517]">
+        <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-[#181517] leading-[1.2]">
           Reserve Your Salon Experience
         </h3>
-        <p className="text-sm text-[#787175] mt-1">
+        <p className="text-sm text-[#554e53] mt-2 font-normal leading-relaxed">
           Select your desired service and preferred timing. We welcome both women and men.
         </p>
       </div>
@@ -199,7 +199,7 @@ Please let me know if this slot is available. Thank you!`;
       <form onSubmit={handleSubmit} className="space-y-5">
         {/* Gender / Client Preference Selection */}
         <div>
-          <label className="block text-xs font-bold text-[#3B3438] uppercase tracking-wider mb-2">
+          <label className="block text-xs font-semibold text-[#3B3438] uppercase tracking-[0.12em] mb-2.5">
             Service For
           </label>
           <div className="grid grid-cols-3 gap-2">

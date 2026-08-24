@@ -24,7 +24,7 @@ export function ServiceHero({
   breadcrumbs,
 }: ServiceHeroProps) {
   return (
-    <section className="pt-6 pb-14 sm:pb-20 bg-luxury-radial border-b border-[#EAE3E6] relative overflow-hidden">
+    <section className="pt-8 pb-16 sm:pb-24 bg-luxury-radial border-b border-[#EAE3E6] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Breadcrumbs items={breadcrumbs} className="mb-6" />
 
@@ -35,7 +35,7 @@ export function ServiceHero({
               {badge}
             </Badge>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#181517] leading-[1.12]">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-[#181517] leading-[1.2]">
               {title}
             </h1>
 
@@ -43,7 +43,7 @@ export function ServiceHero({
               {subtitle}
             </p>
 
-            <p className="text-base text-[#5E575B] leading-relaxed max-w-2xl font-sans">
+            <p className="text-base text-[#554e53] leading-relaxed max-w-2xl font-normal font-sans">
               {introText}
             </p>
 

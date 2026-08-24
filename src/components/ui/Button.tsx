@@ -30,23 +30,23 @@ export function Button({
   icon,
 }: ButtonProps) {
   const baseClasses =
-    "inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
+    "inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
 
   const sizeClasses = {
     sm: "text-xs px-4 py-2 gap-1.5",
-    md: "text-sm px-6 py-3 gap-2",
-    lg: "text-base px-8 py-4 gap-2.5 shadow-sm",
+    md: "text-sm px-6 py-3 gap-2 shadow-sm",
+    lg: "text-base px-8 py-4 gap-2.5 shadow-md",
   };
 
   const variantClasses = {
     primary:
-      "bg-gradient-to-r from-[#E0007C] to-[#C2185B] text-white hover:from-[#FF2E93] hover:to-[#D81B60] shadow-md shadow-[#E0007C]/20 hover:shadow-lg hover:shadow-[#E0007C]/30",
+      "bg-gradient-to-r from-[#E0007C] to-[#C2185B] text-white hover:from-[#FF2E93] hover:to-[#D81B60] shadow-md shadow-[#E0007C]/20 hover:shadow-xl hover:shadow-[#E0007C]/30",
     secondary:
-      "bg-[#181517] text-white hover:bg-[#2F2B2D] shadow-sm",
+      "bg-[#181517] text-white hover:bg-[#2F2B2D] hover:shadow-lg shadow-sm",
     outline:
-      "bg-transparent text-[#181517] border border-[#181517]/20 hover:border-[#E0007C] hover:text-[#E0007C] hover:bg-[#FCE4EC]/40",
+      "bg-transparent text-[#181517] border border-[#181517]/20 hover:border-[#E0007C] hover:text-[#E0007C] hover:bg-[#FCE4EC]/40 hover:shadow-md",
     whatsapp:
-      "bg-[#25D366] text-white hover:bg-[#20BA5A] shadow-md shadow-[#25D366]/20",
+      "bg-[#25D366] text-white hover:bg-[#20BA5A] shadow-md shadow-[#25D366]/20 hover:shadow-xl hover:shadow-[#25D366]/30",
     ghost:
       "bg-transparent text-[#181517] hover:text-[#E0007C] hover:bg-[#FCE4EC]/50",
   };

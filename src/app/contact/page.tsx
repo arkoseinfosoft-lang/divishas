@@ -27,20 +27,20 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Header */}
-      <section className="pt-6 pb-12 bg-luxury-radial border-b border-[#EAE3E6]">
+      <section className="pt-8 pb-16 sm:pb-24 bg-luxury-radial border-b border-[#EAE3E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ name: "Contact & Visit", url: "/contact" }]} className="mb-6" />
 
-          <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="text-center max-w-3xl mx-auto space-y-5">
             <Badge variant="primary" icon={<Sparkles className="w-3.5 h-3.5" />}>
               Connect With Us
             </Badge>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#181517] leading-tight">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-[#181517] leading-[1.2]">
               Visit Divisha&apos;s Unisex Salon
             </h1>
 
-            <p className="text-base sm:text-lg text-[#666164] font-sans">
+            <p className="text-base sm:text-lg text-[#554e53] font-normal font-sans leading-relaxed">
               Book your bespoke salon appointment, ask questions, or drop in for a personal style consultation.
             </p>
           </div>
@@ -48,33 +48,33 @@ export default function ContactPage() {
       </section>
 
       {/* Main Form & Contact Info Grid */}
-      <section className="py-12 sm:py-20 bg-[#FAF8F7] border-b border-[#EAE3E6]">
+      <section className="py-20 md:py-28 bg-[#FAF8F7] border-b border-[#EAE3E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             {/* Left Contact Details */}
             <div className="lg:col-span-5 space-y-6">
               {/* Phone & WhatsApp Card */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#EAE3E6] shadow-sm space-y-6">
-                <h3 className="font-serif text-2xl font-bold text-[#181517]">
+              <div className="bg-white rounded-3xl p-8 sm:p-9 border border-[#EAE3E6] shadow-sm space-y-6">
+                <h3 className="font-serif text-2xl font-semibold text-[#181517] leading-[1.2]">
                   Instant Touchpoints
                 </h3>
 
                 <div className="space-y-4">
                   <a
                     href={`tel:${siteConfig.contact.phone}`}
-                    className="flex items-start gap-4 p-4 rounded-2xl bg-[#FAF8F7] hover:bg-[#FCE4EC]/50 border border-[#EAE3E6] transition-colors group"
+                    className="flex items-start gap-4 p-4 rounded-2xl bg-[#FAF8F7] hover:bg-[#FCE4EC]/50 border border-[#EAE3E6] transition-all hover:scale-[1.01] group"
                   >
                     <div className="w-10 h-10 rounded-xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-[#8C8488]">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#8C8488]">
                         Phone Call
                       </p>
-                      <p className="text-base font-bold text-[#181517] group-hover:text-[#C2185B] transition-colors">
+                      <p className="text-base font-semibold text-[#181517] group-hover:text-[#C2185B] transition-colors">
                         {siteConfig.contact.phoneDisplay}
                       </p>
-                      <p className="text-xs text-[#7A7276] mt-0.5">
+                      <p className="text-xs text-[#7A7276] mt-0.5 font-normal">
                         Direct salon reception line
                       </p>
                     </div>
@@ -86,19 +86,19 @@ export default function ContactPage() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-start gap-4 p-4 rounded-2xl bg-[#E8F8EE] hover:bg-[#D3F3DC] border border-[#C6EBD0] transition-colors group"
+                    className="flex items-start gap-4 p-4 rounded-2xl bg-[#E8F8EE] hover:bg-[#D3F3DC] border border-[#C6EBD0] transition-all hover:scale-[1.01] group"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-[#25D366] text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    <div className="w-10 h-10 rounded-xl bg-[#25D366] text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-sm">
                       <MessageCircle className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-[#137A3E]">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#137A3E]">
                         WhatsApp Chat
                       </p>
-                      <p className="text-base font-bold text-[#137A3E]">
+                      <p className="text-base font-semibold text-[#137A3E]">
                         {siteConfig.contact.whatsappDisplay}
                       </p>
-                      <p className="text-xs text-[#20834B] mt-0.5">
+                      <p className="text-xs text-[#20834B] mt-0.5 font-normal">
                         Instant chat, bridal queries &amp; photos
                       </p>
                     </div>
@@ -106,16 +106,16 @@ export default function ContactPage() {
 
                   <a
                     href={`mailto:${siteConfig.contact.email}`}
-                    className="flex items-start gap-4 p-4 rounded-2xl bg-[#FAF8F7] hover:bg-[#FCE4EC]/50 border border-[#EAE3E6] transition-colors group"
+                    className="flex items-start gap-4 p-4 rounded-2xl bg-[#FAF8F7] hover:bg-[#FCE4EC]/50 border border-[#EAE3E6] transition-all hover:scale-[1.01] group"
                   >
                     <div className="w-10 h-10 rounded-xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-[#8C8488]">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#8C8488]">
                         Email
                       </p>
-                      <p className="text-sm font-bold text-[#181517] group-hover:text-[#C2185B] transition-colors truncate">
+                      <p className="text-sm font-semibold text-[#181517] group-hover:text-[#C2185B] transition-colors truncate">
                         {siteConfig.contact.email}
                       </p>
                     </div>
@@ -124,22 +124,22 @@ export default function ContactPage() {
               </div>
 
               {/* Location & Timings Card */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#EAE3E6] shadow-sm space-y-6">
+              <div className="bg-white rounded-3xl p-8 sm:p-9 border border-[#EAE3E6] shadow-sm space-y-6">
                 <div>
-                  <h3 className="font-serif text-xl font-bold text-[#181517] mb-3">
+                  <h3 className="font-serif text-xl font-semibold text-[#181517] mb-3 leading-[1.2]">
                     Salon Address &amp; Timings
                   </h3>
-                  <div className="flex items-start gap-3 text-sm text-[#5E575B]">
+                  <div className="flex items-start gap-3.5 text-sm text-[#554e53]">
                     <MapPin className="w-5 h-5 text-[#C2185B] shrink-0 mt-1" />
                     <div>
-                      <p className="font-bold text-[#181517]">
+                      <p className="font-semibold text-[#181517]">
                         {siteConfig.name}
                       </p>
-                      <p className="mt-1 leading-relaxed">
+                      <p className="mt-1 leading-relaxed font-normal">
                         {siteConfig.location.fullAddress}
                       </p>
                       {siteConfig.location.landmark && (
-                        <p className="text-xs font-semibold text-[#8C8488] mt-1">
+                        <p className="text-xs font-semibold text-[#8C8488] mt-1.5">
                           Landmark: {siteConfig.location.landmark}
                         </p>
                       )}
@@ -147,10 +147,10 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-[#F5EDF2] flex items-start gap-3 text-sm">
+                <div className="pt-4 border-t border-[#F5EDF2] flex items-start gap-3.5 text-sm">
                   <Clock className="w-5 h-5 text-[#C2185B] shrink-0 mt-1" />
                   <div className="space-y-1">
-                    <p className="text-xs font-bold uppercase tracking-wider text-[#8C8488]">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#8C8488]">
                       Operating Hours
                     </p>
                     <p className="font-medium text-[#181517]">{siteConfig.timings.weekdays}</p>
@@ -165,7 +165,7 @@ export default function ContactPage() {
                   href={siteConfig.location.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-full bg-[#181517] hover:bg-[#332C30] text-white text-sm font-medium transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#181517] hover:bg-[#332C30] text-white text-sm font-medium transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm"
                 >
                   <Navigation className="w-4 h-4" />
                   <span>Open in Google Maps</span>
@@ -182,9 +182,9 @@ export default function ContactPage() {
       </section>
 
       {/* Full Width Google Maps Embed */}
-      <section className="py-12 bg-white border-b border-[#EAE3E6]">
+      <section className="py-20 md:py-28 bg-white border-b border-[#EAE3E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-md h-96 w-full">
+          <div className="rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-md h-96 sm:h-[450px] w-full">
             <iframe
               src={siteConfig.location.googleMapsEmbedUrl}
               width="100%"

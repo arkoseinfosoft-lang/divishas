@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight, Scissors, Sparkles, Paintbrush, Sparkle, Crown } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Badge } from "../ui/Badge";
@@ -57,9 +60,9 @@ const categories = [
 
 export function FeaturedServices() {
   return (
-    <section className="py-16 sm:py-24 bg-[#FAF8F7] relative">
+    <section className="py-20 md:py-28 bg-[#FAF8F7] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <SectionHeading
             align="left"
             badge="Tailored Offerings"
@@ -71,18 +74,22 @@ export function FeaturedServices() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {categories.map((cat) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          {categories.map((cat, idx) => {
             const Icon = cat.icon;
             return (
-              <div
+              <motion.div
                 key={cat.title}
-                className={`luxury-card bg-white rounded-3xl overflow-hidden border border-[#EAE3E6] flex flex-col justify-between group ${
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className={`luxury-card bg-white rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group ${
                   cat.isLarge ? "md:col-span-2 lg:col-span-2" : ""
                 }`}
               >
                 {/* Image Container */}
-                <div className={`relative w-full overflow-hidden bg-zinc-100 ${cat.isLarge ? "h-64 sm:h-72" : "h-56"}`}>
+                <div className={`relative w-full overflow-hidden bg-zinc-100 ${cat.isLarge ? "h-64 sm:h-76" : "h-60 sm:h-64"}`}>
                   <Image
                     src={cat.image}
                     alt={cat.title}
@@ -90,36 +97,36 @@ export function FeaturedServices() {
                     className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
                   {/* Top Badge */}
                   <div className="absolute top-4 left-4">
-                    <Badge variant="primary" className="bg-white/90 text-[#C2185B] backdrop-blur-sm border-white/40">
+                    <Badge variant="primary" className="bg-white/95 text-[#C2185B] backdrop-blur-sm border-white/40">
                       {cat.badge}
                     </Badge>
                   </div>
 
                   {/* Category icon */}
-                  <div className="absolute bottom-4 left-4 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-md text-[#C2185B] flex items-center justify-center">
+                  <div className="absolute bottom-4 left-4 w-10 h-10 rounded-xl bg-white/95 backdrop-blur-md text-[#C2185B] flex items-center justify-center shadow-md">
                     <Icon className="w-5 h-5" />
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+                <div className="p-8 sm:p-9 flex-1 flex flex-col justify-between space-y-5">
                   <div>
-                    <h3 className="font-serif text-2xl font-bold text-[#181517] group-hover:text-[#C2185B] transition-colors">
+                    <h3 className="text-2xl font-semibold text-[#181517] group-hover:text-[#C2185B] transition-colors">
                       {cat.title}
                     </h3>
-                    <p className="text-sm text-[#666164] mt-2 leading-relaxed">
+                    <p className="text-sm text-[#554e53] mt-2.5 leading-relaxed font-normal">
                       {cat.desc}
                     </p>
 
-                    <div className="mt-4 pt-4 border-t border-[#F5EDF2] flex flex-wrap gap-2">
+                    <div className="mt-5 pt-4 border-t border-[#F5EDF2] flex flex-wrap gap-2">
                       {cat.features.map((feature) => (
                         <span
                           key={feature}
-                          className="text-xs bg-[#FAF5F7] text-[#4A4347] px-2.5 py-1 rounded-lg border border-[#EFE8EC]"
+                          className="text-xs bg-[#FAF5F7] text-[#4A4347] px-3 py-1.5 rounded-lg border border-[#EFE8EC] font-medium"
                         >
                           {feature}
                         </span>
@@ -127,17 +134,17 @@ export function FeaturedServices() {
                     </div>
                   </div>
 
-                  <div className="pt-2">
+                  <div className="pt-3">
                     <Link
                       href={cat.href}
-                      className="inline-flex items-center gap-1.5 text-sm font-bold text-[#C2185B] hover:text-[#E0007C] transition-colors group-hover:translate-x-1 duration-200"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2185B] hover:text-[#E0007C] transition-colors group-hover:translate-x-1 duration-200"
                     >
                       <span>Explore {cat.title}</span>
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
