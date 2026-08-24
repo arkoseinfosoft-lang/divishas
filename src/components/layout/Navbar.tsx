@@ -88,25 +88,25 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full transition-all duration-300">
       {/* Top Announcement Bar */}
-      <div className="bg-[#181517] text-[#E8D5D8] text-xs py-2 px-4 border-b border-[#2C2729]">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-4 text-[11px] sm:text-xs">
-            <span className="flex items-center gap-1.5 font-medium text-white">
-              <Sparkles className="w-3.5 h-3.5 text-[#FF80AB]" />
-              <span>Premium Unisex Salon • Welcoming Men & Women</span>
+      <div className="bg-[#181517] text-[#E8D5D8] text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-[#2C2729] overflow-hidden w-full">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 text-[10.5px] sm:text-xs">
+          <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+            <span className="flex items-center gap-1.5 font-medium text-white truncate">
+              <Sparkles className="w-3.5 h-3.5 text-[#FF80AB] shrink-0" />
+              <span className="truncate">Premium Unisex Salon • Welcoming Men &amp; Women</span>
             </span>
-            <span className="hidden md:flex items-center gap-1.5 text-[#BBB4B8]">
+            <span className="hidden md:flex items-center gap-1.5 text-[#BBB4B8] shrink-0">
               <Clock className="w-3 h-3 text-[#FF80AB]" />
               <span>{siteConfig.timings.weekdays}</span>
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-[11px] sm:text-xs">
+          <div className="flex items-center gap-4 text-[10.5px] sm:text-xs shrink-0">
             <a
               href={`tel:${siteConfig.contact.phone}`}
-              className="flex items-center gap-1.5 text-white hover:text-[#FF80AB] transition-colors"
+              className="flex items-center gap-1 text-white hover:text-[#FF80AB] transition-colors"
             >
-              <Phone className="w-3 h-3 text-[#FF80AB]" />
+              <Phone className="w-3 h-3 text-[#FF80AB] shrink-0" />
               <span className="font-semibold">{siteConfig.contact.phoneDisplay}</span>
             </a>
           </div>

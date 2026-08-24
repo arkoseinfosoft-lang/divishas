@@ -103,11 +103,11 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${plusJakarta.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-[#FAF8F7] text-[#221E20] font-sans antialiased selection:bg-[#FCE4EC] selection:text-[#C2185B]">
+      <body className="min-h-full w-full max-w-full overflow-x-hidden relative flex flex-col bg-[#FAF8F7] text-[#221E20] font-sans antialiased selection:bg-[#FCE4EC] selection:text-[#C2185B]">
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />
         <Navbar />
-        <main className="flex-1 pb-20 md:pb-0">{children}</main>
+        <main className="flex-1 w-full max-w-full overflow-x-hidden pb-20 md:pb-0">{children}</main>
         <Footer />
         <MobileStickyBar />
       </body>

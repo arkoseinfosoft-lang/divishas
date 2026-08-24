@@ -24,9 +24,9 @@ export function HeroSection() {
             className="lg:col-span-7 space-y-5 sm:space-y-7 text-center lg:text-left"
           >
             {/* Top Brand Pill */}
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 rounded-full bg-[#FCE4EC] border border-[#F8BBD0] text-[#C2185B] text-[11px] sm:text-xs font-semibold tracking-wide shadow-xs mb-1">
+            <div className="inline-flex max-w-full items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-[#FCE4EC] border border-[#F8BBD0] text-[#C2185B] text-[10.5px] sm:text-xs font-semibold tracking-wide shadow-xs mb-1">
               <Sparkles className="w-3.5 h-3.5 text-[#E0007C] shrink-0" />
-              <span>Premium Unisex Salon • Welcoming Men &amp; Women</span>
+              <span className="truncate sm:overflow-visible">Premium Unisex Salon • Welcoming Men &amp; Women</span>
             </div>
 
             {/* Main Headline */}

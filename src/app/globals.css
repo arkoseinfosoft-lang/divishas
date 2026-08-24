@@ -32,6 +32,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 body {
@@ -41,7 +44,15 @@ body {
   font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
   letter-spacing: -0.005em;
+}
+
+/* Ensure major structural sections never spill past the screen */
+main, section, header, footer, nav {
+  max-width: 100%;
 }
 
 /* Headings: Playfair Display exclusively for H1 and H2 */
