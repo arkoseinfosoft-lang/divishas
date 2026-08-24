@@ -12,6 +12,13 @@ export function QuickBookingCTA() {
       {/* Decorative ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-[600px] h-48 sm:h-[300px] bg-[#E0007C]/15 rounded-full blur-3xl pointer-events-none" />
 
+      {/* Decorative Large-scale Butterfly Silhouette Watermark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 sm:w-[460px] h-80 sm:h-[460px] opacity-[0.035] pointer-events-none select-none">
+        <svg viewBox="0 0 100 100" fill="#FF80AB" className="w-full h-full">
+          <path d="M50 48 C45 32 30 18 12 24 C2 28 0 42 8 54 C16 66 32 72 46 64 C48 62 49 56 50 54 C51 56 52 62 54 64 C68 72 84 66 92 54 C100 42 98 28 88 24 C70 18 55 32 50 48 Z M48 66 C38 72 26 78 18 88 C14 94 22 98 30 96 C40 92 46 80 48 72 Z M52 66 C62 72 74 78 82 88 C86 94 78 98 70 96 C60 92 54 80 52 72 Z" />
+        </svg>
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

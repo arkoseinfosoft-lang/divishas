@@ -47,7 +47,7 @@ const pillars = [
 
 export function ValuePillars() {
   return (
-    <section className="py-14 sm:py-20 md:py-28 bg-white border-y border-[#EAE3E6]">
+    <section className="py-14 sm:py-20 md:py-28 bg-white bg-dot-pattern border-b border-[#EAE3E6] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="The Divisha's Standard"

@@ -69,14 +69,14 @@ export const siteConfig: SiteConfig = {
   location: {
     addressLine1: "Shop No. 12-14, Ground Floor, Sector 14 Main Market",
     addressLine2: "Near HUDA Complex, Commercial Belt",
-    city: "Gurugram",
-    state: "Haryana",
-    postalCode: "122001",
+    city: "Kanpur",
+    state: "Uttar Pradesh",
+    postalCode: "208005",
     country: "India",
     fullAddress:
-      "Shop No. 12-14, Ground Floor, Sector 14 Main Market, Near HUDA Complex, Gurugram, Haryana 122001",
+      "Shop No. 12-14, Ground Floor, Sector 14 Main Market, Near HUDA Complex, Kanpur, Uttar Pradesh 208005",
     landmark: "Opposite Sector 14 Central Plaza",
-    googleMapsUrl: "https://maps.google.com/?q=Divishas+Unisex+Salon+Gurugram",
+    googleMapsUrl: "https://maps.google.com/?q=Divishas+Unisex+Salon+Kanpur",
     googleMapsEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112260.67756184132!2d77.0084478!3d28.4721474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5e64b1e!2sSector%2014%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   },

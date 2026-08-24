@@ -24,7 +24,11 @@ export function ServiceHero({
   breadcrumbs,
 }: ServiceHeroProps) {
   return (
-    <section className="pt-6 pb-12 sm:pt-8 sm:pb-16 md:pb-24 bg-luxury-radial border-b border-[#EAE3E6] relative overflow-hidden">
+    <section className="pt-6 pb-12 sm:pt-8 sm:pb-16 md:pb-24 bg-hero-mesh border-b border-[#EAE3E6] relative overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF2E93]/4 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#C5A880]/6 rounded-full blur-3xl pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Breadcrumbs items={breadcrumbs} className="mb-4 sm:mb-6" />
 

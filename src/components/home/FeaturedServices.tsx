@@ -60,7 +60,10 @@ const categories = [
 
 export function FeaturedServices() {
   return (
-    <section className="py-14 sm:py-20 md:py-28 bg-[#FAF8F7] relative">
+    <section className="py-14 sm:py-20 md:py-28 bg-champagne-mesh border-b border-[#EAE3E6] relative overflow-hidden">
+      {/* Soft champagne & gold ambient corner glow */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#FF2E93]/4 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#C5A880]/6 rounded-full blur-3xl pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-10 sm:mb-14">
           <SectionHeading

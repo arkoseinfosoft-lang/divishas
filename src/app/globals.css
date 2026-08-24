@@ -50,6 +50,20 @@ body {
   letter-spacing: -0.005em;
 }
 
+/* 1. Base Texture: Ultra-faint editorial paper noise overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
 /* Ensure major structural sections never spill past the screen */
 main, section, header, footer, nav {
   max-width: 100%;
@@ -80,6 +94,37 @@ p {
 
 .font-sans {
   font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* 2. Hero Gradient Mesh Background */
+.bg-hero-mesh {
+  background-color: #FAF8F7;
+  background-image:
+    radial-gradient(at 10% 10%, rgba(252, 228, 236, 0.75) 0px, transparent 55%),
+    radial-gradient(at 90% 15%, rgba(251, 247, 240, 0.9) 0px, transparent 50%),
+    radial-gradient(at 95% 85%, rgba(224, 0, 124, 0.05) 0px, transparent 55%),
+    radial-gradient(at 15% 90%, rgba(197, 168, 128, 0.07) 0px, transparent 50%);
+}
+
+/* 3. Subtle Section Dot Grid & Diagonal Patterns */
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(224, 0, 124, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.bg-diagonal-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(24, 21, 23, 0.012) 0,
+    rgba(24, 21, 23, 0.012) 1px,
+    transparent 0,
+    transparent 16px
+  );
+}
+
+.bg-champagne-mesh {
+  background-color: #FAF8F7;
+  background-image: radial-gradient(circle at 100% 0%, rgba(252, 228, 236, 0.45) 0%, transparent 60%);
 }
 
 /* Subtle luxury gradient */
