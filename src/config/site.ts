@@ -58,7 +58,7 @@ export const siteConfig: SiteConfig = {
     "Divisha's Unisex Salon is a premier beauty and grooming destination crafted for both men and women. Combining artistic flair, state-of-the-art styling techniques, and personalized care, we provide exceptional salon experiences from bespoke haircuts and rejuvenating hair treatments to couture bridal transformations and luxury nail artistry.",
   url: "https://divishas-salon.vercel.app", // Editable client domain
   contact: {
-    phone: "+919810012345",
+    phone: "+918527091578",
     phoneDisplay: "+91 85270 91578",
     whatsapp: "918527091578",
     whatsappDisplay: "+91 85270 91578",
