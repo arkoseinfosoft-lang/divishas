@@ -14,13 +14,6 @@ export function HeroSection() {
       <div className="absolute top-1/4 right-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-[#E0007C]/6 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-0 w-60 sm:w-[400px] h-60 sm:h-[400px] bg-[#C5A880]/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Faint Butterfly Silhouette Watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[540px] h-[340px] sm:h-[540px] opacity-[0.03] pointer-events-none select-none">
-        <svg viewBox="0 0 100 100" fill="#E0007C" className="w-full h-full">
-          <path d="M50 48 C45 32 30 18 12 24 C2 28 0 42 8 54 C16 66 32 72 46 64 C48 62 49 56 50 54 C51 56 52 62 54 64 C68 72 84 66 92 54 C100 42 98 28 88 24 C70 18 55 32 50 48 Z M48 66 C38 72 26 78 18 88 C14 94 22 98 30 96 C40 92 46 80 48 72 Z M52 66 C62 72 74 78 82 88 C86 94 78 98 70 96 C60 92 54 80 52 72 Z" />
-        </svg>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Left Hero Content */}
