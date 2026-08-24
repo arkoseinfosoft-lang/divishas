@@ -64,7 +64,7 @@ export const siteConfig: SiteConfig = {
     whatsappDisplay: "+91 98765 43210",
     whatsappMessage:
       "Hello Divisha's Salon! I would like to enquire about booking an appointment.",
-    email: "hello@divishassalon.com", // Editable Salon Email
+    email: "arkoseinfosoftweb@gmail.com", // Contact form inquiry email (FormSubmit)
   },
   location: {
     addressLine1: "Shop No. 12-14, Ground Floor, Royal Palm Avenue", // Editable Placeholder Address

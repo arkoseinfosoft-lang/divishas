@@ -73,6 +73,7 @@ export function AppointmentForm({
           body: JSON.stringify({
             _subject: `New Salon Appointment Booking: ${formData.name} (${formData.serviceCategory})`,
             _template: "table",
+            _captcha: "false",
             Name: formData.name,
             Phone: formData.phone,
             Email: formData.email || "Not provided",
