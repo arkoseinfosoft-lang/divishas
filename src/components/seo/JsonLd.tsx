@@ -1,16 +1,14 @@
 import { siteConfig } from "@/config/site";
 
 interface LocalBusinessJsonLdProps {
-  pageName?: string;
   pageUrl?: string;
   description?: string;
 }
 
 export function LocalBusinessJsonLd({
-  pageName,
   pageUrl,
   description,
-}: LocalBusinessJsonLdProps) {
+}: LocalBusinessJsonLdProps = {}) {
   const schema = {
     "@context": "https://schema.org",
     "@type": ["BeautySalon", "HairSalon", "HealthAndBeautyBusiness"],

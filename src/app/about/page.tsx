@@ -1,16 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import type { Metadata } from "next";
-import {
-  Sparkles,
-  ShieldCheck,
-  Award,
-  Users,
-  CheckCircle2,
-  Calendar,
-  HeartHandshake,
-  Gem,
-} from "lucide-react";
+import { Sparkles, ShieldCheck, Users } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -170,7 +161,7 @@ export default function AboutPage() {
           />
 
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {standards.map((item, idx) => (
+            {standards.map((item) => (
               <div
                 key={item.title}
                 className="luxury-card bg-white rounded-3xl p-6 sm:p-7 border border-[#EAE3E6] flex flex-col justify-between"

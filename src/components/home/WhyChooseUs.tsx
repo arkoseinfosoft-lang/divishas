@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { Check, Sparkles, Scissors, ShieldCheck, Heart, UserCheck } from "lucide-react";
+import { Check, UserCheck } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
-import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
 
 const points = [

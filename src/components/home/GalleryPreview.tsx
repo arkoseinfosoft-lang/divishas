@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Eye, Sparkles } from "lucide-react";
+import { Eye } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Button } from "../ui/Button";
 
@@ -56,7 +56,7 @@ export function GalleryPreview() {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-auto">
-          {previewImages.map((item, idx) => (
+          {previewImages.map((item) => (
             <div
               key={item.title}
               className={`relative rounded-3xl overflow-hidden group shadow-md border border-[#EAE3E6] bg-zinc-100 ${item.span}`}

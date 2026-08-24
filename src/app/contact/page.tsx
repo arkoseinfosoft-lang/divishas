@@ -8,12 +8,10 @@ import {
   MessageCircle,
   Navigation,
   Sparkles,
-  ShieldCheck,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 import { AppointmentForm } from "@/components/forms/AppointmentForm";
 
 export const metadata: Metadata = {

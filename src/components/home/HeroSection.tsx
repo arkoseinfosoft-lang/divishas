@@ -2,8 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Sparkles, Calendar, ArrowRight, ShieldCheck, Heart } from "lucide-react";
-import { siteConfig } from "@/config/site";
+import { Sparkles, Calendar, ShieldCheck, Heart } from "lucide-react";
 import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
 

@@ -13,7 +13,6 @@ import {
   Scissors,
   Paintbrush,
   Sparkle,
-  Heart,
   Calendar,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
@@ -53,6 +52,14 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
+  // Close menus on path change directly during render
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setMobileMenuOpen(false);
+    setServicesDropdownOpen(false);
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -64,12 +71,6 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Close menus on route change
-  useEffect(() => {
-    setMobileMenuOpen(false);
-    setServicesDropdownOpen(false);
-  }, [pathname]);
 
   const navLinks = [
     { name: "Home", href: "/" },

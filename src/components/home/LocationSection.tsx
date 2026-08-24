@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPin, Phone, Mail, Clock, Navigation, Calendar } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Navigation } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Button } from "../ui/Button";

@@ -2,15 +2,9 @@ import React from "react";
 import Image from "next/image";
 import type { Metadata } from "next";
 import {
-  Sparkles,
   Crown,
-  Heart,
   Calendar,
-  Flower2,
-  HeartHandshake,
-  UserCheck,
   CheckCircle2,
-  ArrowRight,
   MessageCircle,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
@@ -253,7 +247,7 @@ export default function BridalPage() {
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
-            {bridalPageData.whyChooseUs.map((reason, idx) => (
+            {bridalPageData.whyChooseUs.map((reason) => (
               <div
                 key={reason}
                 className="p-5 rounded-2xl bg-white border border-[#EAE3E6] flex items-start gap-3.5 shadow-sm"

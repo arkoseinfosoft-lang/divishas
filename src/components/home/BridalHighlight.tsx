@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Sparkles, Crown, CheckCircle2, Calendar, ArrowRight } from "lucide-react";
+import { Crown, CheckCircle2 } from "lucide-react";
 import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
 

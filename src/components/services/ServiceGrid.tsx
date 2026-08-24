@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, Sparkles, Calendar, ArrowRight } from "lucide-react";
+import { Check, Calendar, ArrowRight } from "lucide-react";
 import { ServiceItem } from "@/config/servicesData";
 import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";

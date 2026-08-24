@@ -2,11 +2,10 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Sparkles, Eye, X, Calendar, MessageCircle, Filter } from "lucide-react";
+import { Sparkles, Eye, X, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { galleryData, galleryCategories, GalleryItem } from "@/config/galleryData";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { QuickBookingCTA } from "@/components/home/QuickBookingCTA";
