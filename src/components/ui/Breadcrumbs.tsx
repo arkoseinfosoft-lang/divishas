@@ -21,9 +21,9 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
       <BreadcrumbsJsonLd items={allItems} />
       <nav
         aria-label="Breadcrumb"
-        className={`flex items-center text-xs sm:text-sm text-[#787175] overflow-x-auto py-2 ${className}`}
+        className={`flex items-center text-xs sm:text-sm text-[#787175] overflow-x-auto py-1.5 scrollbar-none ${className}`}
       >
-        <ol className="flex items-center space-x-1.5 sm:space-x-2">
+        <ol className="flex items-center space-x-1.5 sm:space-x-2 whitespace-nowrap">
           {allItems.map((item, index) => {
             const isLast = index === allItems.length - 1;
             return (

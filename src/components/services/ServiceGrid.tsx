@@ -16,31 +16,31 @@ interface ServiceGridProps {
 
 export function ServiceGrid({ items, categoryTitle }: ServiceGridProps) {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-14 sm:py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-12 md:space-y-16">
+        <div className="space-y-8 sm:space-y-12 md:space-y-16">
           {items.map((item, index) => {
             const isEven = index % 2 === 1;
             return (
               <motion.div
                 key={item.id}
                 id={item.id}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="luxury-card bg-[#FAF8F7] rounded-3xl p-8 sm:p-10 lg:p-12 border border-[#EAE3E6] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="luxury-card bg-[#FAF8F7] rounded-3xl p-6 sm:p-8 lg:p-12 border border-[#EAE3E6] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 <div
-                  className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center`}
+                  className={`grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center`}
                 >
                   {/* Content Column */}
                   <div
-                    className={`lg:col-span-7 space-y-6 ${
+                    className={`lg:col-span-7 space-y-4 sm:space-y-6 ${
                       isEven ? "lg:order-2" : "lg:order-1"
                     }`}
                   >
-                    <div className="flex flex-wrap items-center gap-2.5">
+                    <div className="flex flex-wrap items-center gap-2">
                       <Badge
                         variant={
                           item.forGender === "Unisex"
@@ -61,40 +61,41 @@ export function ServiceGrid({ items, categoryTitle }: ServiceGridProps) {
                       </span>
                     </div>
 
-                    <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-[#181517] leading-[1.2]">
+                    <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-semibold text-[#181517] leading-[1.2]">
                       {item.name}
                     </h3>
 
-                    <p className="text-base text-[#554e53] leading-relaxed font-normal font-sans">
+                    <p className="text-xs sm:text-sm md:text-base text-[#554e53] leading-relaxed font-normal font-sans">
                       {item.fullDesc}
                     </p>
 
                     {/* Features list */}
-                    <div className="space-y-3 pt-2">
+                    <div className="space-y-2 sm:space-y-2.5 pt-1">
                       {item.features.map((feature) => (
-                        <div key={feature} className="flex items-start gap-3">
-                          <div className="w-5 h-5 rounded-full bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0 mt-0.5">
-                            <Check className="w-3.5 h-3.5" />
+                        <div key={feature} className="flex items-start gap-2.5">
+                          <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0 mt-0.5">
+                            <Check className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
                           </div>
-                          <span className="text-sm text-[#383236] font-normal">
+                          <span className="text-xs sm:text-sm text-[#383236] font-normal">
                             {feature}
                           </span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="pt-4 flex flex-wrap items-center gap-4">
+                    <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                       <Button
                         href="/contact#appointment"
                         variant="primary"
                         size="md"
                         icon={<Calendar className="w-4 h-4 mr-1.5" />}
+                        className="w-full sm:w-auto min-h-[44px]"
                       >
                         Book {item.name}
                       </Button>
                       <Link
                         href="/contact"
-                        className="text-sm font-semibold text-[#C2185B] hover:text-[#E0007C] inline-flex items-center gap-1 transition-colors"
+                        className="text-xs sm:text-sm font-semibold text-[#C2185B] hover:text-[#E0007C] inline-flex items-center justify-center sm:justify-start gap-1 transition-colors min-h-[36px]"
                       >
                         <span>Enquire Details</span>
                         <ArrowRight className="w-4 h-4" />
@@ -109,13 +110,13 @@ export function ServiceGrid({ items, categoryTitle }: ServiceGridProps) {
                         isEven ? "lg:order-1" : "lg:order-2"
                       }`}
                     >
-                      <div className="relative h-72 sm:h-88 rounded-3xl overflow-hidden shadow-xl border border-[#EAE3E6]">
+                      <div className="relative h-56 sm:h-72 lg:h-88 rounded-3xl overflow-hidden shadow-lg border border-[#EAE3E6]">
                         <Image
                           src={item.image}
                           alt={item.name}
                           fill
                           className="object-cover hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 768px) 100vw, 500px"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 450px"
                         />
                       </div>
                     </div>

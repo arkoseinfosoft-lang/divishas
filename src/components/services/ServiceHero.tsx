@@ -24,36 +24,36 @@ export function ServiceHero({
   breadcrumbs,
 }: ServiceHeroProps) {
   return (
-    <section className="pt-8 pb-16 sm:pb-24 bg-luxury-radial border-b border-[#EAE3E6] relative overflow-hidden">
+    <section className="pt-6 pb-12 sm:pt-8 sm:pb-16 md:pb-24 bg-luxury-radial border-b border-[#EAE3E6] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <Breadcrumbs items={breadcrumbs} className="mb-6" />
+        <Breadcrumbs items={breadcrumbs} className="mb-4 sm:mb-6" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Text Content */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
             <Badge variant="primary" icon={<Sparkles className="w-3.5 h-3.5" />}>
               {badge}
             </Badge>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-[#181517] leading-[1.2]">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#181517] leading-[1.2]">
               {title}
             </h1>
 
-            <p className="text-lg sm:text-xl font-medium text-[#C2185B]">
+            <p className="text-base sm:text-lg md:text-xl font-medium text-[#C2185B]">
               {subtitle}
             </p>
 
-            <p className="text-base text-[#554e53] leading-relaxed max-w-2xl font-normal font-sans">
+            <p className="text-sm sm:text-base text-[#554e53] leading-relaxed max-w-2xl font-normal font-sans">
               {introText}
             </p>
 
-            <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <Button
                 href="/contact#appointment"
                 variant="primary"
                 size="lg"
-                icon={<Calendar className="w-4 h-4 mr-2" />}
-                className="w-full sm:w-auto"
+                icon={<Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />}
+                className="w-full sm:w-auto min-h-[48px]"
               >
                 Book An Appointment
               </Button>
@@ -64,7 +64,7 @@ export function ServiceHero({
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white text-sm font-semibold shadow-sm transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-4 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white text-sm font-semibold shadow-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] min-h-[48px]"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>WhatsApp Enquiry</span>
@@ -73,15 +73,15 @@ export function ServiceHero({
           </div>
 
           {/* Right Hero Visual */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-2xl border border-[#EAE3E6]">
+          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
+            <div className="relative h-64 sm:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-xl border border-[#EAE3E6]">
               <Image
                 src={heroImage}
                 alt={title}
                 fill
                 priority
                 className="object-cover hover:scale-105 transition-transform duration-700"
-                sizes="(max-width: 768px) 100vw, 500px"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 500px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>

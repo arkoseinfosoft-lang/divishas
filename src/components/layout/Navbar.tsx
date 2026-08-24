@@ -259,110 +259,125 @@ export function Navbar() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-[calc(100%+1px)] bg-white/98 backdrop-blur-xl border-b border-[#EAE3E6] shadow-2xl max-h-[85vh] overflow-y-auto px-5 py-6 space-y-4 animate-in slide-in-from-top duration-300">
-            <div className="space-y-1">
-              <Link
-                href="/"
-                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-colors ${
-                  pathname === "/"
-                    ? "bg-[#FCE4EC] text-[#C2185B]"
-                    : "text-[#181517] hover:bg-[#FAF5F7]"
-                }`}
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-colors ${
-                  pathname === "/about"
-                    ? "bg-[#FCE4EC] text-[#C2185B]"
-                    : "text-[#181517] hover:bg-[#FAF5F7]"
-                }`}
-              >
-                About Divisha&apos;s
-              </Link>
-
-              {/* Mobile Services Accordion */}
-              <div className="pt-2 pb-1 border-t border-[#F5EDF2]">
+          <>
+            {/* Backdrop overlay */}
+            <div
+              className="lg:hidden fixed inset-0 top-[calc(100%+1px)] bg-black/40 backdrop-blur-xs z-40"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            <div className="lg:hidden fixed inset-x-0 top-[calc(100%+1px)] z-50 bg-white/98 backdrop-blur-xl border-b border-[#EAE3E6] shadow-2xl max-h-[85vh] overflow-y-auto px-5 py-6 space-y-4 animate-in slide-in-from-top duration-300">
+              <div className="space-y-1">
                 <Link
-                  href="/services"
-                  className="block px-4 py-2 text-xs font-bold text-[#8C8488] uppercase tracking-wider"
+                  href="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center min-h-[44px] px-4 py-2.5 rounded-xl text-base font-semibold transition-colors ${
+                    pathname === "/"
+                      ? "bg-[#FCE4EC] text-[#C2185B]"
+                      : "text-[#181517] hover:bg-[#FAF5F7]"
+                  }`}
                 >
-                  All Salon Services
+                  Home
                 </Link>
-                <div className="grid grid-cols-1 gap-1 mt-1 pl-2">
-                  {serviceLinks.map((service) => {
-                    const Icon = service.icon;
-                    return (
-                      <Link
-                        key={service.name}
-                        href={service.href}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#FDF2F7] text-sm font-medium text-[#2A2428] hover:text-[#C2185B]"
-                      >
-                        <div className="w-7 h-7 rounded-lg bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0">
-                          <Icon className="w-3.5 h-3.5" />
-                        </div>
-                        <span>{service.name}</span>
-                      </Link>
-                    );
-                  })}
+                <Link
+                  href="/about"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center min-h-[44px] px-4 py-2.5 rounded-xl text-base font-semibold transition-colors ${
+                    pathname === "/about"
+                      ? "bg-[#FCE4EC] text-[#C2185B]"
+                      : "text-[#181517] hover:bg-[#FAF5F7]"
+                  }`}
+                >
+                  About Divisha&apos;s
+                </Link>
+
+                {/* Mobile Services Accordion */}
+                <div className="pt-2 pb-1 border-t border-[#F5EDF2]">
+                  <Link
+                    href="/services"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-2 text-xs font-bold text-[#8C8488] uppercase tracking-[0.14em]"
+                  >
+                    All Salon Services
+                  </Link>
+                  <div className="grid grid-cols-1 gap-1 mt-1 pl-2">
+                    {serviceLinks.map((service) => {
+                      const Icon = service.icon;
+                      return (
+                        <Link
+                          key={service.name}
+                          href={service.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="flex items-center min-h-[44px] gap-3 px-3 py-2 rounded-xl hover:bg-[#FDF2F7] text-sm font-medium text-[#2A2428] hover:text-[#C2185B]"
+                        >
+                          <div className="w-8 h-8 rounded-lg bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0">
+                            <Icon className="w-4 h-4" />
+                          </div>
+                          <span>{service.name}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
+
+                <Link
+                  href="/bridal"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center min-h-[44px] px-4 py-2.5 rounded-xl text-base font-semibold transition-colors ${
+                    pathname === "/bridal"
+                      ? "bg-[#FCE4EC] text-[#C2185B]"
+                      : "text-[#C2185B] hover:bg-[#FAF5F7]"
+                  }`}
+                >
+                  Bridal &amp; Occasion Artistry ✨
+                </Link>
+                <Link
+                  href="/gallery"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center min-h-[44px] px-4 py-2.5 rounded-xl text-base font-semibold transition-colors ${
+                    pathname === "/gallery"
+                      ? "bg-[#FCE4EC] text-[#C2185B]"
+                      : "text-[#181517] hover:bg-[#FAF5F7]"
+                  }`}
+                >
+                  Visual Gallery
+                </Link>
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center min-h-[44px] px-4 py-2.5 rounded-xl text-base font-semibold transition-colors ${
+                    pathname === "/contact"
+                      ? "bg-[#FCE4EC] text-[#C2185B]"
+                      : "text-[#181517] hover:bg-[#FAF5F7]"
+                  }`}
+                >
+                  Contact &amp; Visit Us
+                </Link>
               </div>
 
-              <Link
-                href="/bridal"
-                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-colors ${
-                  pathname === "/bridal"
-                    ? "bg-[#FCE4EC] text-[#C2185B]"
-                    : "text-[#C2185B] hover:bg-[#FAF5F7]"
-                }`}
-              >
-                Bridal & Occasion Artistry ✨
-              </Link>
-              <Link
-                href="/gallery"
-                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-colors ${
-                  pathname === "/gallery"
-                    ? "bg-[#FCE4EC] text-[#C2185B]"
-                    : "text-[#181517] hover:bg-[#FAF5F7]"
-                }`}
-              >
-                Visual Gallery
-              </Link>
-              <Link
-                href="/contact"
-                className={`block px-4 py-3 rounded-xl text-base font-semibold transition-colors ${
-                  pathname === "/contact"
-                    ? "bg-[#FCE4EC] text-[#C2185B]"
-                    : "text-[#181517] hover:bg-[#FAF5F7]"
-                }`}
-              >
-                Contact & Visit Us
-              </Link>
+              {/* Quick Mobile Action Buttons */}
+              <div className="pt-4 border-t border-[#F5EDF2] space-y-3">
+                <Button
+                  href="/contact#appointment"
+                  variant="primary"
+                  size="md"
+                  className="w-full justify-center min-h-[44px]"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Book Appointment Now
+                </Button>
+                <a
+                  href={`https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(
+                    siteConfig.contact.whatsappMessage
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center min-h-[44px] gap-2 w-full py-3 rounded-full bg-[#25D366] text-white text-sm font-semibold hover:bg-[#20BA5A] transition-colors"
+                >
+                  WhatsApp Direct Booking
+                </a>
+              </div>
             </div>
-
-            {/* Quick Mobile Action Buttons */}
-            <div className="pt-4 border-t border-[#F5EDF2] space-y-3">
-              <Button
-                href="/contact#appointment"
-                variant="primary"
-                size="md"
-                className="w-full justify-center"
-              >
-                Book Appointment Now
-              </Button>
-              <a
-                href={`https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(
-                  siteConfig.contact.whatsappMessage
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#25D366] text-white text-sm font-semibold hover:bg-[#20BA5A] transition-colors"
-              >
-                WhatsApp Direct Booking
-              </a>
-            </div>
-          </div>
+          </>
         )}
       </nav>
     </header>

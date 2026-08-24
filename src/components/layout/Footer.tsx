@@ -131,59 +131,59 @@ export function Footer() {
             <h3 className="text-sm font-bold text-white tracking-wider uppercase font-sans">
               Navigation
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-1 text-sm">
               <li>
                 <Link
                   href="/"
-                  className="hover:text-[#FF80AB] transition-colors flex items-center gap-1.5"
+                  className="hover:text-[#FF80AB] transition-colors flex items-center gap-2 py-1.5 min-h-[36px]"
                 >
-                  <ArrowRight className="w-3 h-3 text-[#6E676C]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#6E676C]" />
                   <span>Home</span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-[#FF80AB] transition-colors flex items-center gap-1.5"
+                  className="hover:text-[#FF80AB] transition-colors flex items-center gap-2 py-1.5 min-h-[36px]"
                 >
-                  <ArrowRight className="w-3 h-3 text-[#6E676C]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#6E676C]" />
                   <span>About Us</span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/services"
-                  className="hover:text-[#FF80AB] transition-colors flex items-center gap-1.5"
+                  className="hover:text-[#FF80AB] transition-colors flex items-center gap-2 py-1.5 min-h-[36px]"
                 >
-                  <ArrowRight className="w-3 h-3 text-[#6E676C]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#6E676C]" />
                   <span>All Services</span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/bridal"
-                  className="hover:text-[#FF80AB] transition-colors flex items-center gap-1.5 text-[#FF80AB] font-medium"
+                  className="hover:text-[#FF80AB] transition-colors flex items-center gap-2 py-1.5 min-h-[36px] text-[#FF80AB] font-medium"
                 >
-                  <Sparkles className="w-3 h-3 text-[#FF80AB]" />
-                  <span>Bridal & Occasion</span>
+                  <Sparkles className="w-3.5 h-3.5 text-[#FF80AB]" />
+                  <span>Bridal &amp; Occasion</span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/gallery"
-                  className="hover:text-[#FF80AB] transition-colors flex items-center gap-1.5"
+                  className="hover:text-[#FF80AB] transition-colors flex items-center gap-2 py-1.5 min-h-[36px]"
                 >
-                  <ArrowRight className="w-3 h-3 text-[#6E676C]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#6E676C]" />
                   <span>Visual Gallery</span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/contact"
-                  className="hover:text-[#FF80AB] transition-colors flex items-center gap-1.5"
+                  className="hover:text-[#FF80AB] transition-colors flex items-center gap-2 py-1.5 min-h-[36px]"
                 >
-                  <ArrowRight className="w-3 h-3 text-[#6E676C]" />
-                  <span>Contact & Visit</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#6E676C]" />
+                  <span>Contact &amp; Visit</span>
                 </Link>
               </li>
             </ul>
@@ -194,14 +194,14 @@ export function Footer() {
             <h3 className="text-sm font-bold text-white tracking-wider uppercase font-sans">
               Our Services
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="/services/hair"
-                  className="hover:text-[#FF80AB] transition-colors block"
+                  className="hover:text-[#FF80AB] transition-colors block py-1"
                 >
-                  <span className="text-white font-medium">Hair Care & Styling</span>
-                  <span className="block text-xs text-[#8A8388]">
+                  <span className="text-white font-medium">Hair Care &amp; Styling</span>
+                  <span className="block text-xs text-[#8A8388] mt-0.5">
                     Cuts, Styling, Treatments, Men&apos;s Grooming
                   </span>
                 </Link>
@@ -209,33 +209,33 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/makeup"
-                  className="hover:text-[#FF80AB] transition-colors block"
+                  className="hover:text-[#FF80AB] transition-colors block py-1"
                 >
                   <span className="text-white font-medium">Makeup Services</span>
-                  <span className="block text-xs text-[#8A8388]">
-                    Party, HD Occasion & Wedding Artistry
+                  <span className="block text-xs text-[#8A8388] mt-0.5">
+                    Party, HD Occasion &amp; Wedding Artistry
                   </span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/services/nails"
-                  className="hover:text-[#FF80AB] transition-colors block"
+                  className="hover:text-[#FF80AB] transition-colors block py-1"
                 >
-                  <span className="text-white font-medium">Nail Care & Artistry</span>
-                  <span className="block text-xs text-[#8A8388]">
-                    Gel Nails, Extensions, Manicure & Pedicure
+                  <span className="text-white font-medium">Nail Care &amp; Artistry</span>
+                  <span className="block text-xs text-[#8A8388] mt-0.5">
+                    Gel Nails, Extensions, Manicure &amp; Pedicure
                   </span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/services/beauty-grooming"
-                  className="hover:text-[#FF80AB] transition-colors block"
+                  className="hover:text-[#FF80AB] transition-colors block py-1"
                 >
-                  <span className="text-white font-medium">Beauty & Grooming</span>
-                  <span className="block text-xs text-[#8A8388]">
-                    Facials, Skin Detox, Waxing & Men&apos;s Shave
+                  <span className="text-white font-medium">Beauty &amp; Grooming</span>
+                  <span className="block text-xs text-[#8A8388] mt-0.5">
+                    Facials, Skin Detox, Waxing &amp; Men&apos;s Shave
                   </span>
                 </Link>
               </li>

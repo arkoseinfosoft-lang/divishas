@@ -47,7 +47,7 @@ const pillars = [
 
 export function ValuePillars() {
   return (
-    <section className="py-20 md:py-28 bg-white border-y border-[#EAE3E6]">
+    <section className="py-14 sm:py-20 md:py-28 bg-white border-y border-[#EAE3E6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="The Divisha's Standard"
@@ -55,7 +55,7 @@ export function ValuePillars() {
           subtitle="We combine the precision of modern beauty techniques with a warm, inclusive environment designed for everyone."
         />
 
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 lg:gap-10">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
@@ -64,17 +64,17 @@ export function ValuePillars() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="luxury-card bg-[#FAF8F7] rounded-3xl p-8 md:p-9 border border-[#EAE3E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                transition={{ duration: 0.5, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                className="luxury-card bg-[#FAF8F7] rounded-3xl p-6 sm:p-8 lg:p-9 border border-[#EAE3E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center mb-6 shadow-sm">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center mb-4 sm:mb-6 shadow-xs">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-xl font-semibold text-[#181517] mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold text-[#181517] mb-2 sm:mb-3">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-[#554e53] leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-[#554e53] leading-relaxed font-normal">
                     {pillar.desc}
                   </p>
                 </div>

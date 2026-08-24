@@ -22,7 +22,7 @@ export function ServiceFAQ({ faqs, categoryTitle }: ServiceFAQProps) {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-[#FAF8F7] border-t border-[#EAE3E6]">
+    <section className="py-14 sm:py-20 md:py-28 bg-[#FAF8F7] border-t border-[#EAE3E6]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Frequently Asked Questions"
@@ -30,24 +30,24 @@ export function ServiceFAQ({ faqs, categoryTitle }: ServiceFAQProps) {
           subtitle="Everything you need to know before visiting Divisha's Unisex Salon."
         />
 
-        <div className="mt-12 space-y-4">
+        <div className="mt-8 sm:mt-12 space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={faq.question}
-                className="bg-white rounded-2xl border border-[#EAE3E6] overflow-hidden transition-all duration-200 shadow-sm"
+                className="bg-white rounded-2xl border border-[#EAE3E6] overflow-hidden transition-all duration-200 shadow-xs"
               >
                 <button
                   type="button"
                   onClick={() => toggle(index)}
-                  className="w-full p-6 sm:p-7 text-left flex items-center justify-between gap-4 hover:bg-[#FAF5F7] transition-colors"
+                  className="w-full p-4 sm:p-6 lg:p-7 text-left flex items-center justify-between gap-3 sm:gap-4 hover:bg-[#FAF5F7] transition-colors min-h-[48px] cursor-pointer"
                 >
-                  <span className="text-lg sm:text-xl font-semibold text-[#181517] leading-snug">
+                  <span className="text-base sm:text-lg lg:text-xl font-semibold text-[#181517] leading-snug">
                     {faq.question}
                   </span>
                   <div
-                    className={`w-8 h-8 rounded-full bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                    className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0 transition-transform duration-300 ${
                       isOpen ? "rotate-180 bg-[#C2185B] text-white" : ""
                     }`}
                   >
@@ -56,7 +56,7 @@ export function ServiceFAQ({ faqs, categoryTitle }: ServiceFAQProps) {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 sm:px-7 pb-7 pt-1 text-sm sm:text-base text-[#554e53] leading-relaxed border-t border-[#F5EDF2] animate-in fade-in duration-200 font-normal">
+                  <div className="px-4 pb-5 sm:px-6 sm:pb-7 lg:px-7 pt-1 text-xs sm:text-sm md:text-base text-[#554e53] leading-relaxed border-t border-[#F5EDF2] animate-in fade-in duration-200 font-normal">
                     {faq.answer}
                   </div>
                 )}

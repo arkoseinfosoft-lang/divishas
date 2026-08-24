@@ -106,9 +106,19 @@ p {
   box-shadow: 0 20px 35px -10px rgba(224, 0, 124, 0.08), 0 10px 15px -5px rgba(0, 0, 0, 0.03);
 }
 
-/* Clean Custom Scrollbar */
+/* Hide scrollbars for horizontal carousels/breadcrumbs */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom scrollbar for desktop */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {

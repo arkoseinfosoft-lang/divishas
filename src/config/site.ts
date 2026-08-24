@@ -59,9 +59,9 @@ export const siteConfig: SiteConfig = {
   url: "https://divishas-salon.vercel.app", // Editable client domain
   contact: {
     phone: "+919810012345",
-    phoneDisplay: "+91 98100 12345",
-    whatsapp: "919810012345",
-    whatsappDisplay: "+91 98100 12345",
+    phoneDisplay: "+91 85270 91578",
+    whatsapp: "918527091578",
+    whatsappDisplay: "+91 85270 91578",
     whatsappMessage:
       "Hello Divisha's Salon! I would like to enquire about booking an appointment.",
     email: "arkoseinfosoftweb@gmail.com", // Contact form inquiry email (FormSubmit)
@@ -104,7 +104,7 @@ export const siteConfig: SiteConfig = {
     ],
   },
   social: {
-    instagram: "https://instagram.com/divishas_salon",
+    instagram: "https://www.instagram.com/divisha_unisex_salon_?igsi=M2IzMGJtM2Q1dTZq",
     facebook: "https://facebook.com/divishassalon",
     youtube: "https://youtube.com/@divishassalon",
   },

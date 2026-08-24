@@ -8,37 +8,37 @@ import { Button } from "../ui/Button";
 
 export function QuickBookingCTA() {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-br from-[#181517] via-[#261D22] to-[#181517] text-white relative overflow-hidden">
+    <section className="py-14 sm:py-20 md:py-28 bg-gradient-to-br from-[#181517] via-[#261D22] to-[#181517] text-white relative overflow-hidden">
       {/* Decorative ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#E0007C]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-[600px] h-48 sm:h-[300px] bg-[#E0007C]/15 rounded-full blur-3xl pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6"
+        className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-5 sm:space-y-6"
       >
-        <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#FF80AB]/15 border border-[#FF80AB]/30 text-[#FF80AB] text-[11px] font-semibold uppercase tracking-[0.14em]">
-          <Sparkles className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FF80AB]/15 border border-[#FF80AB]/30 text-[#FF80AB] text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.14em]">
+          <Sparkles className="w-3.5 h-3.5 shrink-0" />
           <span>Walk-ins &amp; Prior Bookings Welcome</span>
         </div>
 
-        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.2]">
+        <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.2]">
           Ready for Your Next Transformation?
         </h2>
 
-        <p className="text-base sm:text-lg text-[#D0C7CC] max-w-2xl mx-auto font-normal font-sans leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg text-[#D0C7CC] max-w-2xl mx-auto font-normal font-sans leading-relaxed">
           Book your slot online or send us a quick WhatsApp message. We look forward to welcoming you to Divisha&apos;s Unisex Salon.
         </p>
 
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
           <Button
             href="/contact#appointment"
             variant="primary"
             size="lg"
-            icon={<Calendar className="w-5 h-5 mr-2" />}
-            className="w-full sm:w-auto text-base px-8 py-4"
+            icon={<Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />}
+            className="w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 min-h-[48px]"
           >
             Book an Appointment Online
           </Button>
@@ -49,17 +49,17 @@ export function QuickBookingCTA() {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white text-base font-semibold shadow-lg shadow-[#25D366]/20 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 active:scale-[0.98]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white text-sm sm:text-base font-semibold shadow-lg shadow-[#25D366]/20 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 active:scale-[0.98] min-h-[48px]"
           >
-            <MessageCircle className="w-5 h-5" />
+            <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
             <span>Chat on WhatsApp</span>
           </a>
 
           <a
             href={`tel:${siteConfig.contact.phone}`}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white text-base font-medium border border-white/20 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm sm:text-base font-medium border border-white/20 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 min-h-[48px]"
           >
-            <Phone className="w-4 h-4 text-[#FF80AB]" />
+            <Phone className="w-4 h-4 text-[#FF80AB] shrink-0" />
             <span>Call: {siteConfig.contact.phoneDisplay}</span>
           </a>
         </div>

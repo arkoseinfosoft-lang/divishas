@@ -173,18 +173,18 @@ Please let me know if this slot is available. Thank you!`;
   return (
     <div
       id="appointment"
-      className={`bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#EAE3E6] shadow-xl relative ${className}`}
+      className={`bg-white rounded-3xl p-5 sm:p-8 lg:p-10 border border-[#EAE3E6] shadow-xl relative ${className}`}
     >
       {/* Header */}
-      <div className="mb-8">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#C2185B] bg-[#FCE4EC] rounded-full mb-3">
+      <div className="mb-6 sm:mb-8">
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#C2185B] bg-[#FCE4EC] rounded-full mb-2.5 sm:mb-3">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Priority Booking</span>
         </div>
         <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-[#181517] leading-[1.2]">
           Reserve Your Salon Experience
         </h3>
-        <p className="text-sm text-[#554e53] mt-2 font-normal leading-relaxed">
+        <p className="text-xs sm:text-sm text-[#554e53] mt-2 font-normal leading-relaxed">
           Select your desired service and preferred timing. We welcome both women and men.
         </p>
       </div>
@@ -196,10 +196,10 @@ Please let me know if this slot is available. Thank you!`;
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
         {/* Gender / Client Preference Selection */}
         <div>
-          <label className="block text-xs font-semibold text-[#3B3438] uppercase tracking-[0.12em] mb-2.5">
+          <label className="block text-xs font-semibold text-[#3B3438] uppercase tracking-[0.12em] mb-2">
             Service For
           </label>
           <div className="grid grid-cols-3 gap-2">
@@ -210,7 +210,7 @@ Please let me know if this slot is available. Thank you!`;
                 onClick={() =>
                   setFormData((prev) => ({ ...prev, gender: option }))
                 }
-                className={`py-2.5 px-3 rounded-xl text-xs font-semibold transition-all border text-center ${
+                className={`min-h-[44px] py-2 px-2 sm:px-3 rounded-xl text-xs font-semibold transition-all border text-center cursor-pointer ${
                   formData.gender === option
                     ? "bg-[#C2185B] text-white border-[#C2185B] shadow-sm"
                     : "bg-[#FAF8F7] text-[#4A4347] border-[#E8E0E4] hover:border-[#C2185B]"
@@ -237,7 +237,7 @@ Please let me know if this slot is available. Thank you!`;
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="e.g. Priya Sharma / Rohan Verma"
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-sm text-[#181517] placeholder:text-[#A8A1A6] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors"
+                className="w-full pl-10 pr-4 py-3 min-h-[48px] rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-base sm:text-sm text-[#181517] placeholder:text-[#A8A1A6] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors"
               />
             </div>
           </div>
@@ -254,8 +254,8 @@ Please let me know if this slot is available. Thank you!`;
                 required
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="+91 98765 43210"
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-sm text-[#181517] placeholder:text-[#A8A1A6] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors"
+                placeholder="+91 85270 91578"
+                className="w-full pl-10 pr-4 py-3 min-h-[48px] rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-base sm:text-sm text-[#181517] placeholder:text-[#A8A1A6] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors"
               />
             </div>
           </div>
@@ -275,7 +275,7 @@ Please let me know if this slot is available. Thank you!`;
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="your.email@example.com"
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-sm text-[#181517] placeholder:text-[#A8A1A6] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors"
+                className="w-full pl-10 pr-4 py-3 min-h-[48px] rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-base sm:text-sm text-[#181517] placeholder:text-[#A8A1A6] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors"
               />
             </div>
           </div>
@@ -290,14 +290,14 @@ Please let me know if this slot is available. Thank you!`;
                 name="serviceCategory"
                 value={formData.serviceCategory}
                 onChange={handleChange}
-                className="w-full pl-10 pr-8 py-3 rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-sm text-[#181517] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors appearance-none cursor-pointer"
+                className="w-full pl-10 pr-8 py-3 min-h-[48px] rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-base sm:text-sm text-[#181517] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors appearance-none cursor-pointer"
               >
-                <option value="Hair Care & Styling">Hair Care & Styling (Cuts, Wash, Blowout)</option>
-                <option value="Hair Treatments">Hair Spa & Restorative Treatments</option>
+                <option value="Hair Care & Styling">Hair Care &amp; Styling (Cuts, Wash, Blowout)</option>
+                <option value="Hair Treatments">Hair Spa &amp; Restorative Treatments</option>
                 <option value="Makeup Services">Makeup (Party, Event, Professional)</option>
-                <option value="Bridal & Occasion">Bridal & Wedding Makeover Packages</option>
+                <option value="Bridal & Occasion">Bridal &amp; Wedding Makeover Packages</option>
                 <option value="Nail Services">Nails (Gel Extensions, Art, Mani-Pedi)</option>
-                <option value="Beauty & Grooming">Beauty, Facials & Men&apos;s Grooming</option>
+                <option value="Beauty & Grooming">Beauty, Facials &amp; Men&apos;s Grooming</option>
                 <option value="Complete Salon Day">Complete Salon Experience</option>
               </select>
             </div>
@@ -317,7 +317,7 @@ Please let me know if this slot is available. Thank you!`;
                 name="date"
                 value={formData.date}
                 onChange={handleChange}
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-sm text-[#181517] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors"
+                className="w-full pl-10 pr-4 py-3 min-h-[48px] rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-base sm:text-sm text-[#181517] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors"
               />
             </div>
           </div>
@@ -332,7 +332,7 @@ Please let me know if this slot is available. Thank you!`;
                 name="timeSlot"
                 value={formData.timeSlot}
                 onChange={handleChange}
-                className="w-full pl-10 pr-8 py-3 rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-sm text-[#181517] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors appearance-none cursor-pointer"
+                className="w-full pl-10 pr-8 py-3 min-h-[48px] rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-base sm:text-sm text-[#181517] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors appearance-none cursor-pointer"
               >
                 <option value="Morning (10:00 AM – 01:00 PM)">Morning (10:00 AM – 01:00 PM)</option>
                 <option value="Afternoon (01:00 PM – 05:00 PM)">Afternoon (01:00 PM – 05:00 PM)</option>
@@ -353,7 +353,7 @@ Please let me know if this slot is available. Thank you!`;
             value={formData.notes}
             onChange={handleChange}
             placeholder="Tell us about your hair length, event date, specific stylist preference, or any skin sensitivities..."
-            className="w-full px-4 py-3 rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-sm text-[#181517] placeholder:text-[#A8A1A6] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors resize-none"
+            className="w-full px-4 py-3 rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-base sm:text-sm text-[#181517] placeholder:text-[#A8A1A6] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors resize-none"
           />
         </div>
 
@@ -364,7 +364,7 @@ Please let me know if this slot is available. Thank you!`;
             variant="primary"
             size="lg"
             disabled={isSubmitting}
-            className="flex-1 justify-center"
+            className="flex-1 justify-center min-h-[48px]"
           >
             {isSubmitting ? "Submitting Booking..." : "Request Appointment"}
           </Button>
@@ -373,7 +373,7 @@ Please let me know if this slot is available. Thank you!`;
             href={getWhatsAppBookingLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white text-sm font-semibold shadow-md shadow-[#25D366]/20 transition-all active:scale-[0.98]"
+            className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white text-sm font-semibold shadow-md transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] min-h-[48px]"
           >
             <MessageCircle className="w-4 h-4" />
             <span>Book via WhatsApp</span>
