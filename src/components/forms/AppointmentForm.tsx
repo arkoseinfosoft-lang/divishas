@@ -86,12 +86,12 @@ export function AppointmentForm({
         }
       );
 
-      if (response.ok) {
-        setSubmitted(true);
-      } else {
-        // Fallback gracefully
-        setSubmitted(true);
+      const result = await response.json().catch(() => null);
+      if (result && result.success === "false" && result.message) {
+        // If it's a first time activation message, log or show friendly notice
+        console.log("FormSubmit Notice:", result.message);
       }
+      setSubmitted(true);
     } catch {
       // In case of network errors or offline, still show success and offer WhatsApp instant message
       setSubmitted(true);
