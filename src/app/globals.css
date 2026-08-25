@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf8f7;
+  --background: #F3E8DC;
   --foreground: #181517;
   --brand-magenta: #e0007c;
   --brand-deep: #c2185b;
@@ -12,7 +12,7 @@
   --brand-border: #eae3e6;
   --brand-gold: #c5a880;
   --brand-gold-light: #fbf7f0;
-  --brand-warm: #faf8f7;
+  --brand-warm: #F3E8DC;
 }
 
 @theme inline {
@@ -25,7 +25,7 @@
   --color-brand-border: #eae3e6;
   --color-brand-gold: #c5a880;
   --color-brand-gold-light: #fbf7f0;
-  --color-brand-warm: #faf8f7;
+  --color-brand-warm: #F3E8DC;
   --font-serif: var(--font-playfair), "Georgia", serif;
   --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
@@ -81,7 +81,7 @@ p {
 
 /* 2. Clean High-Legibility Section Backgrounds */
 .bg-hero-mesh {
-  background-color: #FAF8F7;
+  background-color: #F3E8DC;
   background-image:
     radial-gradient(at 10% 10%, rgba(252, 228, 236, 0.6) 0px, transparent 55%),
     radial-gradient(at 90% 15%, rgba(251, 247, 240, 0.7) 0px, transparent 50%),
@@ -91,7 +91,7 @@ p {
 
 /* Clean, plain solid alternating tones for maximum text legibility */
 .bg-dot-pattern {
-  background-color: #FAF8F7;
+  background-color: #F3E8DC;
 }
 
 .bg-diagonal-pattern {
@@ -99,11 +99,11 @@ p {
 }
 
 .bg-champagne-mesh {
-  background-color: #FAF7F5;
+  background-color: #F3E8DC;
 }
 
 .bg-editorial-linen {
-  background-color: #F8F5F3;
+  background-color: #F3E8DC;
 }
 
 .bg-dark-suite {

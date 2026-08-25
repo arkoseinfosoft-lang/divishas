@@ -238,7 +238,7 @@ export default function BridalPage() {
       </section>
 
       {/* Why Choose Divisha's for Bridal */}
-      <section className="py-16 sm:py-24 md:py-32 bg-[#FAF7F5] border-b border-[#EAE3E6]">
+      <section className="py-16 sm:py-24 md:py-32 bg-[#F3E8DC] border-b border-[#EAE3E6]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 sm:space-y-10">
           <SectionHeading
             badge="The Bridal Advantage"
