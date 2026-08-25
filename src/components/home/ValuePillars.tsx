@@ -45,10 +45,7 @@ const pillars = [
 
 export function ValuePillars() {
   return (
-    <section className="py-16 sm:py-24 md:py-32 bg-white bg-dot-pattern border-b border-[#EAE3E6] relative overflow-hidden">
-      {/* Subtle ambient light */}
-      <div className="absolute top-1/2 right-0 w-80 h-80 bg-[#FF2E93]/4 rounded-full blur-3xl pointer-events-none" />
-
+    <section className="py-16 sm:py-24 md:py-32 bg-white border-b border-[#EAE3E6] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <SectionHeading

@@ -43,11 +43,7 @@ const previewImages = [
 
 export function GalleryPreview() {
   return (
-    <section className="py-14 sm:py-20 md:py-28 bg-editorial-linen border-b border-[#EAE3E6] relative overflow-hidden">
-      {/* Ambient background glow blobs */}
-      <div className="absolute top-0 right-0 w-80 sm:w-96 h-80 sm:h-96 bg-[#E0007C]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-72 sm:w-80 h-72 sm:h-80 bg-[#C5A880]/7 rounded-full blur-3xl pointer-events-none" />
-
+    <section className="py-16 sm:py-24 md:py-32 bg-[#FAF7F5] border-b border-[#EAE3E6] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-10 sm:mb-14">
           <SectionHeading

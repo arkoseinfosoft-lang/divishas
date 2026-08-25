@@ -55,26 +55,23 @@ main, section, header, footer, nav {
   max-width: 100%;
 }
 
-/* Headings: Playfair Display exclusively for H1 and H2 */
+/* Headings: Playfair Display for H1 and H2 with inherited color support */
 h1, h2, .font-serif {
   font-family: var(--font-serif);
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.015em;
-  color: #181517;
 }
 
-/* Subheadings & body elements use Plus Jakarta Sans with 600 weight max */
+/* Subheadings & body elements use Plus Jakarta Sans */
 h3, h4, h5, h6 {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-weight: 600;
   line-height: 1.3;
-  color: #181517;
 }
 
 p {
   line-height: 1.6;
-  color: #554e53;
   font-weight: 400;
 }
 
@@ -82,54 +79,36 @@ p {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-/* 2. Hero Gradient Mesh Background */
+/* 2. Clean High-Legibility Section Backgrounds */
 .bg-hero-mesh {
   background-color: #FAF8F7;
   background-image:
-    radial-gradient(at 10% 10%, rgba(252, 228, 236, 0.85) 0px, transparent 55%),
-    radial-gradient(at 90% 15%, rgba(251, 247, 240, 0.95) 0px, transparent 50%),
-    radial-gradient(at 95% 85%, rgba(224, 0, 124, 0.08) 0px, transparent 55%),
-    radial-gradient(at 15% 90%, rgba(197, 168, 128, 0.1) 0px, transparent 50%);
+    radial-gradient(at 10% 10%, rgba(252, 228, 236, 0.6) 0px, transparent 55%),
+    radial-gradient(at 90% 15%, rgba(251, 247, 240, 0.7) 0px, transparent 50%),
+    radial-gradient(at 95% 85%, rgba(224, 0, 124, 0.04) 0px, transparent 55%),
+    radial-gradient(at 15% 90%, rgba(197, 168, 128, 0.06) 0px, transparent 50%);
 }
 
-/* 3. Alternating Section Tones & Subtle Patterns */
+/* Clean, plain solid alternating tones for maximum text legibility */
 .bg-dot-pattern {
   background-color: #FAF8F7;
-  background-image: radial-gradient(rgba(224, 0, 124, 0.08) 1.25px, transparent 1.25px);
-  background-size: 24px 24px;
 }
 
 .bg-diagonal-pattern {
   background-color: #FFFFFF;
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(24, 21, 23, 0.02) 0,
-    rgba(24, 21, 23, 0.02) 1.5px,
-    transparent 0,
-    transparent 16px
-  );
 }
 
 .bg-champagne-mesh {
-  background-color: #FAF7F6;
-  background-image:
-    radial-gradient(circle at 100% 0%, rgba(252, 228, 236, 0.6) 0%, transparent 60%),
-    radial-gradient(circle at 0% 100%, rgba(251, 247, 240, 0.7) 0%, transparent 55%);
+  background-color: #FAF7F5;
 }
 
 .bg-editorial-linen {
-  background-color: #F8F4F5;
-  background-image:
-    radial-gradient(circle at 50% 0%, rgba(224, 0, 124, 0.05) 0%, transparent 70%),
-    radial-gradient(rgba(24, 21, 23, 0.03) 1px, transparent 1px);
-  background-size: auto, 20px 20px;
+  background-color: #F8F5F3;
 }
 
 .bg-dark-suite {
   background-color: #141213;
-  background-image:
-    radial-gradient(at 100% 0%, rgba(224, 0, 124, 0.12) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(197, 168, 128, 0.08) 0px, transparent 50%);
+  color: #FFFFFF;
 }
 
 .serif-numeral {

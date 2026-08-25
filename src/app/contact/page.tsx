@@ -52,7 +52,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Form & Contact Info Grid */}
-      <section className="py-16 sm:py-24 md:py-32 bg-[#FAF8F7] bg-dot-pattern border-b border-[#EAE3E6]">
+      <section className="py-16 sm:py-24 md:py-32 bg-[#FAF7F5] border-b border-[#EAE3E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left Contact Details */}
@@ -186,7 +186,7 @@ export default function ContactPage() {
       </section>
 
       {/* Full Width Google Maps Embed */}
-      <section className="py-16 sm:py-24 md:py-32 bg-white bg-diagonal-pattern border-b border-[#EAE3E6]">
+      <section className="py-16 sm:py-24 md:py-32 bg-white border-b border-[#EAE3E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-xl h-72 sm:h-96 md:h-[480px] w-full">
             <iframe

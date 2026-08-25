@@ -98,7 +98,7 @@ export default function AboutPage() {
       </section>
 
       {/* The Unisex Philosophy */}
-      <section className="py-16 sm:py-24 md:py-32 bg-white bg-diagonal-pattern border-b border-[#EAE3E6]">
+      <section className="py-16 sm:py-24 md:py-32 bg-white border-b border-[#EAE3E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-6 order-2 lg:order-1">

@@ -135,7 +135,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Departments List */}
-      <section className="py-16 sm:py-24 md:py-32 bg-white bg-diagonal-pattern border-b border-[#EAE3E6]">
+      <section className="py-16 sm:py-24 md:py-32 bg-white border-b border-[#EAE3E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14 md:space-y-18">
           {serviceDepts.map((dept, index) => {
             const Icon = dept.icon;

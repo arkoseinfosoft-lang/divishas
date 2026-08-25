@@ -9,11 +9,7 @@ import { Button } from "../ui/Button";
 
 export function LocationSection() {
   return (
-    <section className="py-14 sm:py-20 md:py-28 bg-[#FAF8F7] bg-dot-pattern border-b border-[#EAE3E6] relative overflow-hidden">
-      {/* Soft ambient background lighting */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-[#C5A880]/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#E0007C]/5 rounded-full blur-3xl pointer-events-none" />
-
+    <section className="py-16 sm:py-24 md:py-32 bg-[#FAF7F5] border-b border-[#EAE3E6] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="Visit Our Salon"
