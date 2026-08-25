@@ -28,7 +28,7 @@ export function BridalHighlight() {
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 relative order-2 lg:order-1"
           >
@@ -71,7 +71,7 @@ export function BridalHighlight() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 space-y-4 sm:space-y-6 order-1 lg:order-2"
           >

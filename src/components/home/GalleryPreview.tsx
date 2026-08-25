@@ -13,43 +13,47 @@ const previewImages = [
     title: "Signature Bridal Glamour",
     category: "Bridal",
     image: "/images/bridal-makeup.jpg",
-    span: "col-span-1 sm:col-span-2 md:col-span-2 md:row-span-2 h-64 sm:h-80 md:h-full",
+    span: "col-span-1 sm:col-span-2 md:col-span-2 md:row-span-2 min-h-[300px] sm:min-h-[380px] md:min-h-[520px] h-full",
   },
   {
     title: "Precision Haircut & Fade",
     category: "Men's Styling",
     image: "/images/hair-men.jpg",
-    span: "col-span-1 h-56 sm:h-64",
+    span: "col-span-1 min-h-[240px] sm:min-h-[250px] md:min-h-[250px] h-60 sm:h-64 md:h-auto",
   },
   {
     title: "Chic Rose & Gold Nail Art",
     category: "Nails",
     image: "/images/nail-art.jpg",
-    span: "col-span-1 h-56 sm:h-64",
+    span: "col-span-1 min-h-[240px] sm:min-h-[250px] md:min-h-[250px] h-60 sm:h-64 md:h-auto",
   },
   {
     title: "Voluminous Hair Blowout",
     category: "Hair",
     image: "/images/hair-women.jpg",
-    span: "col-span-1 h-56 sm:h-64",
+    span: "col-span-1 min-h-[240px] sm:min-h-[250px] md:min-h-[250px] h-60 sm:h-64 md:h-auto",
   },
   {
     title: "Radiant Party Makeup",
     category: "Makeup",
     image: "/images/party-makeup.jpg",
-    span: "col-span-1 h-56 sm:h-64",
+    span: "col-span-1 min-h-[240px] sm:min-h-[250px] md:min-h-[250px] h-60 sm:h-64 md:h-auto",
   },
 ];
 
 export function GalleryPreview() {
   return (
-    <section className="py-14 sm:py-20 md:py-28 bg-[#FAF8F7] border-b border-[#EAE3E6]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-14 sm:py-20 md:py-28 bg-editorial-linen border-b border-[#EAE3E6] relative overflow-hidden">
+      {/* Ambient background glow blobs */}
+      <div className="absolute top-0 right-0 w-80 sm:w-96 h-80 sm:h-96 bg-[#E0007C]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-72 sm:w-80 h-72 sm:h-80 bg-[#C5A880]/7 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-10 sm:mb-14">
           <SectionHeading
             align="left"
             badge="Visual Portfolio"
-            title="Real Salon Artistry &amp; Proof"
+            title="Real Salon Artistry & Proof"
             subtitle="Witness the craftsmanship, precision, and glow created by our stylists and makeup artists."
           />
           <Button href="/gallery" variant="outline" withArrow className="shrink-0 self-start sm:self-auto min-h-[44px]">
@@ -62,10 +66,10 @@ export function GalleryPreview() {
           {previewImages.map((item, idx) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.5, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.45, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
               className={`relative rounded-3xl overflow-hidden group shadow-md border border-[#EAE3E6] bg-zinc-100 ${item.span}`}
             >
               <Image

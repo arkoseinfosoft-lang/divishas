@@ -8,15 +8,16 @@ import { Button } from "../ui/Button";
 
 export function QuickBookingCTA() {
   return (
-    <section className="py-14 sm:py-20 md:py-28 bg-gradient-to-br from-[#181517] via-[#261D22] to-[#181517] text-white relative overflow-hidden">
-      {/* Decorative ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-[600px] h-48 sm:h-[300px] bg-[#E0007C]/15 rounded-full blur-3xl pointer-events-none" />
+    <section className="py-14 sm:py-20 md:py-28 bg-gradient-to-br from-[#181517] via-[#2A1B24] to-[#181517] text-white relative overflow-hidden">
+      {/* Decorative ambient glow blobs */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-72 sm:w-[500px] h-48 sm:h-[320px] bg-[#E0007C]/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 sm:w-[450px] h-44 sm:h-[300px] bg-[#C2185B]/15 rounded-full blur-3xl pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-5 sm:space-y-6"
       >
         <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FF80AB]/15 border border-[#FF80AB]/30 text-[#FF80AB] text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.14em]">

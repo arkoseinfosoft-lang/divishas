@@ -85,8 +85,8 @@ export function FeaturedServices() {
                 key={cat.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.5, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
                 className={`luxury-card bg-white rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group ${
                   cat.isLarge ? "md:col-span-2 lg:col-span-2" : ""
                 }`}

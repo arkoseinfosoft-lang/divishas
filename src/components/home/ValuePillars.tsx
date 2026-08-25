@@ -63,9 +63,9 @@ export function ValuePillars() {
                 key={pillar.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
-                className="luxury-card bg-[#FAF8F7] rounded-3xl p-6 sm:p-8 lg:p-9 border border-[#EAE3E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.5, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                className="luxury-card bg-white rounded-3xl p-6 sm:p-8 lg:p-9 border border-[#EAE3E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center mb-4 sm:mb-6 shadow-xs">

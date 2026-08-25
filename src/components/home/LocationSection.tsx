@@ -9,8 +9,12 @@ import { Button } from "../ui/Button";
 
 export function LocationSection() {
   return (
-    <section className="py-14 sm:py-20 md:py-28 bg-white border-b border-[#EAE3E6]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-14 sm:py-20 md:py-28 bg-[#FAF8F7] bg-dot-pattern border-b border-[#EAE3E6] relative overflow-hidden">
+      {/* Soft ambient background lighting */}
+      <div className="absolute top-0 right-0 w-80 h-80 bg-[#C5A880]/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#E0007C]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="Visit Our Salon"
           title="Where to Find Us"
@@ -20,12 +24,12 @@ export function LocationSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mt-10 sm:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch"
         >
           {/* Contact & Timing Details Card */}
-          <div className="lg:col-span-5 bg-[#FAF8F7] rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#EAE3E6] shadow-sm flex flex-col justify-between space-y-6 sm:space-y-8">
+          <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#EAE3E6] shadow-sm flex flex-col justify-between space-y-6 sm:space-y-8">
             <div className="space-y-5 sm:space-y-6">
               <div>
                 <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-[#C2185B]">
@@ -112,17 +116,17 @@ export function LocationSection() {
           </div>
 
           {/* Interactive Map Embed */}
-          <div className="lg:col-span-7 bg-[#FAF8F7] rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-sm relative min-h-[300px] sm:min-h-[380px] lg:min-h-[420px] flex flex-col">
+          <div className="lg:col-span-7 bg-white rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-sm relative min-h-[320px] sm:min-h-[380px] lg:min-h-[440px] flex flex-col">
             <iframe
               src={siteConfig.location.googleMapsEmbedUrl}
               width="100%"
               height="100%"
-              style={{ border: 0, minHeight: "300px" }}
+              style={{ border: 0, minHeight: "320px" }}
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title={`${siteConfig.name} Location Map`}
-              className="w-full flex-1 min-h-[300px]"
+              className="w-full flex-1 min-h-[320px]"
             />
           </div>
         </motion.div>
