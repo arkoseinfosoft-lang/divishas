@@ -45,16 +45,16 @@ export interface DotGridProps {
   style?: React.CSSProperties;
 }
 
-function throttle<T extends (...args: any[]) => void>(
-  func: T,
+function throttle(
+  func: (e: MouseEvent) => void,
   limit: number
-): (...args: Parameters<T>) => void {
+): (e: MouseEvent) => void {
   let lastCall = 0;
-  return function (this: unknown, ...args: Parameters<T>) {
+  return function (this: unknown, e: MouseEvent) {
     const now = performance.now();
     if (now - lastCall >= limit) {
       lastCall = now;
-      func.apply(this, args);
+      func.call(this, e);
     }
   };
 }

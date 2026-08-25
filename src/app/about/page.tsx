@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Sparkles, ShieldCheck, Users } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { QuickBookingCTA } from "@/components/home/QuickBookingCTA";

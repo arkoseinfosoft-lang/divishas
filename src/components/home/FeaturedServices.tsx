@@ -4,59 +4,12 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Scissors, Sparkles, Paintbrush, Sparkle, Crown } from "lucide-react";
+import { ArrowRight, Scissors, Paintbrush, Sparkle, Crown } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
 
-const categories = [
-  {
-    title: "Hair Care & Styling",
-    desc: "Precision haircuts, blowouts, restorative spa rituals, and styling for both men and women.",
-    href: "/services/hair",
-    image: "/images/hair-women.jpg",
-    icon: Scissors,
-    badge: "Unisex Hair",
-    features: ["Haircuts & Trims", "Blowouts & Styling", "Hair Spa & Treatments"],
-  },
-  {
-    title: "Makeup Services",
-    desc: "HD occasion makeup, radiant party looks, and professional event styling tailored for your features.",
-    href: "/services/makeup",
-    image: "/images/party-makeup.jpg",
-    icon: Sparkles,
-    badge: "Artistry",
-    features: ["Party & Event Makeup", "Occasion Styling", "High-Definition Artistry"],
-  },
-  {
-    title: "Nail Care & Extensions",
-    desc: "Luxury gel extensions, custom nail art, cuticle wellness, and soothing manicures & pedicures.",
-    href: "/services/nails",
-    image: "/images/nail-art.jpg",
-    icon: Paintbrush,
-    badge: "Nail Art",
-    features: ["Gel Extensions", "Custom Nail Art", "Spa Manicure & Pedicure"],
-  },
-  {
-    title: "Beauty & Grooming",
-    desc: "Detox facials, gentle waxing, threading, and dedicated men's beard sculpting and grooming.",
-    href: "/services/beauty-grooming",
-    image: "/images/beauty-spa.jpg",
-    icon: Sparkle,
-    badge: "Skin & Spa",
-    features: ["Hydrating Facials", "Men's Beard Sculpting", "Hygienic Waxing & Threading"],
-  },
-  {
-    title: "Bridal & Occasion",
-    desc: "Signature wedding makeovers, groom royal styling, pre-bridal skin prep, and saree/dupatta draping.",
-    href: "/bridal",
-    image: "/images/bridal-makeup.jpg",
-    icon: Crown,
-    badge: "Couture Wedding",
-    features: ["Bridal HD & Airbrush", "Groom Styling", "Pre-Bridal Rituals"],
-    isLarge: true,
-  },
-];
+
 
 export function FeaturedServices() {
   return (

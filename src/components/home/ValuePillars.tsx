@@ -2,14 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Sparkles,
-  Users,
-  Award,
-  ShieldCheck,
-  Smile,
-  HeartHandshake,
-} from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
 
 const pillars = [
