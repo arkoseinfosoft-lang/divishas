@@ -61,7 +61,7 @@ function throttle<T extends (...args: any[]) => void>(
 
 function hexToRgb(hex: string) {
   const m = hex.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i);
-  if (!m) return { r: 0, g: 0, b: 0 };
+  if (!m) return { r: 180, g: 160, b: 175 };
   return {
     r: parseInt(m[1], 16),
     g: parseInt(m[2], 16),
@@ -70,17 +70,17 @@ function hexToRgb(hex: string) {
 }
 
 export const DotGrid: React.FC<DotGridProps> = ({
-  dotSize = 16,
-  gap = 32,
-  baseColor = "#5227FF",
-  activeColor = "#5227FF",
-  proximity = 150,
+  dotSize = 5,
+  gap = 22,
+  baseColor = "#B8A4AF",
+  activeColor = "#E0007C",
+  proximity = 140,
   speedTrigger = 100,
-  shockRadius = 250,
+  shockRadius = 220,
   shockStrength = 5,
   maxSpeed = 5000,
   resistance = 750,
-  returnDuration = 1.5,
+  returnDuration = 1.2,
   className = "",
   style,
 }) => {
@@ -88,43 +88,36 @@ export const DotGrid: React.FC<DotGridProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const dotsRef = useRef<Dot[]>([]);
   const pointerRef = useRef<PointerState>({
-    x: 0,
-    y: 0,
+    x: -9999,
+    y: -9999,
     vx: 0,
     vy: 0,
     speed: 0,
     lastTime: 0,
-    lastX: 0,
-    lastY: 0,
+    lastX: -9999,
+    lastY: -9999,
   });
 
   const baseRgb = useMemo(() => hexToRgb(baseColor), [baseColor]);
   const activeRgb = useMemo(() => hexToRgb(activeColor), [activeColor]);
-
-  const circlePath = useMemo(() => {
-    if (typeof window === "undefined" || !window.Path2D) return null;
-
-    const p = new window.Path2D();
-    p.arc(0, 0, dotSize / 2, 0, Math.PI * 2);
-    return p;
-  }, [dotSize]);
+  const radius = dotSize / 2;
 
   const buildGrid = useCallback(() => {
     const wrap = wrapperRef.current;
     const canvas = canvasRef.current;
     if (!wrap || !canvas) return;
 
-    const { width, height } = wrap.getBoundingClientRect();
+    const rect = wrap.getBoundingClientRect();
+    const width = rect.width || wrap.clientWidth || window.innerWidth;
+    const height = rect.height || wrap.clientHeight || window.innerHeight;
     if (width === 0 || height === 0) return;
 
-    const dpr = window.devicePixelRatio || 1;
+    const dpr = typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1;
 
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
-    const ctx = canvas.getContext("2d");
-    if (ctx) ctx.scale(dpr, dpr);
 
     const cols = Math.floor((width + gap) / (dotSize + gap));
     const rows = Math.floor((height + gap) / (dotSize + gap));
@@ -150,9 +143,8 @@ export const DotGrid: React.FC<DotGridProps> = ({
     dotsRef.current = dots;
   }, [dotSize, gap]);
 
+  // Main Drawing Loop
   useEffect(() => {
-    if (!circlePath) return;
-
     let rafId: number;
     const proxSq = proximity * proximity;
 
@@ -161,13 +153,23 @@ export const DotGrid: React.FC<DotGridProps> = ({
       if (!canvas) return;
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const dpr = window.devicePixelRatio || 1;
+      const width = canvas.width;
+      const height = canvas.height;
+
+      ctx.clearRect(0, 0, width, height);
+
+      if (dotsRef.current.length === 0) {
+        buildGrid();
+      }
 
       const { x: px, y: py } = pointerRef.current;
 
-      for (const dot of dotsRef.current) {
-        const ox = dot.cx + dot.xOffset;
-        const oy = dot.cy + dot.yOffset;
+      for (let i = 0; i < dotsRef.current.length; i++) {
+        const dot = dotsRef.current[i];
+        const ox = (dot.cx + dot.xOffset) * dpr;
+        const oy = (dot.cy + dot.yOffset) * dpr;
         const dx = dot.cx - px;
         const dy = dot.cy - py;
         const dsq = dx * dx + dy * dy;
@@ -182,25 +184,28 @@ export const DotGrid: React.FC<DotGridProps> = ({
           dotStyle = `rgb(${r},${g},${b})`;
         }
 
-        ctx.save();
-        ctx.translate(ox, oy);
+        ctx.beginPath();
+        ctx.arc(ox, oy, radius * dpr, 0, Math.PI * 2);
         ctx.fillStyle = dotStyle;
-        ctx.fill(circlePath);
-        ctx.restore();
+        ctx.fill();
       }
 
       rafId = requestAnimationFrame(draw);
     };
 
+    buildGrid();
     draw();
     return () => cancelAnimationFrame(rafId);
-  }, [proximity, baseColor, activeRgb, baseRgb, circlePath]);
+  }, [proximity, baseColor, activeRgb, baseRgb, radius, buildGrid]);
 
+  // Handle Resize
   useEffect(() => {
     buildGrid();
     let ro: ResizeObserver | null = null;
-    if ("ResizeObserver" in window && wrapperRef.current) {
-      ro = new ResizeObserver(buildGrid);
+    if (typeof window !== "undefined" && "ResizeObserver" in window && wrapperRef.current) {
+      ro = new ResizeObserver(() => {
+        buildGrid();
+      });
       ro.observe(wrapperRef.current);
     } else {
       window.addEventListener("resize", buildGrid);
@@ -211,15 +216,16 @@ export const DotGrid: React.FC<DotGridProps> = ({
     };
   }, [buildGrid]);
 
+  // Mouse & Click Interaction
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
       const now = performance.now();
       const pr = pointerRef.current;
       const dt = pr.lastTime ? now - pr.lastTime : 16;
-      const dx = e.clientX - pr.lastX;
-      const dy = e.clientY - pr.lastY;
-      let vx = (dx / dt) * 1000;
-      let vy = (dy / dt) * 1000;
+      const dx = pr.lastX !== -9999 ? e.clientX - pr.lastX : 0;
+      const dy = pr.lastY !== -9999 ? e.clientY - pr.lastY : 0;
+      let vx = (dx / (dt || 16)) * 1000;
+      let vy = (dy / (dt || 16)) * 1000;
       let speed = Math.hypot(vx, vy);
       if (speed > maxSpeed) {
         const scale = maxSpeed / speed;
@@ -239,7 +245,8 @@ export const DotGrid: React.FC<DotGridProps> = ({
       pr.x = e.clientX - rect.left;
       pr.y = e.clientY - rect.top;
 
-      for (const dot of dotsRef.current) {
+      for (let i = 0; i < dotsRef.current.length; i++) {
+        const dot = dotsRef.current[i];
         const dist = Math.hypot(dot.cx - pr.x, dot.cy - pr.y);
         if (speed > speedTrigger && dist < proximity && !dot._inertiaApplied) {
           dot._inertiaApplied = true;
@@ -267,7 +274,8 @@ export const DotGrid: React.FC<DotGridProps> = ({
       const rect = canvasRef.current.getBoundingClientRect();
       const cx = e.clientX - rect.left;
       const cy = e.clientY - rect.top;
-      for (const dot of dotsRef.current) {
+      for (let i = 0; i < dotsRef.current.length; i++) {
+        const dot = dotsRef.current[i];
         const dist = Math.hypot(dot.cx - cx, dot.cy - cy);
         if (dist < shockRadius && !dot._inertiaApplied) {
           dot._inertiaApplied = true;
@@ -291,7 +299,7 @@ export const DotGrid: React.FC<DotGridProps> = ({
       }
     };
 
-    const throttledMove = throttle(onMove, 50);
+    const throttledMove = throttle(onMove, 30);
     window.addEventListener("mousemove", throttledMove, { passive: true });
     window.addEventListener("click", onClick);
 
@@ -302,11 +310,11 @@ export const DotGrid: React.FC<DotGridProps> = ({
   }, [maxSpeed, speedTrigger, proximity, resistance, returnDuration, shockRadius, shockStrength]);
 
   return (
-    <section className={`dot-grid ${className}`} style={style}>
+    <div className={`dot-grid ${className}`} style={style}>
       <div ref={wrapperRef} className="dot-grid__wrap">
         <canvas ref={canvasRef} className="dot-grid__canvas" />
       </div>
-    </section>
+    </div>
   );
 };
 
