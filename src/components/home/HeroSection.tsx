@@ -14,12 +14,12 @@ export function HeroSection() {
       {/* Interactive DotGrid Background */}
       <DotGrid
         dotSize={5}
-        gap={20}
-        baseColor="#F5EDF2"
+        gap={22}
+        baseColor="#D4C2CB"
         activeColor="#E0007C"
-        proximity={120}
-        shockRadius={200}
-        shockStrength={4}
+        proximity={140}
+        shockRadius={220}
+        shockStrength={5}
         resistance={750}
         returnDuration={1.2}
         className="absolute inset-0 z-0 pointer-events-none hidden md:block"

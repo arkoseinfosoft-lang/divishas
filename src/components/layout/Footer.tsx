@@ -73,14 +73,14 @@ export function Footer() {
       <DotGrid
         dotSize={4}
         gap={22}
-        baseColor="#262124"
+        baseColor="#3E343A"
         activeColor="#FF80AB"
-        proximity={120}
-        shockRadius={200}
-        shockStrength={4}
+        proximity={140}
+        shockRadius={220}
+        shockStrength={5}
         resistance={750}
         returnDuration={1.2}
-        className="absolute inset-0 z-0 pointer-events-none hidden md:block opacity-60"
+        className="absolute inset-0 z-0 pointer-events-none hidden md:block"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
