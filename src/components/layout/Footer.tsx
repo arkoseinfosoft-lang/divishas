@@ -299,7 +299,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8A8388]">
           <p>
-            © {currentYear} {siteConfig.name}. All rights reserved. Premium Unisex Salon.
+            © {currentYear} {siteConfig.name}. All rights reserved. Designed & Developed by Arkose Infosoft.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/about" className="hover:text-white transition-colors">
