@@ -22,20 +22,20 @@ export default function GalleryPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Header */}
-      <section className="pt-6 pb-12 sm:pt-8 sm:pb-16 md:pb-24 bg-hero-mesh border-b border-[#EAE3E6] relative overflow-hidden">
+      <section className="pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-16 md:pb-28 bg-hero-mesh border-b border-[#EAE3E6] relative overflow-hidden">
         {/* Background ambient lighting */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF2E93]/4 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#C5A880]/6 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF2E93]/6 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#C5A880]/8 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Breadcrumbs items={[{ name: "Gallery", url: "/gallery" }]} className="mb-4 sm:mb-6" />
+          <Breadcrumbs items={[{ name: "Gallery", url: "/gallery" }]} className="mb-6 sm:mb-8" />
 
-          <div className="text-center max-w-3xl mx-auto space-y-4 sm:space-y-5">
+          <div className="text-center max-w-3xl mx-auto space-y-4 sm:space-y-6">
             <Badge variant="primary" icon={<Sparkles className="w-3.5 h-3.5" />}>
               Visual Proof &amp; Transformations
             </Badge>
 
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#181517] leading-[1.2]">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#181517] leading-[1.12]">
               Our Artistry in Every Detail
             </h1>
 
@@ -45,16 +45,16 @@ export default function GalleryPage() {
           </div>
 
           {/* Filter Pills */}
-          <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+          <div className="mt-8 sm:mt-12 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
             {galleryCategories.map((category) => (
               <button
                 type="button"
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer min-h-[38px] ${
+                className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer min-h-[42px] ${
                   activeCategory === category
-                    ? "bg-[#C2185B] text-white shadow-md shadow-[#C2185B]/20 scale-105"
-                    : "bg-white text-[#4A4347] border border-[#E8E0E4] hover:border-[#C2185B] hover:text-[#C2185B]"
+                    ? "bg-[#C2185B] text-white shadow-lg shadow-[#C2185B]/25 scale-105"
+                    : "bg-white text-[#4A4347] border border-[#E8E0E4] hover:border-[#C2185B] hover:text-[#C2185B] shadow-2xs"
                 }`}
               >
                 {category}
@@ -65,44 +65,44 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-14 sm:py-20 md:py-28 bg-white border-b border-[#EAE3E6]">
+      <section className="py-16 sm:py-24 md:py-32 bg-white bg-diagonal-pattern border-b border-[#EAE3E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {filteredItems.map((item) => (
               <div
                 key={item.id}
                 onClick={() => setSelectedImage(item)}
-                className="luxury-card bg-[#FAF8F7] rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-xs hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col justify-between"
+                className="luxury-card bg-[#FAF8F7] rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-sm hover:shadow-2xl transition-all duration-300 group cursor-pointer flex flex-col justify-between"
               >
                 {/* Image Container */}
-                <div className="relative h-64 sm:h-72 lg:h-80 w-full overflow-hidden bg-zinc-100">
+                <div className="relative h-64 sm:h-76 lg:h-84 w-full overflow-hidden bg-zinc-100">
                   <Image
                     src={item.image}
                     alt={item.alt}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   {/* Top Badge */}
-                  <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4">
-                    <Badge variant="primary" className="bg-white/95 text-[#C2185B] backdrop-blur-sm">
+                  <div className="absolute top-4 left-4">
+                    <Badge variant="primary" className="bg-white/95 text-[#C2185B] backdrop-blur-md">
                       {item.category}
                     </Badge>
                   </div>
 
                   {/* Hover Icon */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md text-[#C2185B] flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 rounded-full bg-white/95 backdrop-blur-md text-[#C2185B] flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
                       <Eye className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                   </div>
                 </div>
 
                 {/* Details */}
-                <div className="p-5 sm:p-6 space-y-1.5 sm:space-y-2">
-                  <h3 className="text-base sm:text-lg font-semibold text-[#181517] group-hover:text-[#C2185B] transition-colors leading-snug">
+                <div className="p-6 sm:p-7 space-y-2">
+                  <h3 className="font-serif text-lg sm:text-xl font-semibold text-[#181517] group-hover:text-[#C2185B] transition-colors leading-snug">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-[#554e53] font-normal line-clamp-2 leading-relaxed">

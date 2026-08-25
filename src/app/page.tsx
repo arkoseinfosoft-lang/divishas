@@ -2,6 +2,7 @@ import React from "react";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ValuePillars } from "@/components/home/ValuePillars";
 import { FeaturedServices } from "@/components/home/FeaturedServices";
+import { ExperienceStats } from "@/components/home/ExperienceStats";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { BridalHighlight } from "@/components/home/BridalHighlight";
 import { GalleryPreview } from "@/components/home/GalleryPreview";
@@ -17,22 +18,25 @@ export default function HomePage() {
       {/* 2. Trust & Value Pillars */}
       <ValuePillars />
 
-      {/* 3. Featured Services */}
+      {/* 3. Featured Services Bento Grid */}
       <FeaturedServices />
 
-      {/* 4. Why Choose Divisha's */}
+      {/* 4. Dark Contrast Section: Experience & Stats */}
+      <ExperienceStats />
+
+      {/* 5. Why Choose Divisha's */}
       <WhyChooseUs />
 
-      {/* 5. Bridal & Occasion Promotional Section */}
+      {/* 6. Bridal & Occasion Promotional Section */}
       <BridalHighlight />
 
-      {/* 6. Visual Gallery Preview */}
+      {/* 7. Visual Gallery Preview */}
       <GalleryPreview />
 
-      {/* 7. Strong Booking CTA Banner */}
+      {/* 8. Strong Booking CTA Banner */}
       <QuickBookingCTA />
 
-      {/* 8. Location & Timings Section */}
+      {/* 9. Location & Timings Section */}
       <LocationSection />
     </div>
   );

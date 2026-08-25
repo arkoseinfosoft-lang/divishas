@@ -16,20 +16,20 @@ interface ServiceGridProps {
 
 export function ServiceGrid({ items, categoryTitle }: ServiceGridProps) {
   return (
-    <section className="py-14 sm:py-20 md:py-28 bg-white">
+    <section className="py-16 sm:py-24 md:py-32 bg-white bg-diagonal-pattern border-b border-[#EAE3E6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-8 sm:space-y-12 md:space-y-16">
+        <div className="space-y-10 sm:space-y-14 md:space-y-18">
           {items.map((item, index) => {
             const isEven = index % 2 === 1;
             return (
               <motion.div
                 key={item.id}
                 id={item.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="luxury-card bg-[#FAF8F7] rounded-3xl p-6 sm:p-8 lg:p-12 border border-[#EAE3E6] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                className="luxury-card bg-[#FAF8F7] rounded-3xl p-6 sm:p-8 lg:p-12 border border-[#EAE3E6] shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden"
               >
                 <div
                   className={`grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center`}

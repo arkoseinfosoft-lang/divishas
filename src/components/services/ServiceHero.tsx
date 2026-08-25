@@ -24,22 +24,22 @@ export function ServiceHero({
   breadcrumbs,
 }: ServiceHeroProps) {
   return (
-    <section className="pt-6 pb-12 sm:pt-8 sm:pb-16 md:pb-24 bg-hero-mesh border-b border-[#EAE3E6] relative overflow-hidden">
+    <section className="pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-16 md:pb-28 bg-hero-mesh border-b border-[#EAE3E6] relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF2E93]/4 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#C5A880]/6 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF2E93]/6 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#C5A880]/8 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <Breadcrumbs items={breadcrumbs} className="mb-4 sm:mb-6" />
+        <Breadcrumbs items={breadcrumbs} className="mb-6 sm:mb-8" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Text Content */}
-          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-7">
             <Badge variant="primary" icon={<Sparkles className="w-3.5 h-3.5" />}>
               {badge}
             </Badge>
 
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#181517] leading-[1.2]">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#181517] leading-[1.12]">
               {title}
             </h1>
 
@@ -47,7 +47,7 @@ export function ServiceHero({
               {subtitle}
             </p>
 
-            <p className="text-sm sm:text-base text-[#554e53] leading-relaxed max-w-2xl font-normal font-sans">
+            <p className="text-sm sm:text-base md:text-lg text-[#554e53] leading-relaxed max-w-2xl font-normal font-sans">
               {introText}
             </p>
 
@@ -57,7 +57,7 @@ export function ServiceHero({
                 variant="primary"
                 size="lg"
                 icon={<Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />}
-                className="w-full sm:w-auto min-h-[48px]"
+                className="w-full sm:w-auto min-h-[48px] shadow-lg shadow-[#E0007C]/20"
               >
                 Book An Appointment
               </Button>
@@ -78,7 +78,7 @@ export function ServiceHero({
 
           {/* Right Hero Visual */}
           <div className="lg:col-span-5 relative mt-4 lg:mt-0">
-            <div className="relative h-64 sm:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-xl border border-[#EAE3E6]">
+            <div className="relative h-72 sm:h-96 lg:h-[440px] rounded-3xl overflow-hidden shadow-2xl border border-[#EAE3E6]">
               <Image
                 src={heroImage}
                 alt={title}

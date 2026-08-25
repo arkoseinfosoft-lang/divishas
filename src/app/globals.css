@@ -138,6 +138,40 @@ p {
   background-size: auto, 20px 20px;
 }
 
+.bg-dark-suite {
+  background-color: #141213;
+  background-image:
+    radial-gradient(at 100% 0%, rgba(224, 0, 124, 0.12) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(197, 168, 128, 0.08) 0px, transparent 50%);
+}
+
+.serif-numeral {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #e5c9a3 0%, #c5a880 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-pill-dark {
+  background: rgba(24, 21, 23, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
 /* Subtle luxury gradient */
 .bg-luxury-radial {
   background: radial-gradient(circle at 50% 0%, rgba(224, 0, 124, 0.08) 0%, rgba(250, 248, 247, 0) 70%);

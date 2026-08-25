@@ -9,28 +9,28 @@ import { Badge } from "../ui/Badge";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-6 pb-12 sm:pt-10 sm:pb-16 md:pt-16 md:pb-24 lg:pt-20 lg:pb-28 bg-hero-mesh border-b border-[#EAE3E6]">
+    <section className="relative overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-20 md:pb-28 lg:pt-24 lg:pb-32 bg-hero-mesh border-b border-[#EAE3E6]">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/4 right-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-[#E0007C]/6 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-0 w-60 sm:w-[400px] h-60 sm:h-[400px] bg-[#C5A880]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-80 sm:w-[550px] h-80 sm:h-[550px] bg-[#E0007C]/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-0 w-72 sm:w-[450px] h-72 sm:h-[450px] bg-[#C5A880]/12 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Hero Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 space-y-5 sm:space-y-7 text-center lg:text-left"
+            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left"
           >
             {/* Top Brand Pill */}
-            <div className="inline-flex max-w-full items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-[#FCE4EC] border border-[#F8BBD0] text-[#C2185B] text-[10.5px] sm:text-xs font-semibold tracking-wide shadow-xs mb-1">
+            <div className="inline-flex max-w-full items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#FCE4EC] border border-[#F8BBD0] text-[#C2185B] text-xs font-semibold tracking-wide shadow-xs mb-1">
               <Sparkles className="w-3.5 h-3.5 text-[#E0007C] shrink-0" />
-              <span className="truncate sm:overflow-visible">Premium Unisex Salon • Welcoming Men &amp; Women</span>
+              <span>Kanpur&apos;s Signature Unisex Salon &amp; Bridal Atelier</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tight text-[#181517] leading-[1.2]">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-semibold tracking-tight text-[#181517] leading-[1.08]">
               Elevate Your Everyday Style &amp; Special Moments at{" "}
               <span className="text-gradient-magenta inline-block">
                 Divisha&apos;s
@@ -38,20 +38,18 @@ export function HeroSection() {
             </h1>
 
             {/* Persuasive Subtext */}
-            <p className="text-sm sm:text-base md:text-lg text-[#554e53] leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal font-sans">
-              Experience the harmony of contemporary hairdressing, couture bridal
-              makeup, luxury nail art, and revitalizing skin grooming — delivered by
-              certified master stylists in a welcoming, hygienic atmosphere.
+            <p className="text-base sm:text-lg md:text-xl text-[#554e53] leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal font-sans">
+              Where contemporary hairdressing, couture bridal artistry, luxury nail care, and revitalizing skin grooming meet dedicated unisex expertise in an ambient, hygienic sanctuary.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-1">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
               <Button
                 href="/contact#appointment"
                 variant="primary"
                 size="lg"
                 icon={<Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />}
-                className="w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 min-h-[48px]"
+                className="w-full sm:w-auto text-sm sm:text-base px-7 sm:px-9 py-4 min-h-[50px] shadow-lg shadow-[#E0007C]/20"
               >
                 Book an Appointment
               </Button>
@@ -60,16 +58,16 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 withArrow
-                className="w-full sm:w-auto text-sm sm:text-base px-6 sm:px-7 py-3.5 sm:py-4 min-h-[48px]"
+                className="w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-4 min-h-[50px] bg-white/80 hover:bg-white"
               >
-                Explore All Services
+                Explore Services Menu
               </Button>
             </div>
 
             {/* Trust Chips */}
-            <div className="pt-5 sm:pt-6 border-t border-[#EAE3E6] grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-left">
-              <div className="flex items-center gap-3 p-2 sm:p-0 rounded-xl bg-white/60 sm:bg-transparent border sm:border-0 border-[#EAE3E6]">
-                <div className="w-8 h-8 rounded-full bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0">
+            <div className="pt-6 sm:pt-8 border-t border-[#EAE3E6] grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-left">
+              <div className="flex items-center gap-3 p-3 sm:p-2 rounded-2xl bg-white/70 sm:bg-transparent border sm:border-0 border-[#EAE3E6] shadow-2xs sm:shadow-none">
+                <div className="w-9 h-9 rounded-xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <div>
@@ -77,18 +75,18 @@ export function HeroSection() {
                     100% Sanitized
                   </p>
                   <p className="text-[11px] text-[#7A7276]">
-                    Sterilized equipment
+                    Sterilized single-use tools
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-2 sm:p-0 rounded-xl bg-white/60 sm:bg-transparent border sm:border-0 border-[#EAE3E6]">
-                <div className="w-8 h-8 rounded-full bg-[#FBF7F0] text-[#9A7B4F] flex items-center justify-center shrink-0">
+              <div className="flex items-center gap-3 p-3 sm:p-2 rounded-2xl bg-white/70 sm:bg-transparent border sm:border-0 border-[#EAE3E6] shadow-2xs sm:shadow-none">
+                <div className="w-9 h-9 rounded-xl bg-[#FBF7F0] text-[#9A7B4F] flex items-center justify-center shrink-0">
                   <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm font-semibold text-[#181517]">
-                    Expert Stylists
+                    Master Stylists
                   </p>
                   <p className="text-[11px] text-[#7A7276]">
                     Certified professionals
@@ -96,8 +94,8 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-2 sm:p-0 rounded-xl bg-white/60 sm:bg-transparent border sm:border-0 border-[#EAE3E6]">
-                <div className="w-8 h-8 rounded-full bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0">
+              <div className="flex items-center gap-3 p-3 sm:p-2 rounded-2xl bg-white/70 sm:bg-transparent border sm:border-0 border-[#EAE3E6] shadow-2xs sm:shadow-none">
+                <div className="w-9 h-9 rounded-xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0">
                   <Heart className="w-4 h-4" />
                 </div>
                 <div>
@@ -105,27 +103,27 @@ export function HeroSection() {
                     Unisex Care
                   </p>
                   <p className="text-[11px] text-[#7A7276]">
-                    Custom for all
+                    Zoned for men &amp; women
                   </p>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Hero Image Card */}
+          {/* Right Hero Image Card Stack */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.65, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 relative mt-4 lg:mt-0"
           >
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Decorative Frame Elements */}
-              <div className="hidden sm:block absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-full h-full rounded-3xl border-2 border-[#E0007C]/20 -z-10" />
-              <div className="hidden sm:block absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-full h-full rounded-3xl bg-[#FCE4EC]/40 -z-20" />
+              {/* Decorative Backing Frame */}
+              <div className="hidden sm:block absolute -top-4 -left-4 w-full h-full rounded-3xl border-2 border-[#E0007C]/25 -z-10" />
+              <div className="hidden sm:block absolute -bottom-4 -right-4 w-full h-full rounded-3xl bg-[#FCE4EC]/50 -z-20" />
 
               {/* Main Image Container */}
-              <div className="relative rounded-3xl overflow-hidden shadow-xl shadow-black/8 border border-[#EAE3E6] bg-white aspect-[4/3]">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/10 border border-[#EAE3E6] bg-white aspect-[4/3]">
                 <Image
                   src="/images/hero-salon.jpg"
                   alt="Divisha's Unisex Salon Luxury Interior and Hair Styling"
@@ -136,32 +134,39 @@ export function HeroSection() {
                 />
 
                 {/* Subtle Image Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+
+                {/* Top Floating Badge */}
+                <div className="absolute top-4 right-4 glass-pill-dark px-3 py-1.5 rounded-full text-white text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                  <span className="text-amber-400">★</span>
+                  <span>4.9 / 5</span>
+                  <span className="text-[#C8BFC4] text-[11px] font-normal">• 1,200+ Reviews</span>
+                </div>
 
                 {/* Floating Bottom Card */}
-                <div className="absolute bottom-3 inset-x-3 sm:bottom-4 sm:inset-x-4 p-3 sm:p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-white/50 shadow-md flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#FCE4EC] p-1 flex items-center justify-center shrink-0">
+                <div className="absolute bottom-3.5 inset-x-3.5 sm:bottom-4 sm:inset-x-4 p-3.5 sm:p-4 rounded-2xl glass-pill shadow-xl flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-10 h-10 rounded-xl bg-[#FCE4EC] p-1 flex items-center justify-center shrink-0 shadow-xs">
                       <Image
                         src="/images/logo.png"
                         alt="Divisha's Logo"
-                        width={36}
-                        height={36}
+                        width={38}
+                        height={38}
                         className="object-contain"
                       />
                     </div>
                     <div className="min-w-0">
-                      <p className="text-xs font-semibold text-[#181517] truncate">
+                      <p className="text-xs sm:text-sm font-semibold text-[#181517] truncate">
                         Divisha&apos;s Unisex Salon
                       </p>
-                      <p className="text-[10px] sm:text-[11px] text-[#C2185B] font-medium truncate">
+                      <p className="text-[10.5px] sm:text-xs text-[#C2185B] font-medium truncate">
                         Hair • Makeup • Nails • Grooming
                       </p>
                     </div>
                   </div>
 
-                  <Badge variant="gold" className="text-[10px] shrink-0 py-1 px-2.5">
-                    Open Today
+                  <Badge variant="gold" className="text-[10px] sm:text-[11px] shrink-0 py-1 px-3">
+                    Open 7 Days
                   </Badge>
                 </div>
               </div>
