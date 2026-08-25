@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import {
@@ -69,18 +71,18 @@ export function Footer() {
 
   return (
     <footer className="bg-[#141213] text-[#CCC6CA] pt-16 pb-24 md:pb-12 border-t border-[#262124] relative overflow-hidden">
-      {/* Interactive DotGrid Background */}
+      {/* Interactive React Bits DotGrid Background */}
       <DotGrid
-        dotSize={4}
-        gap={22}
-        baseColor="#3E343A"
-        activeColor="#FF80AB"
-        proximity={140}
-        shockRadius={220}
+        dotSize={5}
+        gap={15}
+        baseColor="#2f293a"
+        activeColor="#5227FF"
+        proximity={120}
+        shockRadius={250}
         shockStrength={5}
         resistance={750}
-        returnDuration={1.2}
-        className="absolute inset-0 z-0 pointer-events-none hidden md:block"
+        returnDuration={1.5}
+        className="absolute inset-0 z-0 pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
