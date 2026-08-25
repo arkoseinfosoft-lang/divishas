@@ -1,22 +1,25 @@
 .dot-grid {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
+  pointer-events: none;
+  display: block;
 }
 
 .dot-grid__wrap {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  position: relative;
+  display: block;
 }
 
 .dot-grid__canvas {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   display: block;

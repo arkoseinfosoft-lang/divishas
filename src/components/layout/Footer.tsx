@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Logo } from "../ui/Logo";
+import DotGrid from "../ui/DotGrid";
 
 function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
@@ -70,6 +71,20 @@ export function Footer() {
 
   return (
     <footer className="bg-[#141213] text-[#CCC6CA] pt-16 pb-24 md:pb-12 border-t border-[#262124] relative overflow-hidden">
+      {/* Interactive DotGrid Background */}
+      <DotGrid
+        dotSize={4}
+        gap={24}
+        baseColor="#2f293a"
+        activeColor="#5227FF"
+        proximity={120}
+        shockRadius={200}
+        shockStrength={4}
+        resistance={750}
+        returnDuration={1.2}
+        className="absolute inset-0 z-0 pointer-events-none opacity-50 hidden md:block"
+      />
+
       {/* Subtle ambient lighting */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#E0007C]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#C5A880]/5 rounded-full blur-3xl pointer-events-none" />

@@ -13,16 +13,16 @@ export function HeroSection() {
     <section className="relative overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-20 md:pb-28 lg:pt-24 lg:pb-32 bg-hero-mesh border-b border-[#EAE3E6]">
       {/* Interactive DotGrid Background */}
       <DotGrid
-        dotSize={5}
-        gap={22}
-        baseColor="#FF0000"
-        activeColor="#00FF00"
-        proximity={140}
-        shockRadius={220}
-        shockStrength={5}
+        dotSize={4}
+        gap={28}
+        baseColor="#F0E4E9"
+        activeColor="#E0007C"
+        proximity={120}
+        shockRadius={200}
+        shockStrength={4}
         resistance={750}
         returnDuration={1.2}
-        className="absolute inset-0 z-0 pointer-events-none hidden md:block"
+        className="absolute inset-0 z-0 pointer-events-none opacity-50 hidden md:block"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
