@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Sparkles, Calendar, ShieldCheck, Heart } from "lucide-react";
 import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
-import DotGrid from "../ui/DotGrid";
+import DotGrid from "@/components/ui/DotGrid";
 
 export function HeroSection() {
   return (
@@ -15,8 +15,8 @@ export function HeroSection() {
       <DotGrid
         dotSize={5}
         gap={22}
-        baseColor="#D4C2CB"
-        activeColor="#E0007C"
+        baseColor="#FF0000"
+        activeColor="#00FF00"
         proximity={140}
         shockRadius={220}
         shockStrength={5}
