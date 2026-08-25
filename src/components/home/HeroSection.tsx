@@ -6,13 +6,24 @@ import { motion } from "framer-motion";
 import { Sparkles, Calendar, ShieldCheck, Heart } from "lucide-react";
 import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
+import DotGrid from "../ui/DotGrid";
 
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-20 md:pb-28 lg:pt-24 lg:pb-32 bg-hero-mesh border-b border-[#EAE3E6]">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/4 right-0 w-80 sm:w-[550px] h-80 sm:h-[550px] bg-[#E0007C]/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-0 w-72 sm:w-[450px] h-72 sm:h-[450px] bg-[#C5A880]/12 rounded-full blur-3xl pointer-events-none" />
+      {/* Interactive DotGrid Background */}
+      <DotGrid
+        dotSize={5}
+        gap={20}
+        baseColor="#F5EDF2"
+        activeColor="#E0007C"
+        proximity={120}
+        shockRadius={200}
+        shockStrength={4}
+        resistance={750}
+        returnDuration={1.2}
+        className="absolute inset-0 z-0 pointer-events-none hidden md:block"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
