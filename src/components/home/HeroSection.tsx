@@ -22,7 +22,7 @@ export function HeroSection() {
         shockStrength={4}
         resistance={750}
         returnDuration={1.2}
-        className="absolute inset-0 z-0 pointer-events-none opacity-50 hidden md:block"
+        className="absolute inset-0 z-0 pointer-events-none opacity-50"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

@@ -41,12 +41,12 @@ export interface DotGridProps {
   style?: React.CSSProperties;
 }
 
-function throttle(
-  func: (e: MouseEvent) => void,
+function throttle<E extends MouseEvent | TouchEvent>(
+  func: (e: E) => void,
   limit: number
-): (e: MouseEvent) => void {
+): (e: E) => void {
   let lastCall = 0;
-  return function (this: unknown, e: MouseEvent) {
+  return function (this: unknown, e: E) {
     const now = performance.now();
     if (now - lastCall >= limit) {
       lastCall = now;
@@ -57,7 +57,7 @@ function throttle(
 
 function hexToRgb(hex: string) {
   const m = hex.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i);
-  if (!m) return { r: 255, g: 0, b: 0 };
+  if (!m) return { r: 240, g: 228, b: 233 };
   return {
     r: parseInt(m[1], 16),
     g: parseInt(m[2], 16),
@@ -66,14 +66,14 @@ function hexToRgb(hex: string) {
 }
 
 export const DotGrid: React.FC<DotGridProps> = ({
-  dotSize = 5,
-  gap = 22,
-  baseColor = "#FF0000",
-  activeColor = "#00FF00",
-  proximity = 140,
-  speedTrigger = 80,
-  shockRadius = 220,
-  shockStrength = 5,
+  dotSize = 4,
+  gap = 26,
+  baseColor = "#F0E4E9",
+  activeColor = "#E0007C",
+  proximity = 120,
+  speedTrigger = 60,
+  shockRadius = 200,
+  shockStrength = 4,
   maxSpeed = 5000,
   resistance = 750,
   returnDuration = 1.2,
@@ -117,23 +117,26 @@ export const DotGrid: React.FC<DotGridProps> = ({
     if (!wrap || !canvas) return;
 
     const rect = wrap.getBoundingClientRect();
-    const width = rect.width || wrap.clientWidth || canvas.clientWidth || 800;
-    const height = rect.height || wrap.clientHeight || canvas.clientHeight || 600;
+    const width = rect.width || wrap.clientWidth || window.innerWidth || 800;
+    const height = rect.height || wrap.clientHeight || window.innerHeight || 600;
     if (width <= 0 || height <= 0) return;
 
-    const dpr = typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1;
+    const dpr = typeof window !== "undefined" ? Math.min(window.devicePixelRatio || 1, 2) : 1;
 
     canvas.width = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
 
-    const cols = Math.floor((width + gap) / (dotSize + gap));
-    const rows = Math.floor((height + gap) / (dotSize + gap));
-    const cell = dotSize + gap;
+    // Dynamic mobile gap adjustment to keep 60fps on small screens
+    const effectiveGap = width < 768 ? Math.max(gap, 24) : gap;
 
-    const gridW = cell * cols - gap;
-    const gridH = cell * rows - gap;
+    const cols = Math.floor((width + effectiveGap) / (dotSize + effectiveGap));
+    const rows = Math.floor((height + effectiveGap) / (dotSize + effectiveGap));
+    const cell = dotSize + effectiveGap;
+
+    const gridW = cell * cols - effectiveGap;
+    const gridH = cell * rows - effectiveGap;
 
     const extraX = width - gridW;
     const extraY = height - gridH;
@@ -163,7 +166,7 @@ export const DotGrid: React.FC<DotGridProps> = ({
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
-      const dpr = typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1;
+      const dpr = typeof window !== "undefined" ? Math.min(window.devicePixelRatio || 1, 2) : 1;
       const width = canvas.width;
       const height = canvas.height;
 
@@ -227,14 +230,13 @@ export const DotGrid: React.FC<DotGridProps> = ({
     };
   }, [buildGrid]);
 
-  // Mouse & Click Interaction with Fallback Physics
+  // Mouse & Touch Interaction Handlers
   useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      const now = performance.now();
+    const handlePointerAction = (clientX: number, clientY: number, now: number) => {
       const pr = pointerRef.current;
       const dt = pr.lastTime ? now - pr.lastTime : 16;
-      const dx = pr.lastX !== -9999 ? e.clientX - pr.lastX : 0;
-      const dy = pr.lastY !== -9999 ? e.clientY - pr.lastY : 0;
+      const dx = pr.lastX !== -9999 ? clientX - pr.lastX : 0;
+      const dy = pr.lastY !== -9999 ? clientY - pr.lastY : 0;
       let vx = (dx / (dt || 16)) * 1000;
       let vy = (dy / (dt || 16)) * 1000;
       let speed = Math.hypot(vx, vy);
@@ -245,26 +247,27 @@ export const DotGrid: React.FC<DotGridProps> = ({
         speed = maxSpeed;
       }
       pr.lastTime = now;
-      pr.lastX = e.clientX;
-      pr.lastY = e.clientY;
+      pr.lastX = clientX;
+      pr.lastY = clientY;
       pr.vx = vx;
       pr.vy = vy;
       pr.speed = speed;
 
       if (!canvasRef.current) return;
       const rect = canvasRef.current.getBoundingClientRect();
-      pr.x = e.clientX - rect.left;
-      pr.y = e.clientY - rect.top;
+      pr.x = clientX - rect.left;
+      pr.y = clientY - rect.top;
 
       const dots = dotsRef.current;
+      const prox = proximity;
       for (let i = 0; i < dots.length; i++) {
         const dot = dots[i];
         const dist = Math.hypot(dot.cx - pr.x, dot.cy - pr.y);
-        if (speed > speedTrigger && dist < proximity && !dot._inertiaApplied) {
+        if ((speed > speedTrigger || dist < prox * 0.7) && dist < prox && !dot._inertiaApplied) {
           dot._inertiaApplied = true;
           gsap.killTweensOf(dot);
-          const pushX = (dot.cx - pr.x) * 0.5 + vx * 0.005;
-          const pushY = (dot.cy - pr.y) * 0.5 + vy * 0.005;
+          const pushX = (dot.cx - pr.x) * 0.4 + vx * 0.004;
+          const pushY = (dot.cy - pr.y) * 0.4 + vy * 0.004;
 
           if (hasInertiaRef.current) {
             try {
@@ -282,9 +285,9 @@ export const DotGrid: React.FC<DotGridProps> = ({
               });
             } catch {
               gsap.to(dot, {
-                xOffset: pushX * 0.5,
-                yOffset: pushY * 0.5,
-                duration: 0.3,
+                xOffset: pushX * 0.6,
+                yOffset: pushY * 0.6,
+                duration: 0.25,
                 ease: "power2.out",
                 onComplete: () => {
                   gsap.to(dot, {
@@ -299,9 +302,9 @@ export const DotGrid: React.FC<DotGridProps> = ({
             }
           } else {
             gsap.to(dot, {
-              xOffset: pushX * 0.5,
-              yOffset: pushY * 0.5,
-              duration: 0.3,
+              xOffset: pushX * 0.6,
+              yOffset: pushY * 0.6,
+              duration: 0.25,
               ease: "power2.out",
               onComplete: () => {
                 gsap.to(dot, {
@@ -316,6 +319,29 @@ export const DotGrid: React.FC<DotGridProps> = ({
           }
         }
       }
+    };
+
+    const onMouseMove = (e: MouseEvent) => {
+      handlePointerAction(e.clientX, e.clientY, performance.now());
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        handlePointerAction(e.touches[0].clientX, e.touches[0].clientY, performance.now());
+      }
+    };
+
+    const onTouchStart = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        handlePointerAction(e.touches[0].clientX, e.touches[0].clientY, performance.now());
+      }
+    };
+
+    const onTouchEnd = () => {
+      pointerRef.current.x = -9999;
+      pointerRef.current.y = -9999;
+      pointerRef.current.lastX = -9999;
+      pointerRef.current.lastY = -9999;
     };
 
     const onClick = (e: MouseEvent) => {
@@ -353,12 +379,20 @@ export const DotGrid: React.FC<DotGridProps> = ({
       }
     };
 
-    const throttledMove = throttle(onMove, 25);
-    window.addEventListener("mousemove", throttledMove, { passive: true });
+    const throttledMouseMove = throttle(onMouseMove, 20);
+    const throttledTouchMove = throttle(onTouchMove, 25);
+
+    window.addEventListener("mousemove", throttledMouseMove, { passive: true });
+    window.addEventListener("touchmove", throttledTouchMove, { passive: true });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchend", onTouchEnd, { passive: true });
     window.addEventListener("click", onClick);
 
     return () => {
-      window.removeEventListener("mousemove", throttledMove);
+      window.removeEventListener("mousemove", throttledMouseMove);
+      window.removeEventListener("touchmove", throttledTouchMove);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchend", onTouchEnd);
       window.removeEventListener("click", onClick);
     };
   }, [maxSpeed, speedTrigger, proximity, resistance, returnDuration, shockRadius, shockStrength]);

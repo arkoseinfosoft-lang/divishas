@@ -82,7 +82,7 @@ export function Footer() {
         shockStrength={4}
         resistance={750}
         returnDuration={1.2}
-        className="absolute inset-0 z-0 pointer-events-none opacity-50 hidden md:block"
+        className="absolute inset-0 z-0 pointer-events-none opacity-50"
       />
 
       {/* Subtle ambient lighting */}
