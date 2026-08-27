@@ -3,48 +3,72 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Users, Award, ShieldCheck, Star } from "lucide-react";
+import { CountUpNumber } from "../ui/CountUpNumber";
 
 const stats = [
   {
     icon: Users,
-    value: "5,000+",
+    numericValue: 5000,
+    decimals: 0,
+    prefix: "",
+    suffix: "+",
     label: "Happy Clients Welcomed",
     detail: "Dedicated men & women",
   },
   {
     icon: Award,
-    value: "12+",
+    numericValue: 12,
+    decimals: 0,
+    prefix: "",
+    suffix: "+",
     label: "Master Stylists & Artists",
     detail: "Certified professionals",
   },
   {
     icon: Star,
-    value: "4.9 ★",
+    numericValue: 4.9,
+    decimals: 1,
+    prefix: "",
+    suffix: " ★",
     label: "Top Salon Rating",
     detail: "Over 1,200+ reviews",
   },
   {
     icon: ShieldCheck,
-    value: "100%",
+    numericValue: 100,
+    decimals: 0,
+    prefix: "",
+    suffix: "%",
     label: "UV Autoclave Sanitized",
     detail: "Single-use hygiene kits",
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
+
 export function ExperienceStats() {
   return (
-    <section className="py-16 sm:py-24 md:py-32 bg-dark-suite text-white relative overflow-hidden border-y border-white/10">
+    <section className="py-20 sm:py-28 md:py-36 bg-[#121011] text-white relative overflow-hidden border-y border-white/10">
       {/* Ambient background glow blobs */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#E0007C]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#C5A880]/12 rounded-full blur-3xl pointer-events-none" />
-
-      {/* Subtle organic editorial noise texture */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none opacity-20 mix-blend-overlay"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
-      />
+      <div className="absolute top-0 right-1/4 w-96 sm:w-[500px] h-96 sm:h-[500px] bg-[#E0007C]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 sm:w-[500px] h-96 sm:h-[500px] bg-[#C5A880]/12 rounded-full blur-3xl pointer-events-none" />
 
       {/* Fine luxury micro-grid texture */}
       <div
@@ -64,7 +88,7 @@ export function ExperienceStats() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto space-y-4 sm:space-y-6 mb-16 sm:mb-20"
         >
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FF80AB]/15 border border-[#FF80AB]/30 text-[#FF80AB] text-[10px] sm:text-xs font-semibold uppercase tracking-[0.16em]">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FF80AB]/15 border border-[#FF80AB]/30 text-[#FF80AB] text-[10px] sm:text-xs font-semibold uppercase tracking-[0.16em] shadow-xs">
             <Sparkles className="w-3.5 h-3.5" />
             <span>The Divisha&apos;s Difference</span>
           </div>
@@ -80,26 +104,35 @@ export function ExperienceStats() {
           </div>
         </motion.div>
 
-        {/* 4-Stat Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-          {stats.map((stat, idx) => {
+        {/* 4-Stat Grid with Animated Count-Up Numbers */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.08 }}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
+        >
+          {stats.map((stat) => {
             const Icon = stat.icon;
             return (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="p-6 sm:p-8 rounded-3xl bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-[#FF80AB]/40 hover:bg-white/[0.07] transition-all duration-300 group text-center flex flex-col items-center justify-between shadow-xl"
+                variants={itemVariants}
+                className="p-6 sm:p-8 rounded-3xl glass-panel-dark glass-panel-dark-hover border border-white/10 hover:border-[#FF80AB]/40 transition-all duration-300 group text-center flex flex-col items-center justify-between shadow-2xl"
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#E0007C]/20 text-[#FF80AB] flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#E0007C]/20 text-[#FF80AB] flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform shadow-2xs">
                   <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
 
                 <div>
                   <div className="serif-numeral text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-[#FAF0F4] to-[#C5A880] tracking-tight mb-1">
-                    {stat.value}
+                    <CountUpNumber
+                      end={stat.numericValue}
+                      decimals={stat.decimals}
+                      prefix={stat.prefix}
+                      suffix={stat.suffix}
+                      duration={2.2}
+                    />
                   </div>
                   <h4 className="text-xs sm:text-sm font-semibold text-white tracking-wide">
                     {stat.label}
@@ -111,8 +144,9 @@ export function ExperienceStats() {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
+
