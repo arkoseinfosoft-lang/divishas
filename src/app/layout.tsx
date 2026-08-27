@@ -84,9 +84,14 @@ export const metadata: Metadata = {
     images: ["/images/hero-salon.jpg"],
   },
   icons: {
-    icon: "/images/logo.png",
-    shortcut: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/images/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/images/favicon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   alternates: {
     canonical: siteConfig.url,

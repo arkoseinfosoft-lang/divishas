@@ -159,11 +159,11 @@ export function HeroSection() {
                   <div className="flex items-center gap-3 min-w-0">
                     <div className="w-10 h-10 rounded-xl bg-[#FCE4EC] p-1 flex items-center justify-center shrink-0 shadow-xs">
                       <Image
-                        src="/images/logo.png"
-                        alt="Divisha's Logo"
+                        src="/images/favicon.png"
+                        alt="Divisha's Emblem"
                         width={38}
                         height={38}
-                        className="object-contain"
+                        className="object-contain rounded-full"
                       />
                     </div>
                     <div className="min-w-0">
