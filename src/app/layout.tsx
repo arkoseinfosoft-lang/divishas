@@ -4,8 +4,9 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { MobileStickyBar } from "@/components/layout/MobileStickyBar";
 import { LocalBusinessJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
+import { MobileStickyBar } from "@/components/layout/MobileStickyBar";
+import { FloatingDesktopCTA } from "@/components/layout/FloatingDesktopCTA";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -115,6 +116,7 @@ export default function RootLayout({
         <main className="flex-1 w-full max-w-full overflow-x-clip pb-20 md:pb-0">{children}</main>
         <Footer />
         <MobileStickyBar />
+        <FloatingDesktopCTA />
       </body>
     </html>
   );
