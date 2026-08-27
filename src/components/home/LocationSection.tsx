@@ -9,7 +9,11 @@ import { Button } from "../ui/Button";
 
 export function LocationSection() {
   return (
-    <section className="py-16 sm:py-24 md:py-32 bg-[#F3E8DC] border-b border-[#EAE3E6] relative overflow-hidden">
+    <section className="py-20 sm:py-28 md:py-36 bg-gradient-to-b from-[#F6EFEA] via-[#F3E8DC] to-[#EFE2D4] border-b border-[#EAE3E6] relative overflow-hidden">
+      {/* Ambient background glow */}
+      <div className="absolute top-0 right-10 w-96 sm:w-[500px] h-96 sm:h-[500px] bg-[#E0007C]/6 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-96 sm:w-[500px] h-96 sm:h-[500px] bg-[#C5A880]/12 rounded-full blur-3xl pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="Visit Our Salon"
@@ -18,21 +22,23 @@ export function LocationSection() {
         />
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-10 sm:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch"
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-12 sm:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch"
         >
           {/* Contact & Timing Details Card */}
-          <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#EAE3E6] shadow-sm flex flex-col justify-between space-y-6 sm:space-y-8">
+          <div className="lg:col-span-5 glass-panel rounded-3xl p-6 sm:p-8 lg:p-10 border border-white/90 shadow-[0_12px_40px_rgba(0,0,0,0.04)] flex flex-col justify-between space-y-6 sm:space-y-8">
             <div className="space-y-5 sm:space-y-6">
               <div>
                 <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-[#C2185B]">
                   Physical Address
                 </span>
                 <div className="mt-2.5 sm:mt-3 flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-[#C2185B] shrink-0 mt-0.5" />
+                  <div className="w-9 h-9 rounded-xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                    <MapPin className="w-4 h-4" />
+                  </div>
                   <div>
                     <h3 className="font-serif text-lg sm:text-xl font-semibold text-[#181517]">
                       {siteConfig.name}
@@ -59,7 +65,9 @@ export function LocationSection() {
                   Operating Hours
                 </span>
                 <div className="mt-2.5 sm:mt-3 flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-[#C2185B] shrink-0 mt-0.5" />
+                  <div className="w-9 h-9 rounded-xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                    <Clock className="w-4 h-4" />
+                  </div>
                   <div className="text-xs sm:text-sm text-[#554e53] space-y-1 font-normal">
                     <p className="font-semibold text-[#181517]">{siteConfig.timings.closedOn}</p>
                     <p>{siteConfig.timings.weekdays}</p>
@@ -74,7 +82,9 @@ export function LocationSection() {
                   Instant Touchpoints
                 </span>
                 <div className="flex items-center gap-3 text-xs sm:text-sm">
-                  <Phone className="w-4 h-4 text-[#C2185B] shrink-0" />
+                  <div className="w-8 h-8 rounded-lg bg-[#FAF5F7] text-[#C2185B] flex items-center justify-center shrink-0">
+                    <Phone className="w-3.5 h-3.5" />
+                  </div>
                   <a
                     href={`tel:${siteConfig.contact.phone}`}
                     className="font-semibold text-[#181517] hover:text-[#C2185B] transition-colors"
@@ -83,7 +93,9 @@ export function LocationSection() {
                   </a>
                 </div>
                 <div className="flex items-center gap-3 text-xs sm:text-sm min-w-0">
-                  <Mail className="w-4 h-4 text-[#C2185B] shrink-0" />
+                  <div className="w-8 h-8 rounded-lg bg-[#FAF5F7] text-[#C2185B] flex items-center justify-center shrink-0">
+                    <Mail className="w-3.5 h-3.5" />
+                  </div>
                   <a
                     href={`mailto:${siteConfig.contact.email}`}
                     className="text-[#554e53] hover:text-[#181517] transition-colors font-normal truncate"
@@ -100,29 +112,29 @@ export function LocationSection() {
                 href={siteConfig.location.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#181517] hover:bg-[#332C30] text-white text-sm font-medium transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm min-h-[44px]"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#181517] hover:bg-[#332C30] text-white text-sm font-medium transition-all hover:scale-[1.02] active:scale-[0.98] shadow-md min-h-[48px]"
               >
                 <Navigation className="w-4 h-4" />
                 <span>Get Directions</span>
               </a>
-              <Button href="/contact#appointment" variant="primary" size="md" className="min-h-[44px]">
+              <Button href="/contact#appointment" variant="primary" size="md" className="min-h-[48px] shadow-lg shadow-[#E0007C]/20">
                 Book Visit
               </Button>
             </div>
           </div>
 
           {/* Interactive Map Embed */}
-          <div className="lg:col-span-7 bg-white rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-sm relative min-h-[320px] sm:min-h-[380px] lg:min-h-[440px] flex flex-col">
+          <div className="lg:col-span-7 bg-white rounded-3xl overflow-hidden border border-white/90 shadow-[0_12px_40px_rgba(0,0,0,0.04)] relative min-h-[340px] sm:min-h-[400px] lg:min-h-[460px] flex flex-col">
             <iframe
               src={siteConfig.location.googleMapsEmbedUrl}
               width="100%"
               height="100%"
-              style={{ border: 0, minHeight: "320px" }}
+              style={{ border: 0, minHeight: "340px" }}
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title={`${siteConfig.name} Location Map`}
-              className="w-full flex-1 min-h-[320px]"
+              className="w-full flex-1 min-h-[340px]"
             />
           </div>
         </motion.div>
@@ -130,3 +142,4 @@ export function LocationSection() {
     </section>
   );
 }
+

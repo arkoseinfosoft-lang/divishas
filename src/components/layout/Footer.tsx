@@ -70,39 +70,39 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#141213] text-[#CCC6CA] pt-16 pb-24 md:pb-12 border-t border-[#262124] relative overflow-hidden">
+    <footer className="bg-[#100E0F] text-[#CCC6CA] pt-16 sm:pt-20 pb-24 md:pb-12 border-t border-[#262124] relative overflow-hidden">
       {/* Interactive DotGrid Background */}
       <DotGrid
         dotSize={4}
         gap={24}
         baseColor="#2f293a"
-        activeColor="#5227FF"
+        activeColor="#E0007C"
         proximity={120}
         shockRadius={200}
         shockStrength={4}
         resistance={750}
         returnDuration={1.2}
-        className="absolute inset-0 z-0 pointer-events-none opacity-50"
+        className="absolute inset-0 z-0 pointer-events-none opacity-40"
       />
 
       {/* Subtle ambient lighting */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#E0007C]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#C5A880]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 sm:w-[500px] h-96 sm:h-[500px] bg-[#E0007C]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 sm:w-[500px] h-96 sm:h-[500px] bg-[#C5A880]/8 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-[#282326]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-white/10">
           {/* Brand Col */}
           <div className="lg:col-span-4 space-y-5">
             <Logo variant="footer" />
-            <p className="text-sm text-[#A8A1A6] leading-relaxed max-w-sm font-sans">
+            <p className="text-sm text-[#A8A1A6] leading-relaxed max-w-sm font-sans font-normal">
               Divisha&apos;s Unisex Salon is a premier beauty and grooming destination
               where trendsetting styling meets inclusive, personalized care for both men
               and women.
             </p>
 
-            <div className="flex items-center gap-2 text-xs text-[#FF80AB] bg-[#221C20] py-2 px-3 rounded-xl border border-[#362C32] w-fit">
+            <div className="flex items-center gap-2 text-xs text-[#FF80AB] bg-white/[0.05] backdrop-blur-md py-2 px-3.5 rounded-xl border border-white/10 w-fit shadow-xs">
               <ShieldCheck className="w-4 h-4 text-[#FF80AB]" />
-              <span>Certified Unisex Hair & Makeup Specialists</span>
+              <span className="font-medium">Certified Unisex Hair &amp; Makeup Specialists</span>
             </div>
 
             {/* Social Links */}
@@ -113,7 +113,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="w-9 h-9 rounded-full bg-[#231F21] hover:bg-[#E0007C] text-white flex items-center justify-center transition-colors"
+                  className="w-10 h-10 rounded-full bg-white/[0.06] hover:bg-[#E0007C] text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 border border-white/10 shadow-xs"
                 >
                   <InstagramIcon className="w-4 h-4" />
                 </a>
@@ -124,7 +124,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="w-9 h-9 rounded-full bg-[#231F21] hover:bg-[#E0007C] text-white flex items-center justify-center transition-colors"
+                  className="w-10 h-10 rounded-full bg-white/[0.06] hover:bg-[#E0007C] text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 border border-white/10 shadow-xs"
                 >
                   <FacebookIcon className="w-4 h-4" />
                 </a>
@@ -135,7 +135,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="YouTube"
-                  className="w-9 h-9 rounded-full bg-[#231F21] hover:bg-[#E0007C] text-white flex items-center justify-center transition-colors"
+                  className="w-10 h-10 rounded-full bg-white/[0.06] hover:bg-[#E0007C] text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 border border-white/10 shadow-xs"
                 >
                   <YoutubeIcon className="w-4 h-4" />
                 </a>
@@ -215,9 +215,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/hair"
-                  className="hover:text-[#FF80AB] transition-colors block py-1"
+                  className="hover:text-[#FF80AB] transition-colors block py-1 group"
                 >
-                  <span className="text-white font-medium">Hair Care &amp; Styling</span>
+                  <span className="text-white font-medium group-hover:text-[#FF80AB] transition-colors">
+                    Hair Care &amp; Styling
+                  </span>
                   <span className="block text-xs text-[#8A8388] mt-0.5">
                     Cuts, Styling, Treatments, Men&apos;s Grooming
                   </span>
@@ -226,9 +228,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/makeup"
-                  className="hover:text-[#FF80AB] transition-colors block py-1"
+                  className="hover:text-[#FF80AB] transition-colors block py-1 group"
                 >
-                  <span className="text-white font-medium">Makeup Services</span>
+                  <span className="text-white font-medium group-hover:text-[#FF80AB] transition-colors">
+                    Makeup Services
+                  </span>
                   <span className="block text-xs text-[#8A8388] mt-0.5">
                     Party, HD Occasion &amp; Wedding Artistry
                   </span>
@@ -237,9 +241,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/nails"
-                  className="hover:text-[#FF80AB] transition-colors block py-1"
+                  className="hover:text-[#FF80AB] transition-colors block py-1 group"
                 >
-                  <span className="text-white font-medium">Nail Care &amp; Artistry</span>
+                  <span className="text-white font-medium group-hover:text-[#FF80AB] transition-colors">
+                    Nail Care &amp; Artistry
+                  </span>
                   <span className="block text-xs text-[#8A8388] mt-0.5">
                     Gel Nails, Extensions, Manicure &amp; Pedicure
                   </span>
@@ -248,9 +254,11 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/beauty-grooming"
-                  className="hover:text-[#FF80AB] transition-colors block py-1"
+                  className="hover:text-[#FF80AB] transition-colors block py-1 group"
                 >
-                  <span className="text-white font-medium">Beauty &amp; Grooming</span>
+                  <span className="text-white font-medium group-hover:text-[#FF80AB] transition-colors">
+                    Beauty &amp; Grooming
+                  </span>
                   <span className="block text-xs text-[#8A8388] mt-0.5">
                     Facials, Skin Detox, Waxing &amp; Men&apos;s Shave
                   </span>
@@ -262,7 +270,7 @@ export function Footer() {
           {/* Contact & Hours Col */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-sm font-bold text-white tracking-wider uppercase font-sans">
-              Visit & Contact
+              Visit &amp; Contact
             </h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3">
@@ -289,7 +297,7 @@ export function Footer() {
                   {siteConfig.contact.email}
                 </a>
               </li>
-              <li className="flex items-start gap-3 pt-2 border-t border-[#262124]">
+              <li className="flex items-start gap-3 pt-2 border-t border-white/10">
                 <Clock className="w-4 h-4 text-[#FF80AB] shrink-0 mt-0.5" />
                 <div className="text-xs text-[#A8A1A6] space-y-0.5">
                   <p>{siteConfig.timings.weekdays}</p>
@@ -303,7 +311,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8A8388]">
           <p>
-            © {currentYear} {siteConfig.name}. All rights reserved. Designed & Developed by Arkose Infosoft.
+            © {currentYear} {siteConfig.name}. All rights reserved. Designed &amp; Developed by Arkose Infosoft.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/about" className="hover:text-white transition-colors">
@@ -321,3 +329,4 @@ export function Footer() {
     </footer>
   );
 }
+
