@@ -37,8 +37,8 @@ export function LocalBusinessJsonLd({
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "28.6328",
-      longitude: "77.1054",
+      latitude: "26.4950",
+      longitude: "80.2590",
     },
     openingHoursSpecification: siteConfig.timings.openHoursSpecification.map(
       (spec) => ({
