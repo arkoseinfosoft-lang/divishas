@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/services",
     "/services/hair",
+    "/services/mens-grooming",
     "/services/makeup",
     "/services/nails",
     "/services/beauty-grooming",

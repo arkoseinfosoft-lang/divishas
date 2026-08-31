@@ -293,11 +293,12 @@ Please let me know if this slot is available. Thank you!`;
                 className="w-full pl-10 pr-8 py-3 min-h-[48px] rounded-xl bg-[#FAF8F7] border border-[#E8E0E4] text-base sm:text-sm text-[#181517] focus:outline-none focus:border-[#C2185B] focus:bg-white transition-colors appearance-none cursor-pointer"
               >
                 <option value="Hair Care & Styling">Hair Care &amp; Styling (Cuts, Wash, Blowout)</option>
+                <option value="Men's Grooming & Barbering">Men&apos;s Grooming (Fades, Beard, Detan &amp; Shave)</option>
                 <option value="Hair Treatments">Hair Spa &amp; Restorative Treatments</option>
                 <option value="Makeup Services">Makeup (Party, Event, Professional)</option>
                 <option value="Bridal & Occasion">Bridal &amp; Wedding Makeover Packages</option>
                 <option value="Nail Services">Nails (Gel Extensions, Art, Mani-Pedi)</option>
-                <option value="Beauty & Grooming">Beauty, Facials &amp; Men&apos;s Grooming</option>
+                <option value="Skin & Beauty Care">Skin Care, Facials &amp; Waxing</option>
                 <option value="Complete Salon Day">Complete Salon Experience</option>
               </select>
             </div>

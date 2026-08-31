@@ -221,7 +221,20 @@ export function Footer() {
                     Hair Care &amp; Styling
                   </span>
                   <span className="block text-xs text-[#8A8388] mt-0.5">
-                    Cuts, Styling, Treatments, Men&apos;s Grooming
+                    Cuts, Styling, Spas &amp; Occasion Updos
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/mens-grooming"
+                  className="hover:text-[#FF80AB] transition-colors block py-1 group"
+                >
+                  <span className="text-white font-medium group-hover:text-[#FF80AB] transition-colors">
+                    Men&apos;s Grooming &amp; Lounge
+                  </span>
+                  <span className="block text-xs text-[#8A8388] mt-0.5">
+                    Fades, Beard Sculpting, Detan &amp; Shaves
                   </span>
                 </Link>
               </li>
@@ -257,10 +270,10 @@ export function Footer() {
                   className="hover:text-[#FF80AB] transition-colors block py-1 group"
                 >
                   <span className="text-white font-medium group-hover:text-[#FF80AB] transition-colors">
-                    Beauty &amp; Grooming
+                    Skin &amp; Beauty Care
                   </span>
                   <span className="block text-xs text-[#8A8388] mt-0.5">
-                    Facials, Skin Detox, Waxing &amp; Men&apos;s Shave
+                    Facials, Threading, Waxing &amp; Wellness
                   </span>
                 </Link>
               </li>

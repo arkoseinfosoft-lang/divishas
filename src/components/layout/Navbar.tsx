@@ -23,7 +23,13 @@ const serviceLinks = [
   {
     name: "Hair Services",
     href: "/services/hair",
-    desc: "Haircuts, Styling, Treatments & Hair Grooming",
+    desc: "Haircuts, Styling, Restorative Treatments & Occasion Artistry",
+    icon: Scissors,
+  },
+  {
+    name: "Men's Grooming",
+    href: "/services/mens-grooming",
+    desc: "Haircuts, Beard Architecture, Detan & Men's Lounge",
     icon: Scissors,
   },
   {
@@ -39,9 +45,9 @@ const serviceLinks = [
     icon: Paintbrush,
   },
   {
-    name: "Beauty & Grooming",
+    name: "Skin & Beauty Care",
     href: "/services/beauty-grooming",
-    desc: "Men's & Women's Skin Care, Facials & Grooming",
+    desc: "Rejuvenating Facials, Threading, Waxing & Skin Wellness",
     icon: Sparkle,
   },
 ];

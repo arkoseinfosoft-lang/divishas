@@ -279,10 +279,10 @@ export function FeaturedServices() {
                 </p>
               </div>
               <Link
-                href="/services/beauty-grooming"
+                href="/services/mens-grooming"
                 className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#FF80AB] hover:text-white group-hover:translate-x-1.5 transition-all"
               >
-                <span>Explore Men&apos;s Services</span>
+                <span>Explore Men&apos;s Lounge</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
