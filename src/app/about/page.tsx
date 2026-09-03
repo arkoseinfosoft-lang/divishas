@@ -1,48 +1,81 @@
 import React from "react";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { Sparkles, ShieldCheck, Users } from "lucide-react";
+import { Sparkles, ShieldCheck, Users, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { QuickBookingCTA } from "@/components/home/QuickBookingCTA";
+import { BreadcrumbsJsonLd, FaqPageJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "About Us | Divisha's Unisex Salon",
+  title: "About Divisha's Unisex Salon, Kanpur | Our Story & Standards",
   description:
-    "Learn about Divisha's Unisex Salon — our founding vision, certified hair & makeup artistry, uncompromising hygiene standards, and commitment to both men and women.",
+    "Divisha's Unisex Salon in Kalyanpur, Kanpur — certified hair & makeup artists, hospital-grade sterilization, dedicated sections for men & women. Learn about our philosophy and hygiene standards.",
   alternates: {
     canonical: `${siteConfig.url}/about`,
   },
+  openGraph: {
+    title: "About Divisha's Unisex Salon, Kanpur | Our Story & Standards",
+    description:
+      "Meet the team and philosophy behind Divisha's — Kanpur's premium unisex salon with certified artists and uncompromising hygiene.",
+    url: `${siteConfig.url}/about`,
+  },
 };
 
-export default function AboutPage() {
-  const standards = [
-    {
-      num: "01",
-      title: "Hospital-Grade Tool Sterilization",
-      desc: "All metal instruments undergo multi-stage ultrasonic cleansing followed by autoclave UV sterilization before every appointment.",
-    },
-    {
-      num: "02",
-      title: "100% Single-Use Disposables",
-      desc: "We use sealed disposable salon capes, bedsheets, nail files, and waxing spatulas with zero double-dipping.",
-    },
-    {
-      num: "03",
-      title: "Dermatologically Safe Formulations",
-      desc: "We exclusively partner with globally recognized, skin-kind and hair-safe cosmetic and treatment brands.",
-    },
-    {
-      num: "04",
-      title: "Private Bridal & Grooming Suites",
-      desc: "Quiet, dedicated spaces for intimate bridal preparation, pre-wedding rituals, and executive men's grooming.",
-    },
-  ];
+const aboutFaqs = [
+  {
+    question: "What makes Divisha's different from other salons in Kanpur?",
+    answer:
+      "Divisha's is Kanpur's only true unisex salon with dedicated separate sections for men and women, hospital-grade UV autoclave sterilization of all tools, and certified professionals trained in both bridal makeup artistry and precision men's barbering — all under one roof in Kalyanpur.",
+  },
+  {
+    question: "What hygiene standards does Divisha's Unisex Salon follow?",
+    answer:
+      "All metal tools undergo multi-stage ultrasonic cleansing followed by UV autoclave sterilization before every appointment. Divisha's uses 100% single-use disposable salon capes, bedsheets, nail files, and waxing spatulas — zero double-dipping, zero cross-contamination.",
+  },
+  {
+    question: "Does Divisha's serve both men and women?",
+    answer:
+      "Yes. Divisha's is a true unisex salon with zoned styling sections and dedicated expertise for both men and women. Services for men include precision fade haircuts, beard sculpting, and scalp detox. Services for women include bridal makeup, nail art, hair spa, and skin facials.",
+  },
+  {
+    question: "Are the stylists at Divisha's certified professionals?",
+    answer:
+      "Yes. Divisha's team includes certified hair and makeup artists trained in professional techniques for both men and women, specializing in bridal makeup artistry, precision barbering, HD and airbrush makeup, and advanced skin and nail care.",
+  },
+];
 
+const standards = [
+  {
+    num: "01",
+    title: "Hospital-Grade Tool Sterilization",
+    desc: "All metal instruments undergo multi-stage ultrasonic cleansing followed by autoclave UV sterilization before every appointment.",
+  },
+  {
+    num: "02",
+    title: "100% Single-Use Disposables",
+    desc: "We use sealed disposable salon capes, bedsheets, nail files, and waxing spatulas with zero double-dipping.",
+  },
+  {
+    num: "03",
+    title: "Dermatologically Safe Formulations",
+    desc: "We exclusively partner with globally recognized, skin-kind and hair-safe cosmetic and treatment brands.",
+  },
+  {
+    num: "04",
+    title: "Private Bridal & Grooming Suites",
+    desc: "Quiet, dedicated spaces for intimate bridal preparation, pre-wedding rituals, and executive men's grooming.",
+  },
+];
+
+export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
+      <BreadcrumbsJsonLd items={[{ name: "About Us", url: "/about" }]} />
+      <FaqPageJsonLd faqs={aboutFaqs} />
+
       {/* Top Hero Banner */}
       <section className="pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-16 md:pb-28 bg-hero-mesh border-b border-[#EAE3E6] relative overflow-hidden">
         {/* Background ambient lighting */}
@@ -67,7 +100,7 @@ export default function AboutPage() {
               </p>
 
               <p className="text-sm sm:text-base md:text-lg text-[#554e53] leading-relaxed font-normal font-sans">
-                Founded on the belief that personal grooming and luxury styling should be an enriching, welcoming experience for all, <strong>Divisha&apos;s Unisex Salon</strong> bridges artistic innovation with attentive, personalized care. We take pride in being a comprehensive unisex destination where both women and men receive master-level attention.
+                Founded on the belief that personal grooming and luxury styling should be an enriching, welcoming experience for all, <strong>Divisha&apos;s Unisex Salon</strong> in Kalyanpur, Kanpur bridges artistic innovation with attentive, personalized care. We take pride in being a comprehensive unisex destination where both women and men receive master-level attention.
               </p>
 
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4">
@@ -84,7 +117,7 @@ export default function AboutPage() {
               <div className="relative h-72 sm:h-96 lg:h-[450px] rounded-3xl overflow-hidden shadow-2xl border border-[#EAE3E6]">
                 <Image
                   src="/images/hero-salon.jpg"
-                  alt="Divisha's Unisex Salon Interior"
+                  alt="Divisha's Unisex Salon interior — dedicated styling areas for men and women in Kalyanpur, Kanpur"
                   fill
                   priority
                   className="object-cover hover:scale-105 transition-transform duration-700"
@@ -93,6 +126,48 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* GEO Block: Citation-ready facts for LLM crawlers */}
+      <section
+        aria-label="About Divisha's Unisex Salon — Key Facts"
+        className="py-12 sm:py-16 bg-[#FAF8F7] border-b border-[#EAE3E6]"
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="space-y-1.5">
+              <h2 className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C2185B]">Business</h2>
+              <p className="text-sm font-semibold text-[#181517]">{siteConfig.name}</p>
+              <p className="text-xs text-[#554e53] leading-relaxed">Premium unisex beauty and grooming salon serving both men and women in Kanpur, Uttar Pradesh, India.</p>
+            </div>
+            <div className="space-y-1.5">
+              <h2 className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C2185B]">Location</h2>
+              <p className="text-sm font-semibold text-[#181517]">{siteConfig.location.fullAddress}</p>
+              <p className="text-xs text-[#554e53]">Landmark: {siteConfig.location.landmark}</p>
+            </div>
+            <div className="space-y-1.5">
+              <h2 className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C2185B]">Hours &amp; Contact</h2>
+              <p className="text-xs text-[#554e53] leading-relaxed">{siteConfig.timings.weekdays}</p>
+              <p className="text-xs text-[#554e53] leading-relaxed">{siteConfig.timings.weekends}</p>
+              <p className="text-xs font-semibold text-[#181517]">{siteConfig.contact.phoneDisplay}</p>
+            </div>
+            <div className="space-y-1.5">
+              <h2 className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C2185B]">Services Offered</h2>
+              <p className="text-xs text-[#554e53] leading-relaxed">Hair cutting & styling, HD and airbrush makeup, gel nail care & nail art, skin facials & beauty grooming, men's precision barbering, and complete bridal & groom packages.</p>
+            </div>
+            <div className="space-y-1.5">
+              <h2 className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C2185B]">Hygiene Standards</h2>
+              <p className="text-xs text-[#554e53] leading-relaxed">UV autoclave sterilization of all metal tools. 100% single-use disposable capes, bedsheets, nail files, and waxing spatulas for every client.</p>
+            </div>
+            <div className="space-y-1.5">
+              <h2 className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C2185B]">Team</h2>
+              <p className="text-xs text-[#554e53] leading-relaxed">Certified hair and makeup artists. Dedicated unisex styling sections. Specialists in bridal artistry, men's barbering, and advanced nail and skin care.</p>
+            </div>
+          </div>
+          <p className="mt-6 text-[10px] text-[#9C9498] text-center">
+            Last updated: September 2026 · {siteConfig.name} · {siteConfig.location.city}, {siteConfig.location.state}
+          </p>
         </div>
       </section>
 
@@ -105,7 +180,7 @@ export default function AboutPage() {
                 <div className="relative h-60 sm:h-76 lg:h-88 rounded-3xl overflow-hidden shadow-xl border border-[#EAE3E6]">
                   <Image
                     src="/images/hair-women.jpg"
-                    alt="Women's Hair Styling at Divisha's"
+                    alt="Women's hair styling and treatment at Divisha's Unisex Salon, Kanpur"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 350px"
@@ -117,7 +192,7 @@ export default function AboutPage() {
                 <div className="relative h-60 sm:h-76 lg:h-88 rounded-3xl overflow-hidden shadow-xl border border-[#EAE3E6]">
                   <Image
                     src="/images/hair-men.jpg"
-                    alt="Men's Hair & Grooming at Divisha's"
+                    alt="Men's precision haircut and grooming at Divisha's Unisex Salon, Kanpur"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 350px"
@@ -144,21 +219,27 @@ export default function AboutPage() {
 
               <div className="space-y-4 pt-1">
                 <div className="p-6 rounded-3xl bg-[#FAF8F7] border border-[#EAE3E6] shadow-2xs">
-                  <h4 className="text-base sm:text-lg font-semibold text-[#181517] mb-1">
+                  <h3 className="text-base sm:text-lg font-semibold text-[#181517] mb-1">
                     For Women: Artistry &amp; Indulgence
-                  </h4>
+                  </h3>
                   <p className="text-xs sm:text-sm text-[#554e53] font-normal leading-relaxed">
                     From high-definition bridal transformations and signature balayage to soothing spa pedicures and organic skin therapies.
                   </p>
+                  <a href="/services" className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#C2185B] hover:underline">
+                    Explore women&apos;s services <ArrowRight className="w-3 h-3" />
+                  </a>
                 </div>
 
                 <div className="p-6 rounded-3xl bg-[#FAF8F7] border border-[#EAE3E6] shadow-2xs">
-                  <h4 className="text-base sm:text-lg font-semibold text-[#181517] mb-1">
+                  <h3 className="text-base sm:text-lg font-semibold text-[#181517] mb-1">
                     For Men: Precision &amp; Sophistication
-                  </h4>
+                  </h3>
                   <p className="text-xs sm:text-sm text-[#554e53] font-normal leading-relaxed">
                     From sharp fade haircuts and sculpted beard architecture to executive scalp detoxes and clarifying facials.
                   </p>
+                  <a href="/services/mens-grooming" className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#C2185B] hover:underline">
+                    Explore men&apos;s grooming <ArrowRight className="w-3 h-3" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -203,6 +284,41 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AEO FAQ Section */}
+      <section className="py-16 sm:py-24 bg-[#F3E8DC] border-b border-[#EAE3E6]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-3 mb-10">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FCE4EC]/80 border border-[#F8BBD0] text-[#C2185B] text-[10px] sm:text-xs font-semibold uppercase tracking-[0.14em]">
+              Questions &amp; Answers
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#181517]">
+              About Divisha&apos;s — Common Questions
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {aboutFaqs.map((faq) => (
+              <div key={faq.question} className="p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border border-[#EAE3E6] shadow-2xs">
+                <h3 className="text-sm sm:text-base font-semibold text-[#181517] mb-2">{faq.question}</h3>
+                <p className="text-xs sm:text-sm text-[#554e53] leading-relaxed font-normal">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 flex flex-wrap gap-3 justify-center">
+            <a href="/services" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2185B] hover:underline">
+              View All Services <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+            <span className="text-[#EAE3E6]">|</span>
+            <a href="/bridal" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2185B] hover:underline">
+              Bridal Packages <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+            <span className="text-[#EAE3E6]">|</span>
+            <a href="/gallery" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2185B] hover:underline">
+              View Gallery <ArrowRight className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
       </section>

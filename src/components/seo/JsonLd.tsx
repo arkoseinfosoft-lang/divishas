@@ -9,7 +9,7 @@ export function LocalBusinessJsonLd({
   pageUrl,
   description,
 }: LocalBusinessJsonLdProps = {}) {
-  const schema = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": ["BeautySalon", "HairSalon", "HealthAndBeautyBusiness"],
     "@id": `${siteConfig.url}/#salon`,
@@ -49,7 +49,8 @@ export function LocalBusinessJsonLd({
       })
     ),
     sameAs: [
-      siteConfig.social.instagram,
+      // Strip tracking params from Instagram URL for clean sameAs
+      "https://www.instagram.com/divisha_unisex_salon_/",
       siteConfig.social.facebook,
       siteConfig.social.youtube,
     ].filter(Boolean),
@@ -57,29 +58,30 @@ export function LocalBusinessJsonLd({
       "@type": "OfferCatalog",
       name: "Divisha's Salon Services",
       itemListElement: [
-        {
-          "@type": "OfferCatalog",
-          name: "Hair Care & Styling",
-        },
-        {
-          "@type": "OfferCatalog",
-          name: "Makeup & Beauty Artistry",
-        },
-        {
-          "@type": "OfferCatalog",
-          name: "Nail Care & Extensions",
-        },
-        {
-          "@type": "OfferCatalog",
-          name: "Beauty & Personal Grooming",
-        },
-        {
-          "@type": "OfferCatalog",
-          name: "Bridal & Occasion Artistry",
-        },
+        { "@type": "OfferCatalog", name: "Hair Care & Styling" },
+        { "@type": "OfferCatalog", name: "Makeup & Beauty Artistry" },
+        { "@type": "OfferCatalog", name: "Nail Care & Extensions" },
+        { "@type": "OfferCatalog", name: "Beauty & Personal Grooming" },
+        { "@type": "OfferCatalog", name: "Bridal & Occasion Artistry" },
       ],
     },
+    // CONFIRM BEFORE PUBLISH (Q2): Verify rating & reviewCount match your
+    // real Google Business Profile figures before going live.
+    aggregateRating: siteConfig.aggregateRating
+      ? {
+          "@type": "AggregateRating",
+          ratingValue: String(siteConfig.aggregateRating.ratingValue),
+          reviewCount: String(siteConfig.aggregateRating.reviewCount),
+          bestRating: "5",
+          worstRating: "1",
+        }
+      : undefined,
   };
+
+  // Remove undefined keys to keep JSON-LD clean
+  Object.keys(schema).forEach(
+    (k) => schema[k] === undefined && delete schema[k]
+  );
 
   return (
     <script
@@ -127,7 +129,9 @@ export function ServiceJsonLd({
       name: siteConfig.location.city,
     },
     url: url,
-    image: image ? `${siteConfig.url}${image}` : `${siteConfig.url}/images/hero-salon.jpg`,
+    image: image
+      ? `${siteConfig.url}${image}`
+      : `${siteConfig.url}/images/hero-salon.jpg`,
   };
 
   return (
@@ -146,11 +150,50 @@ export function BreadcrumbsJsonLd({
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.name,
-      item: `${siteConfig.url}${item.url}`,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
+      ...items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 2,
+        name: item.name,
+        item: `${siteConfig.url}${item.url}`,
+      })),
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+/**
+ * FAQPage schema for AEO (Answer Engine Optimization).
+ * Use on any page that has visible Q&A content so Google AI Overviews,
+ * ChatGPT, Perplexity, and Gemini can extract and cite answers directly.
+ */
+export function FaqPageJsonLd({
+  faqs,
+}: {
+  faqs: Array<{ question: string; answer: string }>;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
     })),
   };
 
@@ -169,6 +212,7 @@ export function WebSiteJsonLd() {
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.shortDescription,
+    dateModified: "2026-09-03",
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -176,6 +220,14 @@ export function WebSiteJsonLd() {
         "@type": "ImageObject",
         url: `${siteConfig.url}/images/logo.png`,
       },
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteConfig.url}/?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
     },
   };
 

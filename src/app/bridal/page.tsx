@@ -6,6 +6,7 @@ import {
   Calendar,
   CheckCircle2,
   MessageCircle,
+  ArrowRight,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { bridalPageData } from "@/config/servicesData";
@@ -14,6 +15,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { AppointmentForm } from "@/components/forms/AppointmentForm";
+import { BreadcrumbsJsonLd, FaqPageJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: bridalPageData.metaTitle,
@@ -25,9 +27,37 @@ export const metadata: Metadata = {
     title: bridalPageData.metaTitle,
     description: bridalPageData.metaDescription,
     url: `${siteConfig.url}/bridal`,
-    images: [{ url: bridalPageData.heroImage }],
+    images: [{ url: bridalPageData.heroImage, width: 1200, height: 630, alt: "Bridal makeup and styling at Divisha's Unisex Salon, Kanpur" }],
   },
 };
+
+const bridalFaqs = [
+  {
+    question: "How much does bridal makeup cost at Divisha's Salon in Kanpur?",
+    answer:
+      "Bridal package pricing at Divisha's varies by package type — HD makeup, airbrush finish, pre-bridal rituals, or complete wedding day packages. Prices are shared during a personalised consultation. Contact the salon at +91 85270 91578 or via WhatsApp to receive a quote based on your wedding date and requirements.",
+  },
+  {
+    question: "Does Divisha's offer pre-bridal packages in Kanpur?",
+    answer:
+      "Yes. Divisha's offers pre-bridal glow rituals spanning 2 to 4 weeks before the wedding. These include organic deep-hydration skin facials, restorative keratin hair spas, luxury bridal manicure and pedicure, and full-body polishing — all designed to achieve maximum natural radiance by the wedding day.",
+  },
+  {
+    question: "Can I book a bridal trial session at Divisha's?",
+    answer:
+      "Yes. Divisha's recommends a bridal trial session before the wedding day to finalize the exact makeup look, hairstyle, and colour palette. Contact the salon at +91 85270 91578 or via WhatsApp to schedule your trial appointment.",
+  },
+  {
+    question: "Does Divisha's offer groom styling for weddings?",
+    answer:
+      "Yes. Divisha's offers a Royal Groom Styling package including a precision wedding haircut, razor beard sculpting, exfoliating skin brightener and detan, and discreet camera-ready grooming for 4K wedding photography — all in a private suite.",
+  },
+  {
+    question: "What is airbrush bridal makeup and does Divisha's offer it?",
+    answer:
+      "Airbrush bridal makeup uses a fine spray gun to apply foundation in ultra-thin, buildable layers, producing a flawless and long-lasting finish that photographs beautifully and is sweat-resistant. Divisha's offers both HD and airbrush bridal makeup options. The artist recommends based on your skin type during the consultation.",
+  },
+];
 
 const bridalPackages = [
   {
@@ -42,6 +72,7 @@ const bridalPackages = [
       "Tear-proof, weather-resistant longevity",
     ],
     image: "/images/bridal-makeup.jpg",
+    imageAlt: "HD and airbrush bridal makeup by Divisha's Salon, Kanpur",
   },
   {
     title: "Royal Groom Styling & Grooming",
@@ -54,6 +85,7 @@ const bridalPackages = [
       "Hair setting with long-lasting lightweight hold",
     ],
     image: "/images/beard-grooming.jpg",
+    imageAlt: "Royal groom styling and beard grooming at Divisha's Salon, Kanpur",
   },
   {
     title: "Pre-Wedding & Function Glam",
@@ -66,6 +98,7 @@ const bridalPackages = [
       "Quick touch-up advice",
     ],
     image: "/images/party-makeup.jpg",
+    imageAlt: "Pre-wedding function and event makeup at Divisha's Unisex Salon",
   },
   {
     title: "Pre-Bridal Glow Rituals",
@@ -78,12 +111,16 @@ const bridalPackages = [
       "Full-body polishing & soothing hydration",
     ],
     image: "/images/beauty-spa.jpg",
+    imageAlt: "Pre-bridal skin and hair rituals at Divisha's Salon, Kanpur",
   },
 ];
 
 export default function BridalPage() {
   return (
     <div className="flex flex-col min-h-screen">
+      <BreadcrumbsJsonLd items={[{ name: "Bridal & Occasion", url: "/bridal" }]} />
+      <FaqPageJsonLd faqs={bridalFaqs} />
+
       {/* Bridal Hero */}
       <section className="pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-16 md:pb-28 bg-[#141213] text-white relative overflow-hidden border-b border-[#2A2327]">
         <div className="absolute top-0 right-0 w-80 sm:w-[600px] h-80 sm:h-[600px] bg-[#E0007C]/20 rounded-full blur-3xl pointer-events-none" />
@@ -143,12 +180,12 @@ export default function BridalPage() {
               </div>
             </div>
 
-            {/* Right Visual Composition */}
+            {/* Right Visual */}
             <div className="lg:col-span-5 mt-4 lg:mt-0">
               <div className="relative h-72 sm:h-96 lg:h-[460px] rounded-3xl overflow-hidden shadow-2xl border border-white/20">
                 <Image
                   src={bridalPageData.heroImage}
-                  alt="Divisha's Signature Bridal Look"
+                  alt="Divisha's signature bridal makeup and hairstyling — wedding beauty in Kanpur"
                   fill
                   priority
                   className="object-cover hover:scale-105 transition-transform duration-700"
@@ -187,7 +224,7 @@ export default function BridalPage() {
                 <div className="relative h-60 sm:h-72 lg:h-80 w-full overflow-hidden bg-zinc-100">
                   <Image
                     src={pkg.image}
-                    alt={pkg.title}
+                    alt={pkg.imageAlt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
@@ -201,9 +238,9 @@ export default function BridalPage() {
 
                 <div className="p-6 sm:p-8 lg:p-10 space-y-5 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-[#181517] leading-[1.18] group-hover:text-[#C2185B] transition-colors">
+                    <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-[#181517] leading-[1.18] group-hover:text-[#C2185B] transition-colors">
                       {pkg.title}
-                    </h3>
+                    </h2>
                     <p className="text-sm text-[#554e53] mt-2.5 leading-relaxed font-normal font-sans">
                       {pkg.desc}
                     </p>
@@ -258,6 +295,42 @@ export default function BridalPage() {
                 <span className="text-xs sm:text-sm font-normal text-[#2A2428] leading-relaxed">
                   {reason}
                 </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Internal links */}
+          <div className="flex flex-wrap gap-4 justify-center pt-4">
+            <a href="/gallery" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2185B] hover:underline">
+              View Bridal Gallery <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+            <span className="text-[#EAE3E6]">|</span>
+            <a href="/services" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2185B] hover:underline">
+              All Salon Services <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* AEO Bridal FAQ */}
+      <section className="py-16 sm:py-24 bg-white border-b border-[#EAE3E6]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-3 mb-10">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FCE4EC]/80 border border-[#F8BBD0] text-[#C2185B] text-[10px] sm:text-xs font-semibold uppercase tracking-[0.14em]">
+              Bridal FAQ
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#181517]">
+              Bridal &amp; Wedding Questions Answered
+            </h2>
+            <p className="text-sm text-[#554e53] font-normal max-w-xl mx-auto">
+              Everything you need to know about bridal packages at Divisha&apos;s Unisex Salon, Kanpur.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {bridalFaqs.map((faq) => (
+              <div key={faq.question} className="p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-[#FAF8F7] border border-[#EAE3E6] shadow-2xs">
+                <h3 className="text-sm sm:text-base font-semibold text-[#181517] mb-2">{faq.question}</h3>
+                <p className="text-xs sm:text-sm text-[#554e53] leading-relaxed font-normal">{faq.answer}</p>
               </div>
             ))}
           </div>

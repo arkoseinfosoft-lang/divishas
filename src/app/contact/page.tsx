@@ -13,19 +13,52 @@ import { siteConfig } from "@/config/site";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Badge } from "@/components/ui/Badge";
 import { AppointmentForm } from "@/components/forms/AppointmentForm";
+import { BreadcrumbsJsonLd, FaqPageJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Contact Us & Book Appointment | Divisha's Unisex Salon",
+  title: "Contact Divisha's Salon, Kanpur | Book an Appointment",
   description:
-    "Contact Divisha's Unisex Salon. Book an appointment online, send a WhatsApp message, view salon opening hours, or get Google Maps directions.",
+    "Contact Divisha's Unisex Salon in Kalyanpur, Kanpur — book online, call +91 85270 91578, WhatsApp, or get Google Maps directions. Open Mon–Fri 10AM–9PM, Sat–Sun 9:30AM–9:30PM.",
   alternates: {
     canonical: `${siteConfig.url}/contact`,
   },
+  openGraph: {
+    title: "Contact Divisha's Salon, Kanpur | Book an Appointment",
+    description:
+      "Book at Divisha's Unisex Salon, Kalyanpur, Kanpur. Call, WhatsApp, or fill the online form. Open 7 days a week.",
+    url: `${siteConfig.url}/contact`,
+  },
 };
+
+const contactFaqs = [
+  {
+    question: "How do I book an appointment at Divisha's Unisex Salon?",
+    answer:
+      "You can book an appointment at Divisha's by calling +91 85270 91578, sending a WhatsApp message to the same number, or by submitting the online booking form on this Contact page. Walk-in appointments are welcome subject to stylist availability.",
+  },
+  {
+    question: "What are the opening hours of Divisha's Unisex Salon in Kanpur?",
+    answer:
+      "Divisha's Unisex Salon is open 7 days a week. Monday to Friday: 10:00 AM – 9:00 PM. Saturday and Sunday: 9:30 AM – 9:30 PM. The salon is open on most public holidays — call ahead to confirm.",
+  },
+  {
+    question: "Where exactly is Divisha's Unisex Salon located in Kanpur?",
+    answer:
+      "Divisha's Unisex Salon is located at M-157, Awas Vikas Scheme-1, Kalyanpur, Kanpur, Uttar Pradesh 208019. The nearest landmark is Negi Banquet Hall (Back Side). Use the embedded Google Maps on this page for turn-by-turn directions.",
+  },
+  {
+    question: "Can I walk in to Divisha's Unisex Salon without an appointment?",
+    answer:
+      "Walk-ins are welcome at Divisha's Unisex Salon subject to stylist availability. For guaranteed slots — especially for bridal consultations, special occasion styling, or multiple services — prior booking via call or WhatsApp is recommended.",
+  },
+];
 
 export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen">
+      <BreadcrumbsJsonLd items={[{ name: "Contact & Visit", url: "/contact" }]} />
+      <FaqPageJsonLd faqs={contactFaqs} />
+
       {/* Hero Header */}
       <section className="pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-16 md:pb-28 bg-hero-mesh border-b border-[#EAE3E6] relative overflow-hidden">
         {/* Background ambient lighting */}
@@ -41,11 +74,11 @@ export default function ContactPage() {
             </Badge>
 
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#181517] leading-[1.12]">
-              Visit Divisha&apos;s Unisex Salon
+              Visit Divisha&apos;s Unisex Salon in Kanpur
             </h1>
 
             <p className="text-sm sm:text-base md:text-lg text-[#554e53] font-normal font-sans leading-relaxed">
-              Book your bespoke salon appointment, ask questions, or drop in for a personal style consultation.
+              Book your bespoke salon appointment, ask questions, or drop in to our salon in Kalyanpur, Kanpur for a personal style consultation.
             </p>
           </div>
         </div>
@@ -59,9 +92,9 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-6 sm:space-y-8">
               {/* Phone & WhatsApp Card */}
               <div className="luxury-card bg-white rounded-3xl p-6 sm:p-8 lg:p-9 border border-[#EAE3E6] shadow-sm space-y-6">
-                <h3 className="font-serif text-2xl font-semibold text-[#181517] leading-[1.18]">
+                <h2 className="font-serif text-2xl font-semibold text-[#181517] leading-[1.18]">
                   Instant Touchpoints
-                </h3>
+                </h2>
 
                 <div className="space-y-3.5 sm:space-y-4">
                   <a
@@ -130,9 +163,9 @@ export default function ContactPage() {
               {/* Location & Timings Card */}
               <div className="luxury-card bg-white rounded-3xl p-6 sm:p-8 lg:p-9 border border-[#EAE3E6] shadow-sm space-y-6">
                 <div>
-                  <h3 className="font-serif text-xl font-semibold text-[#181517] mb-3 leading-[1.2]">
+                  <h2 className="font-serif text-xl font-semibold text-[#181517] mb-3 leading-[1.2]">
                     Salon Address &amp; Timings
-                  </h3>
+                  </h2>
                   <div className="flex items-start gap-3.5 text-sm text-[#554e53]">
                     <MapPin className="w-5 h-5 text-[#C2185B] shrink-0 mt-0.5" />
                     <div>
@@ -185,9 +218,39 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* AEO FAQ Section — above the map for visibility */}
+      <section className="py-16 sm:py-20 bg-[#FAF8F7] border-b border-[#EAE3E6]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-3 mb-10">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FCE4EC]/80 border border-[#F8BBD0] text-[#C2185B] text-[10px] sm:text-xs font-semibold uppercase tracking-[0.14em]">
+              Contact FAQ
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-[#181517]">
+              Common Questions About Visiting Us
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {contactFaqs.map((faq) => (
+              <div key={faq.question} className="p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border border-[#EAE3E6] shadow-2xs">
+                <h3 className="text-sm sm:text-base font-semibold text-[#181517] mb-2">{faq.question}</h3>
+                <p className="text-xs sm:text-sm text-[#554e53] leading-relaxed font-normal">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Full Width Google Maps Embed */}
       <section className="py-16 sm:py-24 md:py-32 bg-white border-b border-[#EAE3E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-[#181517]">
+              Find Us in Kalyanpur, Kanpur
+            </h2>
+            <p className="text-sm text-[#554e53] mt-2">
+              M-157, Awas Vikas Scheme-1, Kalyanpur, Kanpur 208019 · Near Negi Banquet Hall
+            </p>
+          </div>
           <div className="rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-xl h-72 sm:h-96 md:h-[480px] w-full">
             <iframe
               src={siteConfig.location.googleMapsEmbedUrl}
@@ -197,7 +260,7 @@ export default function ContactPage() {
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Divisha's Unisex Salon Location Map"
+              title="Divisha's Unisex Salon Location — Kalyanpur, Kanpur, Uttar Pradesh"
               className="w-full h-full min-h-[280px]"
             />
           </div>

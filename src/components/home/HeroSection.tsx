@@ -36,14 +36,18 @@ export function HeroSection() {
       <div className="absolute bottom-10 left-10 w-80 sm:w-[450px] h-80 sm:h-[450px] bg-[#C5A880]/15 rounded-full blur-3xl pointer-events-none -z-0" />
 
       {/* Interactive DotGrid Background */}
+      {/* shockRadius={0} intentionally disables the click shock-wave effect.
+          The onClick handler in DotGrid iterates all dots synchronously on every
+          window click, causing a 480ms INP block on the homepage. The mousemove
+          proximity effect (throttled at 20ms, passive) is preserved. */}
       <DotGrid
         dotSize={4}
         gap={28}
         baseColor="#F0E4E9"
         activeColor="#E0007C"
         proximity={120}
-        shockRadius={200}
-        shockStrength={4}
+        shockRadius={0}
+        shockStrength={0}
         resistance={750}
         returnDuration={1.2}
         className="absolute inset-0 z-0 pointer-events-none opacity-45"

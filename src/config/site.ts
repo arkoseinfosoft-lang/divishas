@@ -44,6 +44,17 @@ export interface SiteConfig {
     facebook: string;
     youtube?: string;
     threads?: string;
+    googleBusinessProfile?: string; // Q5: Add your GMB URL here
+  };
+  /**
+   * CONFIRM BEFORE PUBLISH (Q2):
+   * Only populate aggregateRating after verifying these numbers
+   * match your real Google Business Profile review count and rating.
+   * Inflating review data violates Google's structured data guidelines.
+   */
+  aggregateRating?: {
+    ratingValue: number;
+    reviewCount: number;
   };
   features: string[];
   genderServed: "Unisex (Men & Women)";
@@ -53,10 +64,11 @@ export const siteConfig: SiteConfig = {
   name: "Divisha's Unisex Salon",
   tagline: "Where Elegance Meets Precision Grooming",
   shortDescription:
-    "Premium unisex salon offering professional hair styling, couture makeup, luxury nail care, bridal transformations, and advanced skin grooming.",
+    "Premium unisex salon in Kanpur offering professional hair styling, couture makeup, luxury nail care, bridal transformations, and advanced skin grooming for men and women.",
   fullDescription:
-    "Divisha's Unisex Salon is a premier beauty and grooming destination crafted for both men and women. Combining artistic flair, state-of-the-art styling techniques, and personalized care, we provide exceptional salon experiences from bespoke haircuts and rejuvenating hair treatments to couture bridal transformations and luxury nail artistry.",
-  url: "https://divishas-salon.vercel.app", // Editable client domain
+    "Divisha's Unisex Salon is a premier beauty and grooming destination in Kalyanpur, Kanpur, Uttar Pradesh, crafted for both men and women. Combining artistic flair, state-of-the-art styling techniques, and personalized care, we provide exceptional salon experiences from bespoke haircuts and rejuvenating hair treatments to couture bridal transformations and luxury nail artistry.",
+  // Q1: Update to your real production domain when ready.
+  url: "https://divishas.com",
   contact: {
     phone: "+918527091578",
     phoneDisplay: "+91 85270 91578",
@@ -105,10 +117,24 @@ export const siteConfig: SiteConfig = {
     ],
   },
   social: {
-    instagram: "https://www.instagram.com/divisha_unisex_salon_?igsi=M2IzMGJtM2Q1dTZq",
+    // Clean URL without tracking params for sameAs schema
+    instagram: "https://www.instagram.com/divisha_unisex_salon_/",
+    // Q4: Confirm this is your real Facebook page URL
     facebook: "https://facebook.com/divishassalon",
+    // Q4: Confirm this is your real YouTube channel URL
     youtube: "https://youtube.com/@divishassalon",
+    // Q5: Add your Google Business Profile URL below
+    googleBusinessProfile: undefined,
   },
+  /**
+   * CONFIRM BEFORE PUBLISH (Q2):
+   * Uncomment and set real values only after verifying against your GMB dashboard.
+   * Do NOT guess or estimate these numbers.
+   */
+  // aggregateRating: {
+  //   ratingValue: 4.9,
+  //   reviewCount: 1200,
+  // },
   features: [
     "Certified Hair & Makeup Artists",
     "Dedicated Unisex Styling Sections",

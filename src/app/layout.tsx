@@ -32,21 +32,27 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Luxury Hair, Makeup & Grooming for Men & Women`,
+    default: `${siteConfig.name} | Hair, Makeup & Bridal Salon Kanpur`,
     template: `%s | ${siteConfig.name}`,
   },
-  description: siteConfig.shortDescription,
+  description:
+    "Divisha's Unisex Salon in Kanpur offers expert hair styling, HD bridal makeup, nail art, men's grooming, and luxury skin care. Open 7 days — Mon–Fri 10AM–9PM, Sat–Sun 9:30AM–9:30PM. Book at +91 85270 91578.",
   keywords: [
+    "unisex salon Kanpur",
+    "bridal makeup Kanpur",
+    "hair salon Kanpur",
+    "hair salon Kalyanpur Kanpur",
+    "best salon in Kanpur",
+    "bridal salon Kanpur",
     "Divisha's Unisex Salon",
+    "makeup artist Kanpur",
+    "nail art salon Kanpur",
+    "men's grooming Kanpur",
     "unisex salon near me",
-    "bridal makeup artist",
-    "makeup artist for wedding",
-    "hair salon for men and women",
-    "nail art and extensions",
-    "men's grooming salon",
-    "luxury hair spa treatments",
-    "party makeup salon",
-    "pedicure manicure salon",
+    "luxury hair spa Kanpur",
+    "party makeup Kanpur",
+    "pedicure manicure Kanpur",
+    "salon Kalyanpur",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
@@ -66,22 +72,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: siteConfig.url,
-    title: `${siteConfig.name} | Premium Unisex Salon`,
-    description: siteConfig.shortDescription,
+    title: `${siteConfig.name} | Premium Unisex Salon in Kanpur`,
+    description:
+      "Divisha's Unisex Salon in Kanpur — professional hair styling, bridal makeup, nail art, men's grooming & skin care. Open 7 days a week.",
     siteName: siteConfig.name,
     images: [
       {
         url: "/images/hero-salon.jpg",
         width: 1200,
         height: 630,
-        alt: "Divisha's Unisex Salon Interior & Beauty Styling",
+        alt: "Divisha's Unisex Salon — Premium Hair, Makeup & Bridal Salon in Kanpur",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Premium Unisex Salon`,
-    description: siteConfig.shortDescription,
+    title: `${siteConfig.name} | Premium Unisex Salon in Kanpur`,
+    description:
+      "Divisha's Unisex Salon in Kanpur — professional hair styling, bridal makeup, nail art, men's grooming & skin care. Open 7 days a week.",
     images: ["/images/hero-salon.jpg"],
   },
   icons: {
@@ -94,9 +102,8 @@ export const metadata: Metadata = {
       { url: "/images/favicon.png?v=2", sizes: "180x180", type: "image/png" },
     ],
   },
-  alternates: {
-    canonical: siteConfig.url,
-  },
+  // NOTE: No root-level canonical here — each page sets its own via alternates.canonical.
+  // Having a root canonical caused every page to inherit the homepage URL as its canonical.
 };
 
 export default function RootLayout({
