@@ -71,7 +71,7 @@ const bridalPackages = [
       "Dupatta & jewelry setting coordination",
       "Tear-proof, weather-resistant longevity",
     ],
-    image: "/images/bridal-makeup.jpg",
+    image: "/images/bridal-makeup.webp",
     imageAlt: "HD and airbrush bridal makeup by Divisha's Salon, Kanpur",
   },
   {
@@ -84,7 +84,7 @@ const bridalPackages = [
       "Discreet studio grooming for 4K photography",
       "Hair setting with long-lasting lightweight hold",
     ],
-    image: "/images/beard-grooming.jpg",
+    image: "/images/beard-grooming.webp",
     imageAlt: "Royal groom styling and beard grooming at Divisha's Salon, Kanpur",
   },
   {
@@ -97,7 +97,7 @@ const bridalPackages = [
       "Sweat-resistant, dance-proof formulations",
       "Quick touch-up advice",
     ],
-    image: "/images/party-makeup.jpg",
+    image: "/images/party-makeup.webp",
     imageAlt: "Pre-wedding function and event makeup at Divisha's Unisex Salon",
   },
   {
@@ -110,7 +110,7 @@ const bridalPackages = [
       "Luxury bridal manicure & pedicure",
       "Full-body polishing & soothing hydration",
     ],
-    image: "/images/beauty-spa.jpg",
+    image: "/images/beauty-spa.webp",
     imageAlt: "Pre-bridal skin and hair rituals at Divisha's Salon, Kanpur",
   },
 ];

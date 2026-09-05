@@ -129,7 +129,7 @@ export function WhyChooseUs() {
 
               <div className="relative h-80 sm:h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-[#EAE3E6]/80 bg-white group">
                 <Image
-                  src="/images/hair-men.jpg"
+                  src="/images/hair-men.webp"
                   alt="Men's and Women's Unisex Styling at Divisha's"
                   fill
                   className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"

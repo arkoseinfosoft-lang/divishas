@@ -12,31 +12,31 @@ const previewImages: (LightboxItem & { span: string })[] = [
   {
     title: "Signature Bridal Glamour",
     category: "Bridal",
-    image: "/images/bridal-makeup.jpg",
+    image: "/images/bridal-makeup.webp",
     span: "col-span-1 sm:col-span-2 md:col-span-2 md:row-span-2 min-h-[320px] sm:min-h-[400px] md:min-h-[540px] h-full",
   },
   {
     title: "Precision Haircut & Fade",
     category: "Men's Styling",
-    image: "/images/hair-men.jpg",
+    image: "/images/hair-men.webp",
     span: "col-span-1 min-h-[250px] sm:min-h-[260px] md:min-h-[260px] h-64 md:h-auto",
   },
   {
     title: "Chic Rose & Gold Nail Art",
     category: "Nails",
-    image: "/images/nail-art.jpg",
+    image: "/images/nail-art.webp",
     span: "col-span-1 min-h-[250px] sm:min-h-[260px] md:min-h-[260px] h-64 md:h-auto",
   },
   {
     title: "Voluminous Hair Blowout",
     category: "Hair",
-    image: "/images/hair-women.jpg",
+    image: "/images/hair-women.webp",
     span: "col-span-1 min-h-[250px] sm:min-h-[260px] md:min-h-[260px] h-64 md:h-auto",
   },
   {
     title: "Radiant Party Makeup",
     category: "Makeup",
-    image: "/images/party-makeup.jpg",
+    image: "/images/party-makeup.webp",
     span: "col-span-1 min-h-[250px] sm:min-h-[260px] md:min-h-[260px] h-64 md:h-auto",
   },
 ];

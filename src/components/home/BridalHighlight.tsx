@@ -58,8 +58,8 @@ export function BridalHighlight() {
             {/* Interactive Before & After Transformation Slider */}
             <div className="relative group">
               <BeforeAfterSlider
-                beforeImage="/images/natural_portrait.png"
-                afterImage="/images/bridal-makeup.jpg"
+                beforeImage="/images/natural_portrait.webp"
+                afterImage="/images/bridal-makeup.webp"
                 beforeLabel="Natural Look"
                 afterLabel="HD Bridal Glamour"
                 beforeAlt="Natural look before bridal styling"
@@ -74,7 +74,7 @@ export function BridalHighlight() {
               <div className="relative h-32 sm:h-36 rounded-2xl overflow-hidden border border-white/10 glass-panel-dark group flex items-center p-3 gap-3 shadow-lg">
                 <div className="relative w-24 sm:w-28 h-full rounded-xl overflow-hidden shrink-0">
                   <Image
-                    src="/images/bridal-hair.jpg"
+                    src="/images/bridal-hair.webp"
                     alt="Floral Bridal Bun Styling"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

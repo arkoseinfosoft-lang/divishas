@@ -58,7 +58,7 @@ const serviceDepts = [
     href: "/services/hair",
     badge: "For Men & Women",
     desc: "Custom precision haircuts, signature blow-dries, scalp detox, restorative spas, and special occasion hair updos.",
-    image: "/images/hair-women.jpg",
+    image: "/images/hair-women.webp",
     imageAlt: "Women's hair styling and treatment at Divisha's Salon, Kanpur",
     icon: Scissors,
     subServices: [
@@ -75,7 +75,7 @@ const serviceDepts = [
     href: "/services/mens-grooming",
     badge: "Men's Barbering",
     desc: "Precision fade haircuts, straight-razor beard sculpting, executive detan facials, and revitalizing scalp treatments in our dedicated men's suite.",
-    image: "/images/beard-grooming.jpg",
+    image: "/images/beard-grooming.webp",
     imageAlt: "Men's precision beard sculpting and grooming at Divisha's, Kanpur",
     icon: Scissors,
     subServices: [
@@ -92,7 +92,7 @@ const serviceDepts = [
     href: "/services/makeup",
     badge: "HD Artistry",
     desc: "Camera-ready high-definition makeup, radiant party glam, and milestone event styling using luxury cosmetic formulations.",
-    image: "/images/party-makeup.jpg",
+    image: "/images/party-makeup.webp",
     imageAlt: "HD party and event makeup artistry at Divisha's Unisex Salon, Kanpur",
     icon: Sparkles,
     subServices: [
@@ -109,7 +109,7 @@ const serviceDepts = [
     href: "/services/nails",
     badge: "Hands & Feet",
     desc: "Nourishing cuticle therapies, long-lasting gel overlays, custom nail art creations, and soothing spa manicures & pedicures.",
-    image: "/images/nail-art.jpg",
+    image: "/images/nail-art.webp",
     imageAlt: "Custom nail art and gel nail care at Divisha's Salon, Kanpur",
     icon: Paintbrush,
     subServices: [
@@ -125,7 +125,7 @@ const serviceDepts = [
     href: "/services/beauty-grooming",
     badge: "Skin & Wellness",
     desc: "Rejuvenating organic facials, precision threading, gentle waxing, and holistic full-body wellness rituals in private suites.",
-    image: "/images/beauty-spa.jpg",
+    image: "/images/beauty-spa.webp",
     imageAlt: "Skin facial and beauty grooming treatment at Divisha's Salon, Kanpur",
     icon: Sparkle,
     subServices: [
@@ -141,7 +141,7 @@ const serviceDepts = [
     href: "/bridal",
     badge: "Wedding Couture",
     desc: "Signature bridal transformations, groom royal styling, pre-wedding skin rituals, and saree / dupatta draping.",
-    image: "/images/bridal-makeup.jpg",
+    image: "/images/bridal-makeup.webp",
     imageAlt: "HD and airbrush bridal makeup and hairstyling at Divisha's Salon, Kanpur",
     icon: Crown,
     subServices: [

@@ -116,7 +116,7 @@ export default function AboutPage() {
             <div className="lg:col-span-5 mt-4 lg:mt-0">
               <div className="relative h-72 sm:h-96 lg:h-[450px] rounded-3xl overflow-hidden shadow-2xl border border-[#EAE3E6]">
                 <Image
-                  src="/images/hero-salon.jpg"
+                  src="/images/hero-salon.webp"
                   alt="Divisha's Unisex Salon interior — dedicated styling areas for men and women in Kalyanpur, Kanpur"
                   fill
                   priority
@@ -179,7 +179,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                 <div className="relative h-60 sm:h-76 lg:h-88 rounded-3xl overflow-hidden shadow-xl border border-[#EAE3E6]">
                   <Image
-                    src="/images/hair-women.jpg"
+                    src="/images/hair-women.webp"
                     alt="Women's hair styling and treatment at Divisha's Unisex Salon, Kanpur"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-700"
@@ -191,7 +191,7 @@ export default function AboutPage() {
                 </div>
                 <div className="relative h-60 sm:h-76 lg:h-88 rounded-3xl overflow-hidden shadow-xl border border-[#EAE3E6]">
                   <Image
-                    src="/images/hair-men.jpg"
+                    src="/images/hair-men.webp"
                     alt="Men's precision haircut and grooming at Divisha's Unisex Salon, Kanpur"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-700"

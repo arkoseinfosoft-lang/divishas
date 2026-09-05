@@ -18,11 +18,11 @@ export function LocalBusinessJsonLd({
     url: pageUrl || siteConfig.url,
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
-    logo: `${siteConfig.url}/images/logo.png`,
+    logo: `${siteConfig.url}/images/logo.webp`,
     image: [
-      `${siteConfig.url}/images/hero-salon.jpg`,
-      `${siteConfig.url}/images/bridal-makeup.jpg`,
-      `${siteConfig.url}/images/hair-women.jpg`,
+      `${siteConfig.url}/images/hero-salon.webp`,
+      `${siteConfig.url}/images/bridal-makeup.webp`,
+      `${siteConfig.url}/images/hair-women.webp`,
     ],
     priceRange: "$$",
     currenciesAccepted: "INR",
@@ -131,7 +131,7 @@ export function ServiceJsonLd({
     url: url,
     image: image
       ? `${siteConfig.url}${image}`
-      : `${siteConfig.url}/images/hero-salon.jpg`,
+      : `${siteConfig.url}/images/hero-salon.webp`,
   };
 
   return (
@@ -218,7 +218,7 @@ export function WebSiteJsonLd() {
       name: siteConfig.name,
       logo: {
         "@type": "ImageObject",
-        url: `${siteConfig.url}/images/logo.png`,
+        url: `${siteConfig.url}/images/logo.webp`,
       },
     },
     potentialAction: {

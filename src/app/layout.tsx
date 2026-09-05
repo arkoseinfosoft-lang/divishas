@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: "/images/hero-salon.jpg",
+        url: "/images/hero-salon.webp",
         width: 1200,
         height: 630,
         alt: "Divisha's Unisex Salon — Premium Hair, Makeup & Bridal Salon in Kanpur",
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} | Premium Unisex Salon in Kanpur`,
     description:
       "Divisha's Unisex Salon in Kanpur — professional hair styling, bridal makeup, nail art, men's grooming & skin care. Open 7 days a week.",
-    images: ["/images/hero-salon.jpg"],
+    images: ["/images/hero-salon.webp"],
   },
   icons: {
     icon: [

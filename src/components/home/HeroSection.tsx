@@ -178,7 +178,7 @@ export function HeroSection() {
               {/* Main Image Container */}
               <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-[#EAE3E6]/80 bg-white aspect-[4/3] group">
                 <Image
-                  src="/images/hero-salon.jpg"
+                  src="/images/hero-salon.webp"
                   alt="Divisha's Unisex Salon Luxury Interior and Hair Styling"
                   fill
                   priority

@@ -30,7 +30,7 @@ export const servicesData: Record<string, ServiceCategory> = {
     metaTitle: "Hair Salon Services for Men & Women | Divisha's Unisex Salon",
     metaDescription:
       "Explore bespoke haircuts, modern styling, restorative hair spa treatments, and professional grooming for men and women at Divisha's Unisex Salon.",
-    heroImage: "/images/hair-women.jpg",
+    heroImage: "/images/hair-women.webp",
     badge: "Hair Artistry & Care",
     introText:
       "From trendsetting haircuts and precision fades to restorative hair rituals and custom blowouts, our certified hair specialists craft looks tailored to your facial structure, hair texture, and individual lifestyle.",
@@ -48,7 +48,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 45–60 mins | Recommended cadence: 4–6 weeks",
         ],
         forGender: "Unisex",
-        image: "/images/hair-men.jpg",
+        image: "/images/hair-men.webp",
       },
       {
         id: "hair-styling",
@@ -63,7 +63,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 45–60 mins | Longevity: 24–48 hours",
         ],
         forGender: "Unisex",
-        image: "/images/hair-women.jpg",
+        image: "/images/hair-women.webp",
       },
       {
         id: "hair-grooming",
@@ -78,7 +78,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 25–35 mins | Recommended cadence: 2–3 weeks",
         ],
         forGender: "Unisex",
-        image: "/images/beard-grooming.jpg",
+        image: "/images/beard-grooming.webp",
       },
       {
         id: "hair-treatments",
@@ -93,7 +93,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 60–75 mins | Visible softness: 3–4 weeks",
         ],
         forGender: "Unisex",
-        image: "/images/hero-salon.jpg",
+        image: "/images/hero-salon.webp",
       },
       {
         id: "professional-hair-styling",
@@ -108,7 +108,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 60–90 mins | Longevity: 10–14 hours",
         ],
         forGender: "Unisex",
-        image: "/images/hair-balayage.jpg",
+        image: "/images/hair-balayage.webp",
       },
     ],
     faqs: [
@@ -136,7 +136,7 @@ export const servicesData: Record<string, ServiceCategory> = {
     metaTitle: "Professional Makeup Services | Divisha's Unisex Salon",
     metaDescription:
       "Explore bespoke makeup artistry at Divisha's Unisex Salon, from subtle day looks and radiant party glam to couture bridal and special occasion makeup.",
-    heroImage: "/images/party-makeup.jpg",
+    heroImage: "/images/party-makeup.webp",
     badge: "Makeup & Beauty Artistry",
     introText:
       "Every face is a unique canvas. Our skilled makeup artists highlight your authentic beauty with skin-first application techniques, luxury cosmetic formulations, and enduring high-definition finishes.",
@@ -154,7 +154,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 45–60 mins | Longevity: 8–10 hours",
         ],
         forGender: "Women",
-        image: "/images/party-makeup.jpg",
+        image: "/images/party-makeup.webp",
       },
       {
         id: "party-event-makeup",
@@ -169,7 +169,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 60–75 mins | Longevity: 10–14 hours",
         ],
         forGender: "Women",
-        image: "/images/party-makeup.jpg",
+        image: "/images/party-makeup.webp",
       },
       {
         id: "bridal-wedding-makeup",
@@ -184,7 +184,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 90–120 mins | Longevity: 14–18 hours",
         ],
         forGender: "Women",
-        image: "/images/bridal-makeup.jpg",
+        image: "/images/bridal-makeup.webp",
       },
       {
         id: "professional-makeup",
@@ -199,7 +199,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 45–60 mins | Longevity: 6–8 hours",
         ],
         forGender: "Unisex",
-        image: "/images/hair-women.jpg",
+        image: "/images/hair-women.webp",
       },
       {
         id: "special-occasion-makeup",
@@ -214,7 +214,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 60–75 mins | Longevity: 10–12 hours",
         ],
         forGender: "Women",
-        image: "/images/bridal-makeup.jpg",
+        image: "/images/bridal-makeup.webp",
       },
     ],
     faqs: [
@@ -238,7 +238,7 @@ export const servicesData: Record<string, ServiceCategory> = {
     metaTitle: "Nail Care, Manicure, Pedicure & Nail Art | Divisha's Unisex Salon",
     metaDescription:
       "Pamper your hands and feet at Divisha's Unisex Salon. Explore nail care, luxury manicures, soothing pedicures, and bespoke nail art.",
-    heroImage: "/images/nail-art.jpg",
+    heroImage: "/images/nail-art.webp",
     badge: "Nail Care & Extensions",
     introText:
       "Give your hands and feet the nourishment they deserve. From hygienic nail shaping and hydrating spa pedicures to trendsetting gel extensions and intricate nail art, our nail technicians deliver perfection in every stroke.",
@@ -256,7 +256,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 30–40 mins | Results last: 2–3 weeks",
         ],
         forGender: "Unisex",
-        image: "/images/nail-art.jpg",
+        image: "/images/nail-art.webp",
       },
       {
         id: "nail-styling",
@@ -271,7 +271,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 45–60 mins | Longevity: 3–4 weeks",
         ],
         forGender: "Women",
-        image: "/images/nail-art.jpg",
+        image: "/images/nail-art.webp",
       },
       {
         id: "nail-art",
@@ -286,7 +286,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 60–90 mins | Longevity: 3–4 weeks",
         ],
         forGender: "Women",
-        image: "/images/nail-art.jpg",
+        image: "/images/nail-art.webp",
       },
       {
         id: "manicure-pedicure",
@@ -302,7 +302,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 60–75 mins | Smoothness: 3–4 weeks",
         ],
         forGender: "Unisex",
-        image: "/images/beauty-spa.jpg",
+        image: "/images/beauty-spa.webp",
       },
     ],
     faqs: [
@@ -330,7 +330,7 @@ export const servicesData: Record<string, ServiceCategory> = {
     metaTitle: "Men's Haircuts, Beard Grooming & Barbering | Divisha's Unisex Salon",
     metaDescription:
       "Step into Divisha's dedicated Men's Lounge for precision fade haircuts, straight-razor beard sculpting, executive skin detan facials, and grooming packages.",
-    heroImage: "/images/beard-grooming.jpg",
+    heroImage: "/images/beard-grooming.webp",
     badge: "Men's Lounge & Barbering",
     introText:
       "Crafted specifically for the modern gentleman. Enjoy dedicated barbering chairs, expert beard sculptors, and revitalizing skin treatments in a relaxed, masculine lounge atmosphere.",
@@ -348,7 +348,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 35–45 mins | Recommended cadence: 3–4 weeks",
         ],
         forGender: "Men",
-        image: "/images/hair-men.jpg",
+        image: "/images/hair-men.webp",
       },
       {
         id: "beard-sculpting-shave",
@@ -363,7 +363,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 25–35 mins | Maintenance: 10–14 days",
         ],
         forGender: "Men",
-        image: "/images/beard-grooming.jpg",
+        image: "/images/beard-grooming.webp",
       },
       {
         id: "executive-detan-facial",
@@ -378,7 +378,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 45–60 mins | Freshness: 3–4 weeks",
         ],
         forGender: "Men",
-        image: "/images/beauty-spa.jpg",
+        image: "/images/beauty-spa.webp",
       },
       {
         id: "mens-scalp-spa",
@@ -393,7 +393,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 40–50 mins | Recommended: Monthly",
         ],
         forGender: "Men",
-        image: "/images/hero-salon.jpg",
+        image: "/images/hero-salon.webp",
       },
       {
         id: "gentlemans-grooming-package",
@@ -409,7 +409,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 90–105 mins | All-in-one executive service",
         ],
         forGender: "Men",
-        image: "/images/beard-grooming.jpg",
+        image: "/images/beard-grooming.webp",
       },
     ],
     faqs: [
@@ -437,7 +437,7 @@ export const servicesData: Record<string, ServiceCategory> = {
     metaTitle: "Beauty & Skin Care Services | Divisha's Unisex Salon",
     metaDescription:
       "Experience revitalizing skin facials, gentle waxing, precision threading, and holistic body wellness in private suites at Divisha's Unisex Salon.",
-    heroImage: "/images/beauty-spa.jpg",
+    heroImage: "/images/beauty-spa.webp",
     badge: "Skin Care & Aesthetics",
     introText:
       "Look luminous, smooth, and confident every day. Our comprehensive beauty and skin care rituals are performed with gentle techniques and dermatologically safe formulations in private, hygienic treatment suites.",
@@ -455,7 +455,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 60–75 mins | Radiance lasts: 3–4 weeks",
         ],
         forGender: "Unisex",
-        image: "/images/beauty-spa.jpg",
+        image: "/images/beauty-spa.webp",
       },
       {
         id: "personal-grooming",
@@ -470,7 +470,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 15–25 mins | Results last: 2–4 weeks",
         ],
         forGender: "Unisex",
-        image: "/images/beauty-spa.jpg",
+        image: "/images/beauty-spa.webp",
       },
       {
         id: "womens-grooming",
@@ -485,7 +485,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 30–60 mins | Smoothness: 3–5 weeks",
         ],
         forGender: "Women",
-        image: "/images/beauty-spa.jpg",
+        image: "/images/beauty-spa.webp",
       },
       {
         id: "complete-salon-beauty-care",
@@ -500,7 +500,7 @@ export const servicesData: Record<string, ServiceCategory> = {
           "Duration: 2 – 2.5 hours | Comprehensive full-body pampering",
         ],
         forGender: "Unisex",
-        image: "/images/hero-salon.jpg",
+        image: "/images/hero-salon.webp",
       },
     ],
     faqs: [
@@ -524,7 +524,7 @@ export const bridalPageData = {
   metaTitle: "Bridal Makeup & Groom Styling | Divisha's Unisex Salon",
   metaDescription:
     "Make your wedding unforgettable with Divisha's bespoke bridal makeup, groom grooming packages, pre-bridal rituals, and occasion styling.",
-  heroImage: "/images/bridal-makeup.jpg",
+  heroImage: "/images/bridal-makeup.webp",
   badge: "Weddings & Celebrations",
   introText:
     "Your wedding day is one of the most cherished milestones of your life. At Divisha's Unisex Salon, we craft personalized bridal and groom experiences that bring your dream vision to life with regal elegance and contemporary finesse.",
@@ -533,31 +533,31 @@ export const bridalPageData = {
       title: "Bridal Makeup",
       desc: "High-definition bridal makeup tailored to match your wedding attire, jewelry, and lighting.",
       icon: "Sparkles",
-      image: "/images/bridal-makeup.jpg",
+      image: "/images/bridal-makeup.webp",
     },
     {
       title: "Wedding / Event Makeup",
       desc: "Glamorous makeup for Sangeet, Mehendi, Engagement, Haldi, and Reception functions.",
       icon: "Crown",
-      image: "/images/party-makeup.jpg",
+      image: "/images/party-makeup.webp",
     },
     {
       title: "Occasion Styling",
       desc: "Complete hair updos, floral hair arrangements, dupatta draping, and saree styling.",
       icon: "Flower2",
-      image: "/images/bridal-hair.jpg",
+      image: "/images/bridal-hair.webp",
     },
     {
       title: "Bridal Beauty Preparation",
       desc: "Pre-bridal skin regimes, glow facials, full-body polishing, and nail extensions.",
       icon: "HeartHandshake",
-      image: "/images/beauty-spa.jpg",
+      image: "/images/beauty-spa.webp",
     },
     {
       title: "Groom Wedding Styling",
       desc: "Executive beard grooming, skin prep, hairstyle setting, and royal groom styling.",
       icon: "UserCheck",
-      image: "/images/beard-grooming.jpg",
+      image: "/images/beard-grooming.webp",
     },
   ],
   whyChooseUs: [

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description:
       "Real results from Divisha's Unisex Salon, Kanpur — hair styling, bridal makeup, nail art, and men's grooming transformations.",
     url: `${siteConfig.url}/gallery`,
-    images: [{ url: "/images/hero-salon.jpg", width: 1200, height: 630, alt: "Divisha's Salon Gallery" }],
+    images: [{ url: "/images/hero-salon.webp", width: 1200, height: 630, alt: "Divisha's Salon Gallery" }],
   },
 };
 

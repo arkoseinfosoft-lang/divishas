@@ -68,7 +68,7 @@ export function FeaturedServices() {
           >
             <div className="md:w-1/2 relative min-h-[280px] md:min-h-[380px] overflow-hidden bg-zinc-100">
               <Image
-                src="/images/bridal-makeup.jpg"
+                src="/images/bridal-makeup.webp"
                 alt="Bridal Couture Makeover by Divisha's"
                 fill
                 className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
@@ -126,7 +126,7 @@ export function FeaturedServices() {
           >
             <div className="relative h-56 sm:h-64 overflow-hidden bg-zinc-100">
               <Image
-                src="/images/hair-women.jpg"
+                src="/images/hair-women.webp"
                 alt="Hair Styling & Balayage"
                 fill
                 className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
@@ -169,7 +169,7 @@ export function FeaturedServices() {
           >
             <div className="relative h-52 sm:h-56 overflow-hidden bg-zinc-100">
               <Image
-                src="/images/nail-art.jpg"
+                src="/images/nail-art.webp"
                 alt="Nail Art & Gel Extensions"
                 fill
                 className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
@@ -212,7 +212,7 @@ export function FeaturedServices() {
           >
             <div className="relative h-52 sm:h-56 overflow-hidden bg-zinc-100">
               <Image
-                src="/images/beauty-spa.jpg"
+                src="/images/beauty-spa.webp"
                 alt="Beauty and Spa Facials"
                 fill
                 className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
@@ -255,7 +255,7 @@ export function FeaturedServices() {
           >
             <div className="relative h-52 sm:h-56 overflow-hidden bg-zinc-900">
               <Image
-                src="/images/beard-grooming.jpg"
+                src="/images/beard-grooming.webp"
                 alt="Men's Beard Grooming and Styling"
                 fill
                 className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out opacity-90"
