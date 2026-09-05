@@ -58,11 +58,11 @@ export function BridalHighlight() {
             {/* Interactive Before & After Transformation Slider */}
             <div className="relative group">
               <BeforeAfterSlider
-                beforeImage="/images/party-makeup.jpg"
+                beforeImage="/images/natural_portrait.png"
                 afterImage="/images/bridal-makeup.jpg"
                 beforeLabel="Natural Look"
                 afterLabel="HD Bridal Glamour"
-                beforeAlt="Natural salon makeup before bridal styling"
+                beforeAlt="Natural look before bridal styling"
                 afterAlt="HD Couture Indian Bridal Makeup"
                 className="w-full h-[320px] sm:h-[380px] lg:h-[420px]"
               />
