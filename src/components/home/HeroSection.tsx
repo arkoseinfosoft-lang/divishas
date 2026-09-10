@@ -118,8 +118,13 @@ export function HeroSection() {
             <motion.div
               variants={itemVariants}
               className="pt-6 sm:pt-8 border-t border-[#EAE3E6]/80 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-left"
+              role="list"
             >
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl glass-panel glass-panel-hover group">
+              <div 
+                className="flex items-center gap-3 p-3.5 rounded-2xl glass-panel glass-panel-hover group"
+                role="listitem"
+                aria-label="100% Sanitized, Sterilized single-use tools"
+              >
                 <div className="w-10 h-10 rounded-xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 transition-transform">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
@@ -133,7 +138,11 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl glass-panel glass-panel-hover group">
+              <div 
+                className="flex items-center gap-3 p-3.5 rounded-2xl glass-panel glass-panel-hover group"
+                role="listitem"
+                aria-label="Master Stylists, Certified professionals"
+              >
                 <div className="w-10 h-10 rounded-xl bg-[#FBF7F0] text-[#9A7B4F] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 transition-transform">
                   <Sparkles className="w-5 h-5" />
                 </div>
@@ -147,7 +156,11 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl glass-panel glass-panel-hover group">
+              <div 
+                className="flex items-center gap-3 p-3.5 rounded-2xl glass-panel glass-panel-hover group"
+                role="listitem"
+                aria-label="Unisex Care, Zoned for men & women"
+              >
                 <div className="w-10 h-10 rounded-xl bg-[#FCE4EC] text-[#C2185B] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 transition-transform">
                   <Heart className="w-5 h-5" />
                 </div>

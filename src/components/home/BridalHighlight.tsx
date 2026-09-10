@@ -71,7 +71,11 @@ export function BridalHighlight() {
             {/* Supporting Micro-Cards Row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Floral Bun Card */}
-              <div className="relative h-32 sm:h-36 rounded-2xl overflow-hidden border border-white/10 glass-panel-dark group flex items-center p-3 gap-3 shadow-lg">
+              <div 
+                className="relative h-32 sm:h-36 rounded-2xl overflow-hidden border border-white/10 glass-panel-dark group flex items-center p-3 gap-3 shadow-lg hover:-translate-y-1 transition-all duration-300"
+                aria-label="Floral Bun Styling"
+                role="article"
+              >
                 <div className="relative w-24 sm:w-28 h-full rounded-xl overflow-hidden shrink-0">
                   <Image
                     src="/images/bridal-hair.webp"
@@ -95,7 +99,11 @@ export function BridalHighlight() {
               </div>
 
               {/* Suite Card */}
-              <div className="relative h-32 sm:h-36 rounded-2xl overflow-hidden border border-white/10 glass-panel-dark p-4 flex flex-col justify-between shadow-lg">
+              <div 
+                className="relative h-32 sm:h-36 rounded-2xl overflow-hidden border border-white/10 glass-panel-dark p-4 flex flex-col justify-between shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+                aria-label="Private bridal makeup suites and executive groom styling lounge"
+                role="article"
+              >
                 <div className="flex items-center gap-1.5 text-[#FF80AB]">
                   <Crown className="w-4 h-4 shrink-0" />
                   <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.14em]">
