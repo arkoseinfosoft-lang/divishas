@@ -101,6 +101,15 @@ export function GalleryPreview() {
               key={item.title}
               variants={itemVariants}
               onClick={() => setLightboxIndex(idx)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setLightboxIndex(idx);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              aria-label={`View ${item.title} in full screen`}
               className={`relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl border border-white/80 bg-zinc-900 cursor-pointer transition-all duration-500 hover:-translate-y-1 ${item.span}`}
             >
               <Image

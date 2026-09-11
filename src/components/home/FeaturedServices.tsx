@@ -64,8 +64,9 @@ export function FeaturedServices() {
           {/* Bento Tile 1: Large Anchor - Bridal & Occasion Couture */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-2 lg:col-span-2 glass-panel glass-panel-hover rounded-3xl overflow-hidden border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(224,0,124,0.12)] flex flex-col md:flex-row group"
+            className="md:col-span-2 lg:col-span-2 glass-panel glass-panel-hover rounded-3xl overflow-hidden border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(224,0,124,0.12)] flex flex-col md:flex-row group relative"
           >
+            <Link href="/bridal" className="absolute inset-0 z-10" aria-label="Explore Bridal Atelier & Packages" />
             <div className="md:w-1/2 relative min-h-[280px] md:min-h-[380px] overflow-hidden bg-zinc-100">
               <Image
                 src="/images/bridal-makeup.webp"
@@ -108,13 +109,10 @@ export function FeaturedServices() {
               </div>
 
               <div className="pt-3">
-                <Link
-                  href="/bridal"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#C2185B] hover:text-[#E0007C] group-hover:translate-x-1.5 transition-all"
-                >
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#C2185B] group-hover:text-[#E0007C] group-hover:translate-x-1.5 transition-all relative z-20">
                   <span>Explore Bridal Atelier &amp; Packages</span>
                   <ArrowRight className="w-4 h-4" />
-                </Link>
+                </span>
               </div>
             </div>
           </motion.div>
@@ -122,8 +120,9 @@ export function FeaturedServices() {
           {/* Bento Tile 2: Hair Care & Balayage */}
           <motion.div
             variants={itemVariants}
-            className="glass-panel glass-panel-hover rounded-3xl overflow-hidden border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(224,0,124,0.12)] flex flex-col justify-between group"
+            className="glass-panel glass-panel-hover rounded-3xl overflow-hidden border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(224,0,124,0.12)] flex flex-col justify-between group relative"
           >
+            <Link href="/services/hair" className="absolute inset-0 z-10" aria-label="View Hair Menu" />
             <div className="relative h-56 sm:h-64 overflow-hidden bg-zinc-100">
               <Image
                 src="/images/hair-women.webp"
@@ -152,21 +151,19 @@ export function FeaturedServices() {
                   Precision haircuts, blowout styling, balayage color blending, and restorative keratin spa treatments.
                 </p>
               </div>
-              <Link
-                href="/services/hair"
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#C2185B] group-hover:translate-x-1.5 transition-transform"
-              >
+              <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#C2185B] group-hover:translate-x-1.5 transition-transform relative z-20">
                 <span>View Hair Menu</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </span>
             </div>
           </motion.div>
 
           {/* Bento Tile 3: Nail Care & Extensions */}
           <motion.div
             variants={itemVariants}
-            className="glass-panel glass-panel-hover rounded-3xl overflow-hidden border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(224,0,124,0.12)] flex flex-col justify-between group"
+            className="glass-panel glass-panel-hover rounded-3xl overflow-hidden border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(224,0,124,0.12)] flex flex-col justify-between group relative"
           >
+            <Link href="/services/nails" className="absolute inset-0 z-10" aria-label="View Nail Menu" />
             <div className="relative h-52 sm:h-56 overflow-hidden bg-zinc-100">
               <Image
                 src="/images/nail-art.webp"
@@ -195,21 +192,19 @@ export function FeaturedServices() {
                   Gel extensions, custom nail art, cuticle wellness, and soothing spa manicures &amp; pedicures.
                 </p>
               </div>
-              <Link
-                href="/services/nails"
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#C2185B] group-hover:translate-x-1.5 transition-transform"
-              >
+              <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#C2185B] group-hover:translate-x-1.5 transition-transform relative z-20">
                 <span>View Nail Menu</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </span>
             </div>
           </motion.div>
 
           {/* Bento Tile 4: Skin Wellness & Facials */}
           <motion.div
             variants={itemVariants}
-            className="glass-panel glass-panel-hover rounded-3xl overflow-hidden border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(224,0,124,0.12)] flex flex-col justify-between group"
+            className="glass-panel glass-panel-hover rounded-3xl overflow-hidden border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(224,0,124,0.12)] flex flex-col justify-between group relative"
           >
+            <Link href="/services/beauty-grooming" className="absolute inset-0 z-10" aria-label="View Beauty Menu" />
             <div className="relative h-52 sm:h-56 overflow-hidden bg-zinc-100">
               <Image
                 src="/images/beauty-spa.webp"
@@ -238,13 +233,10 @@ export function FeaturedServices() {
                   Deep pore cleansing facials, gentle waxing, threading, and revitalizing skin hydration.
                 </p>
               </div>
-              <Link
-                href="/services/beauty-grooming"
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#C2185B] group-hover:translate-x-1.5 transition-transform"
-              >
+              <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#C2185B] group-hover:translate-x-1.5 transition-transform relative z-20">
                 <span>View Beauty Menu</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </span>
             </div>
           </motion.div>
 
@@ -253,6 +245,7 @@ export function FeaturedServices() {
             variants={itemVariants}
             className="glass-panel-dark glass-panel-dark-hover text-white rounded-3xl overflow-hidden border border-white/10 shadow-xl hover:shadow-2xl flex flex-col justify-between group relative"
           >
+            <Link href="/services/mens-grooming" className="absolute inset-0 z-10" aria-label="Explore Men's Lounge" />
             <div className="relative h-52 sm:h-56 overflow-hidden bg-zinc-900">
               <Image
                 src="/images/beard-grooming.webp"
@@ -278,13 +271,10 @@ export function FeaturedServices() {
                   Razor-sharp fades, sculpted beard architecture, scalp treatments, and executive detan rituals.
                 </p>
               </div>
-              <Link
-                href="/services/mens-grooming"
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#FF80AB] hover:text-white group-hover:translate-x-1.5 transition-all"
-              >
+              <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#FF80AB] group-hover:text-white group-hover:translate-x-1.5 transition-all relative z-20">
                 <span>Explore Men&apos;s Lounge</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </span>
             </div>
           </motion.div>
         </motion.div>
