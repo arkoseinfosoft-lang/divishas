@@ -72,8 +72,17 @@ export function GalleryClient() {
             {filteredItems.map((item) => (
               <div
                 key={item.id}
+                role="button"
+                tabIndex={0}
+                aria-label={`View ${item.title}`}
                 onClick={() => setSelectedImage(item)}
-                className="luxury-card bg-[#FAF8F7] rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-sm hover:shadow-2xl transition-all duration-300 group cursor-pointer flex flex-col justify-between"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelectedImage(item);
+                  }
+                }}
+                className="luxury-card bg-[#FAF8F7] rounded-3xl overflow-hidden border border-[#EAE3E6] shadow-sm hover:shadow-2xl transition-all duration-300 group cursor-pointer flex flex-col justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C2185B] focus-visible:ring-offset-2"
               >
                 {/* Image Container */}
                 <div className="relative h-64 sm:h-76 lg:h-84 w-full overflow-hidden bg-zinc-100">

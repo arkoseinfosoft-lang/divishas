@@ -41,7 +41,7 @@ export interface SiteConfig {
   };
   social: {
     instagram: string;
-    facebook: string;
+    facebook?: string;
     youtube?: string;
     threads?: string;
     googleBusinessProfile?: string; // Q5: Add your GMB URL here
@@ -117,14 +117,12 @@ export const siteConfig: SiteConfig = {
     ],
   },
   social: {
-    // Clean URL without tracking params for sameAs schema
+    // Verified Instagram profile URL
     instagram: "https://www.instagram.com/divisha_unisex_salon_/",
-    // Q4: Confirm this is your real Facebook page URL
-    facebook: "https://facebook.com/divishassalon",
-    // Q4: Confirm this is your real YouTube channel URL
-    youtube: "https://youtube.com/@divishassalon",
-    // Q5: Add your Google Business Profile URL below
-    googleBusinessProfile: undefined,
+    // Set your verified URLs below when ready (set to undefined while inactive to avoid 404 links):
+    facebook: undefined, // e.g., "https://facebook.com/divishassalon"
+    youtube: undefined,  // e.g., "https://youtube.com/@divishassalon"
+    googleBusinessProfile: undefined, // e.g., Google Maps Place share link
   },
   /**
    * CONFIRM BEFORE PUBLISH (Q2):

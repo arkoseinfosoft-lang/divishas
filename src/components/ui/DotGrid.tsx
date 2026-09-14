@@ -155,12 +155,38 @@ export const DotGrid: React.FC<DotGridProps> = ({
     dotsRef.current = dots;
   }, [dotSize, gap]);
 
+  const isVisibleRef = useRef<boolean>(true);
+
+  // IntersectionObserver to pause rendering when off-screen
+  useEffect(() => {
+    const wrap = wrapperRef.current;
+    if (!wrap || typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { threshold: 0.01 }
+    );
+
+    observer.observe(wrap);
+    return () => observer.disconnect();
+  }, []);
+
   // Main Drawing Loop
   useEffect(() => {
     let rafId: number;
     const proxSq = proximity * proximity;
 
     const draw = () => {
+      // Pause drawing completely when canvas is off-screen
+      if (!isVisibleRef.current) {
+        rafId = requestAnimationFrame(draw);
+        return;
+      }
+
       const canvas = canvasRef.current;
       if (!canvas) return;
       const ctx = canvas.getContext("2d");
@@ -233,6 +259,8 @@ export const DotGrid: React.FC<DotGridProps> = ({
   // Mouse & Touch Interaction Handlers
   useEffect(() => {
     const handlePointerAction = (clientX: number, clientY: number, now: number) => {
+      if (!isVisibleRef.current || !canvasRef.current) return;
+
       const pr = pointerRef.current;
       const dt = pr.lastTime ? now - pr.lastTime : 16;
       const dx = pr.lastX !== -9999 ? clientX - pr.lastX : 0;
@@ -253,7 +281,6 @@ export const DotGrid: React.FC<DotGridProps> = ({
       pr.vy = vy;
       pr.speed = speed;
 
-      if (!canvasRef.current) return;
       const rect = canvasRef.current.getBoundingClientRect();
       pr.x = clientX - rect.left;
       pr.y = clientY - rect.top;
@@ -345,8 +372,17 @@ export const DotGrid: React.FC<DotGridProps> = ({
     };
 
     const onClick = (e: MouseEvent) => {
-      if (!canvasRef.current) return;
+      if (shockRadius <= 0 || !isVisibleRef.current || !canvasRef.current) return;
       const rect = canvasRef.current.getBoundingClientRect();
+      // Fast AABB rejection: if click is far outside canvas bounds + shockRadius, skip
+      if (
+        e.clientX < rect.left - shockRadius ||
+        e.clientX > rect.right + shockRadius ||
+        e.clientY < rect.top - shockRadius ||
+        e.clientY > rect.bottom + shockRadius
+      ) {
+        return;
+      }
       const cx = e.clientX - rect.left;
       const cy = e.clientY - rect.top;
       const dots = dotsRef.current;
@@ -386,14 +422,18 @@ export const DotGrid: React.FC<DotGridProps> = ({
     window.addEventListener("touchmove", throttledTouchMove, { passive: true });
     window.addEventListener("touchstart", onTouchStart, { passive: true });
     window.addEventListener("touchend", onTouchEnd, { passive: true });
-    window.addEventListener("click", onClick);
+    if (shockRadius > 0) {
+      window.addEventListener("click", onClick);
+    }
 
     return () => {
       window.removeEventListener("mousemove", throttledMouseMove);
       window.removeEventListener("touchmove", throttledTouchMove);
       window.removeEventListener("touchstart", onTouchStart);
       window.removeEventListener("touchend", onTouchEnd);
-      window.removeEventListener("click", onClick);
+      if (shockRadius > 0) {
+        window.removeEventListener("click", onClick);
+      }
     };
   }, [maxSpeed, speedTrigger, proximity, resistance, returnDuration, shockRadius, shockStrength]);
 
